@@ -1,0 +1,121 @@
+[gd_scene load_steps=8 format=3 uid="uid://corp1vr051pep"]
+
+[ext_resource type="Script" uid="uid://bvdki7sxjwp8f" path="res://source/screens/pantprin/pant_principal.gd" id="1_apxvv"]
+[ext_resource type="FontFile" uid="uid://dvcf3m6rj80gw" path="res://resources/lang/OCRAEXT.TTF" id="2_00500"]
+[ext_resource type="Texture2D" uid="uid://cfgvvuqhm148a" path="res://resources/Images/parallax/4.png" id="2_vb4qs"]
+[ext_resource type="Texture2D" uid="uid://b2plmqcsx7btl" path="res://resources/Images/parallax/3.png" id="3_giitp"]
+[ext_resource type="Texture2D" uid="uid://bpibeybsb4qw7" path="res://resources/Images/parallax/2.png" id="4_d3ybt"]
+[ext_resource type="Texture2D" uid="uid://dl48e2ggwvojs" path="res://resources/Images/parallax/1.png" id="5_ma318"]
+
+[sub_resource type="Theme" id="Theme_oftsy"]
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+
+[node name="PantPrincipal" type="Node2D"]
+script = ExtResource("1_apxvv")
+
+[node name="BgBack2" type="Parallax2D" parent="."]
+repeat_size = Vector2(1300, 0)
+autoscroll = Vector2(5, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="BgBack2"]
+position = Vector2(600, 360)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_vb4qs")
+
+[node name="BgBack" type="Parallax2D" parent="."]
+repeat_size = Vector2(1300, 0)
+autoscroll = Vector2(10, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="BgBack"]
+position = Vector2(600, 360)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("3_giitp")
+
+[node name="BgFront2" type="Parallax2D" parent="."]
+repeat_size = Vector2(1300, 0)
+autoscroll = Vector2(15, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="BgFront2"]
+position = Vector2(600, 360)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("4_d3ybt")
+
+[node name="BgFront" type="Parallax2D" parent="."]
+repeat_size = Vector2(1300, 0)
+autoscroll = Vector2(15, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="BgFront"]
+position = Vector2(600, 360)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("5_ma318")
+
+[node name="VBContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 510.0
+offset_top = 278.0
+offset_right = 690.0
+offset_bottom = 478.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="btnIniciar" type="Button" parent="VBContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_neighbor_bottom = NodePath("../btnConfig")
+theme = SubResource("Theme_oftsy")
+theme_type_variation = &"FlatButton"
+theme_override_fonts/font = ExtResource("2_00500")
+theme_override_font_sizes/font_size = 16
+text = "btnIniciar"
+
+[node name="btnConfig" type="Button" parent="VBContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_neighbor_top = NodePath("../btnIniciar")
+focus_neighbor_bottom = NodePath("../btnSalir")
+theme_override_fonts/font = ExtResource("2_00500")
+theme_override_font_sizes/font_size = 16
+text = "btnConfig"
+
+[node name="btnSalir" type="Button" parent="VBContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_neighbor_top = NodePath("../btnConfig")
+theme_override_fonts/font = ExtResource("2_00500")
+theme_override_font_sizes/font_size = 16
+text = "btnSalir"
+
+[node name="lblTitulo" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 426.0
+offset_top = 82.0
+offset_right = 774.0
+offset_bottom = 149.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_00500")
+theme_override_font_sizes/font_size = 64
+text = "lblTitulo"
+horizontal_alignment = 1
+
+[node name="TmrToIntro" type="Timer" parent="."]
+process_callback = 0
+wait_time = 40.0
+one_shot = true
+autostart = true
+
+[connection signal="pressed" from="VBContainer/btnIniciar" to="." method="_on_btn_iniciar_pressed"]
+[connection signal="pressed" from="VBContainer/btnConfig" to="." method="_on_btn_config_pressed"]
+[connection signal="pressed" from="VBContainer/btnSalir" to="." method="_on_btn_salir_pressed"]
+[connection signal="timeout" from="TmrToIntro" to="." method="_on_tmr_to_intro_timeout"]

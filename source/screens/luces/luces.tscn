@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://b4ygg3i7b6p2a"]
+
+[sub_resource type="Gradient" id="Gradient_inmhm"]
+offsets = PackedFloat32Array(0, 0.712707)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0im7r"]
+gradient = SubResource("Gradient_inmhm")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Animation" id="Animation_70132"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_0im7r"]
+resource_name = "fade_light"
+loop_mode = 1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.300013, 0.400017, 0.500021, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [1.0, 1.0, 0.8, 1.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sh38c"]
+_data = {
+&"RESET": SubResource("Animation_70132"),
+&"fade_light": SubResource("Animation_0im7r")
+}
+
+[node name="Luces" type="PointLight2D"]
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_0im7r")
+texture_scale = 0.8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_sh38c")
+}
+autoplay = "fade_light"

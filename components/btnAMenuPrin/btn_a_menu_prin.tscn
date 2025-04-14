@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbmykjyl6dc26"]
+
+[ext_resource type="FontFile" uid="uid://dvcf3m6rj80gw" path="res://resources/lang/OCRAEXT.TTF" id="1_jsewe"]
+[ext_resource type="Script" uid="uid://b1p8su4ua6sbq" path="res://components/btnAMenuPrin/btn_a_menu_prin.gd" id="2_rw7lt"]
+
+[node name="BtnAMenuPrin" type="Button"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1020.0
+offset_bottom = -680.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_jsewe")
+theme_override_font_sizes/font_size = 16
+text = "btnAMenuPrin"
+script = ExtResource("2_rw7lt")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://uyx21pijatp"
+
+[deps]
+
+files=["res://resources/languages.es.translation", "res://resources/languages.en.translation"]
+
+source_file="res://resources/languages.csv"
+dest_files=["res://resources/languages.es.translation", "res://resources/languages.en.translation"]
+
+[params]
+
+compress=true
+delimiter=0

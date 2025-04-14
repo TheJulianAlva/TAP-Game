@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://275ibvia1q42"]
+
+[ext_resource type="Script" uid="uid://cnkygc5bj5ips" path="res://source/screens/personaje/personaje.gd" id="1_211qq"]
+[ext_resource type="SpriteFrames" uid="uid://2y6btlsb3qil" path="res://resources/assets/principalcharacter/principalcharacter_spriteframes.tres" id="2_pgort"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_27g3f"]
+size = Vector2(10, 6)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ikr41"]
+polygon = PackedVector2Array(6, 14, 6, 8, 5, 8, 5, 5, 6, 5, 6, 4, 10, 4, 10, 5, 11, 5, 11, 8, 10, 8, 10, 14)
+
+[node name="Personaje" type="CharacterBody2D"]
+script = ExtResource("1_211qq")
+
+[node name="AnimPlayer" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = ExtResource("2_pgort")
+animation = &"idle_right"
+autoplay = "idle_down"
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 14)
+shape = SubResource("RectangleShape2D_27g3f")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_ikr41")
+
+[node name="Lamp" type="PointLight2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Lamp"]

@@ -1,0 +1,68 @@
+[gd_scene load_steps=7 format=3 uid="uid://bqlyiqi4kpm5y"]
+
+[ext_resource type="Shader" uid="uid://dwo7u8qtf7oel" path="res://source/Singleton/scn_circle_transition/scn_circle_transition.gdshader" id="1_04pr0"]
+[ext_resource type="Script" uid="uid://b7i112s2fxnv5" path="res://source/Singleton/scn_circle_transition/scn_circle_transition.gd" id="1_hf644"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7y4n2"]
+shader = ExtResource("1_04pr0")
+shader_parameter/circle_size = 0.0
+
+[sub_resource type="Animation" id="Animation_bwudy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CircleRect:material:shader_parameter/circle_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_eq3ch"]
+resource_name = "circle_fade"
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CircleRect:material:shader_parameter/circle_size")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b01sg"]
+_data = {
+&"RESET": SubResource("Animation_bwudy"),
+&"circle_fade": SubResource("Animation_eq3ch")
+}
+
+[node name="scn_circle_transition" type="CanvasLayer"]
+script = ExtResource("1_hf644")
+
+[node name="CircleRect" type="ColorRect" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+material = SubResource("ShaderMaterial_7y4n2")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -600.0
+offset_top = -360.0
+offset_right = 600.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnFade" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_b01sg")
+}

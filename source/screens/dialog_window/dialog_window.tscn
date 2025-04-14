@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://gkt7ddh3p5gu"]
+
+[ext_resource type="Script" uid="uid://txo58xy67mom" path="res://source/screens/dialog_window/dialog_window.gd" id="1_awmlj"]
+[ext_resource type="FontFile" uid="uid://dvcf3m6rj80gw" path="res://resources/lang/OCRAEXT.TTF" id="2_avnr8"]
+
+[node name="DialogWindow" type="CanvasLayer"]
+script = ExtResource("1_awmlj")
+
+[node name="panelMsg" type="Panel" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -128.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="TextMsg" type="Label" parent="panelMsg"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.319167
+anchor_right = 0.005
+offset_left = 857.0
+offset_top = 2.0
+offset_right = 1081.0
+offset_bottom = 91.0
+theme_override_fonts/font = ExtResource("2_avnr8")
+theme_override_font_sizes/font_size = 28
+text = "Texto de informacion"
+horizontal_alignment = 2
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
