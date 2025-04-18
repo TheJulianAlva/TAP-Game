@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cho4bq5qo6xav"]
+
+[ext_resource type="PackedScene" uid="uid://275ibvia1q42" path="res://source/screens/personaje/personaje.tscn" id="1_juf1v"]
+[ext_resource type="PackedScene" uid="uid://bo2ub8kol5ixc" path="res://source/screens/room/room.tscn" id="2_aynba"]
+[ext_resource type="Script" uid="uid://bqhvjwtopfh2q" path="res://source/screens/room/camera_2d.gd" id="3_aynba"]
+
+[node name="EdificioT" type="Node2D"]
+
+[node name="Personaje" parent="." instance=ExtResource("1_juf1v")]
+
+[node name="Room" parent="." instance=ExtResource("2_aynba")]
+
+[node name="Room2" parent="." instance=ExtResource("2_aynba")]
+
+[node name="Room3" parent="." instance=ExtResource("2_aynba")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+script = ExtResource("3_aynba")
