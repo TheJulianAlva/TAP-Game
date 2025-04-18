@@ -14,6 +14,8 @@ func _ready() -> void:
 		config.set_value("Character", "lowheal", 10)
 		config.set_value("Character", "highheal", 20)
 		config.set_value("Character", "name", "John Guavas")
+		
+		config.set_value("Enemy", "speed", 50)
 		config.save(file_path)
 		print("Archivo ", file_path, " creado")
 	else:
@@ -51,3 +53,18 @@ func load_character_setting():
 	for key in config.get_section_keys("Character"):
 		language_settings[key] = config.get_value("Character", key)
 	return language_settings
+
+
+#SECCION Enemy
+func save_enemy_setting(key:String, value):
+	config.set_value("Enemy",key,value)
+	config.save(file_path)
+	
+func update_enemy_setting(key:String, value):
+	config.set_value("Enemy",key,value)
+	
+func load_enemy_setting():
+	var enemy_settings = {}
+	for key in config.get_section_keys("Enemy"):
+		enemy_settings[key]=config.get_value("Enemy",key)
+	return enemy_settings
