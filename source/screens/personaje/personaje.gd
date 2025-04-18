@@ -12,7 +12,8 @@ class_name Personaje extends CharacterBody2D
 
 @onready var anim_player: AnimatedSprite2D = $AnimPlayer
 @onready var lamp: PointLight2D = $Lamp
-var speed: int = GLOBAL.pChar_speed
+#var speed: int = GLOBAL.pChar_speed
+var speed=150
 
 var direction: String = "down"
 

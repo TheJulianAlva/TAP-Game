@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxkxmgot6mejq"]
+
+[ext_resource type="Script" uid="uid://dsra2tsuxtatt" path="res://source/Singleton/evento.gd" id="1_3seri"]
+
+[node name="Evento" type="Node"]
+script = ExtResource("1_3seri")

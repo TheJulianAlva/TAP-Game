@@ -24,6 +24,7 @@ CONFIG_FILE="*res://source/Singleton/config.gd"
 GLOBAL="*res://source/Singleton/global.gd"
 SCN_TRANSITION="*res://source/Singleton/scn_transition/scn_transition.tscn"
 SCN_CIRCLE_TRANSITION="*res://source/Singleton/scn_circle_transition/scn_circle_transition.tscn"
+EVENTO="*res://source/Singleton/evento.tscn"
 
 [display]
 

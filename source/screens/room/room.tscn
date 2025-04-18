@@ -1,0 +1,134 @@
+[gd_scene load_steps=6 format=4 uid="uid://bo2ub8kol5ixc"]
+
+[ext_resource type="Script" uid="uid://cbqxjthx3sroy" path="res://source/screens/room/room.gd" id="1_b81yn"]
+[ext_resource type="PackedScene" uid="uid://8eey10hcu7iu" path="res://resources/assets/door.tscn" id="1_gx1bw"]
+[ext_resource type="TileSet" uid="uid://ckqpsaw1nd35i" path="res://resources/assets/tile_map_outside/pant_game_world.tres" id="3_blt7d"]
+[ext_resource type="PackedScene" uid="uid://275ibvia1q42" path="res://source/screens/personaje/personaje.tscn" id="4_kby3c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_blt7d"]
+size = Vector2(991, 507)
+
+[node name="Room" type="Node2D"]
+position = Vector2(0, -3)
+script = ExtResource("1_b81yn")
+
+[node name="Walls" type="StaticBody2D" parent="."]
+position = Vector2(-601, -383)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
+position = Vector2(0.20703, 101.093)
+scale = Vector2(0.876377, 0.497328)
+polygon = PackedVector2Array(127.45, 13.9564, -2, -207, 334.288, -205.264, 579, -204, 619.918, 10.5735)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Walls"]
+position = Vector2(1198.86, 615)
+rotation = 3.14159
+scale = Vector2(0.870825, 0.497328)
+polygon = PackedVector2Array(107.787, 10.0538, -2, -207, 334.288, -205.264, 579, -204, 619.918, 10.5735)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Walls"]
+position = Vector2(1106, -2.90309)
+rotation = 1.5708
+scale = Vector2(0.493991, 0.44031)
+polygon = PackedVector2Array(220.456, 15.8979, -2, -207, 334.288, -205.264, 579, -204, 619.918, 10.5735)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Walls"]
+position = Vector2(107.958, 722)
+rotation = -1.5708
+scale = Vector2(0.493991, 0.50588)
+polygon = PackedVector2Array(220.456, 15.8979, -2, -207, 334.288, -205.264, 579, -204, 619.918, 10.5735)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Walls"]
+position = Vector2(9.8414, 0)
+scale = Vector2(0.992743, 1)
+polygon = PackedVector2Array(1196, -3, 1101, 104, 662, 104, 684, 1)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Walls"]
+position = Vector2(1191, 715)
+rotation = 3.14159
+scale = Vector2(0.992743, 1)
+polygon = PackedVector2Array(1196, -3, 1101, 104, 662, 104, 684, 1)
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="Walls"]
+position = Vector2(1198.76, 72.2433)
+rotation = 1.5708
+scale = Vector2(0.523949, 1.04235)
+polygon = PackedVector2Array(1224.85, -0.857666, 1014.9, 97.7851, 646.545, 97.6252, 684, 1)
+
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="Walls"]
+position = Vector2(2, 645)
+rotation = -1.5708
+scale = Vector2(0.523949, 1.04235)
+polygon = PackedVector2Array(1224.85, -0.857666, 1036.36, 104.571, 650.827, 104.571, 684, 1)
+
+[node name="PlayerDetector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector"]
+position = Vector2(2, -19)
+shape = SubResource("RectangleShape2D_blt7d")
+
+[node name="DoorU" parent="." instance=ExtResource("1_gx1bw")]
+position = Vector2(-595, -389)
+
+[node name="Marker2D" parent="DoorU" index="0"]
+position = Vector2(590, -249)
+scale = Vector2(10.4398, -17.9862)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DoorU"]
+position = Vector2(1023.79, -0.999997)
+rotation = 1.5708
+scale = Vector2(1, 1.17762)
+polygon = PackedVector2Array(1, 289, 16, 289, 106, 301.275, 106, 415.913, 16, 433, 1, 432)
+
+[node name="DoorD" parent="." instance=ExtResource("1_gx1bw")]
+position = Vector2(-595, -389)
+
+[node name="Marker2D" parent="DoorD" index="0"]
+position = Vector2(598, 899)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="DoorD"]
+position = Vector2(178, 716)
+rotation = 4.71239
+scale = Vector2(1, 1.17762)
+polygon = PackedVector2Array(1, 289, 16, 289, 106, 301.275, 106, 415.913, 16, 433, 1, 432, 1.00012, 356.792)
+
+[node name="DoorR" parent="." instance=ExtResource("1_gx1bw")]
+position = Vector2(-595, -389)
+
+[node name="Marker2D" parent="DoorR" index="0"]
+position = Vector2(1148, 355)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="DoorR"]
+position = Vector2(1205.42, 715)
+rotation = 3.14159
+scale = Vector2(0.956502, 1)
+polygon = PackedVector2Array(1, 289, 16, 289, 112, 303, 113, 416, 16, 433, 1, 432)
+
+[node name="DoorL" parent="." instance=ExtResource("1_gx1bw")]
+position = Vector2(-595, -389)
+
+[node name="Marker2D" parent="DoorL" index="0"]
+position = Vector2(46, 355)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="DoorL"]
+polygon = PackedVector2Array(1, 289, 16, 289, 112, 303, 113, 416, 16, 433, 1, 432)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(-595, -389)
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAMAAAABAAAAAAABAAMAAAACAAAAAAABAAMAAAADAAAAAAABAAMAAAAEAAAAAAABAAMAAAAFAAAAAAABAAMAAAAGAAAAAAABAAMAAAAHAAAAAAABAAMAAAAIAAAAAAABAAMAAAAJAAAAAAABAAMAAAAKAAAAAAABAAMAAAALAAAAAAABAAMAAAAMAAAAAAABAAMAAAANAAAAAAABAAMAAAAOAAAAAAABAAMAAAAPAAAAAAABAAMAAAAQAAAAAAABAAMAAAARAAAAAAABAAMAAAASAAAAAAABAAMAAAATAAAAAAABAAMAAAAUAAAAAAABAAMAAAAVAAAAAAABAAMAAAAWAAAAAAABAAMAAAAXAAAAAAABAAMAAAAYAAAAAAABAAMAAAAZAAAAAAABAAMAAAAaAAAAAAABAAMAAAAbAAAAAAABAAMAAAAcAAAAAAABAAMAAAAdAAAAAAABAAMAAAAeAAAAAAABAAMAAAAfAAAAAAABAAMAAAArAAAAAAABAAMAAAAsAAAAAAABAAMAAAAtAAAAAAABAAMAAAAuAAAAAAABAAMAAAAvAAAAAAABAAMAAAAwAAAAAAABAAMAAAAxAAAAAAABAAMAAAAyAAAAAAABAAMAAAAzAAAAAAABAAMAAAA0AAAAAAABAAMAAAA1AAAAAAABAAMAAAA2AAAAAAABAAMAAAA3AAAAAAABAAMAAAA4AAAAAAABAAMAAAA5AAAAAAABAAMAAAA6AAAAAAABAAMAAAA7AAAAAAABAAMAAAA8AAAAAAABAAMAAAA9AAAAAAABAAMAAAA+AAAAAAABAAMAAAA/AAAAAAABAAMAAABAAAAAAAABAAMAAABBAAAAAAABAAMAAABCAAAAAAABAAMAAABDAAAAAAABAAMAAABEAAAAAAABAAMAAABFAAAAAAABAAMAAABGAAAAAAABAAMAAAAAAAEAAAAAAAQAAAAAAAIAAAAAAAQAAAAAAAMAAAAAAAQAAAAAAAQAAAAAAAQAAAAAAAUAAAAAAAQAAAAAAAYAAAAAAAQAAAAAAAcAAAAAAAQAAAAAAAgAAAAAAAQAAAAAAAkAAAAAAAQAAAAAAAoAAAAAAAQAAAAAAAsAAAAAAAQAAAAAAAwAAAAAAAQAAAAAAA0AAAAAAAQAAAAAAA4AAAAAAAQAAAAAAA8AAAAAAAQAAAAAABAAAAAAAAQAAAAAABEAAAAAAAQAAAAAABsAAAAAAAQAAAAAABwAAAAAAAQAAAAAAB0AAAAAAAQAAAAAAB4AAAAAAAQAAAAAAB8AAAAAAAQAAAAAACAAAAAAAAQAAAAAACEAAAAAAAQAAAAAACIAAAAAAAQAAAAAACMAAAAAAAQAAAAAACwAAAAAAAUAAAAAACQAAAAAAAQAAAAAACUAAAAAAAQAAAAAACYAAAAAAAQAAAAAACcAAAAAAAQAAAAAACgAAAAAAAQAAAAAACkAAAAAAAQAAAAAACoAAAAAAAQAAAAAACsAAAAAAAQAAAABACwAAAABAAUAAAACACwAAAABAAUAAAADACwAAAABAAUAAAAEACwAAAABAAUAAAAFACwAAAABAAUAAAAGACwAAAABAAUAAAAHACwAAAABAAUAAAAIACwAAAABAAUAAAAJACwAAAABAAUAAAAKACwAAAABAAUAAAALACwAAAABAAUAAAAMACwAAAABAAUAAAANACwAAAABAAUAAAAOACwAAAABAAUAAAAPACwAAAABAAUAAAAQACwAAAABAAUAAAARACwAAAABAAUAAAASACwAAAABAAUAAAATACwAAAABAAUAAAAUACwAAAABAAUAAAAVACwAAAABAAUAAAAWACwAAAABAAUAAAAXACwAAAABAAUAAAAYACwAAAABAAUAAAAZACwAAAABAAUAAAAaACwAAAABAAUAAAAbACwAAAABAAUAAAAcACwAAAABAAUAAAAdACwAAAABAAUAAAAeACwAAAABAAUAAAAfACwAAAABAAUAAAArACwAAAABAAUAAAAsACwAAAABAAUAAAAtACwAAAABAAUAAAAuACwAAAABAAUAAAAvACwAAAABAAUAAAAwACwAAAABAAUAAAAxACwAAAABAAUAAAAyACwAAAABAAUAAAAzACwAAAABAAUAAAA0ACwAAAABAAUAAAA1ACwAAAABAAUAAAA2ACwAAAABAAUAAAA3ACwAAAABAAUAAAA4ACwAAAABAAUAAAA5ACwAAAABAAUAAAA6ACwAAAABAAUAAAA7ACwAAAABAAUAAAA8ACwAAAABAAUAAAA9ACwAAAABAAUAAAA+ACwAAAABAAUAAABKAAAAAAACAAMAAABKAAEAAAACAAQAAABKAAIAAAACAAQAAABKAAMAAAACAAQAAABKAAQAAAACAAQAAABKAAUAAAACAAQAAABKAAYAAAACAAQAAABKAAcAAAACAAQAAABKAAgAAAACAAQAAABKAAkAAAACAAQAAABKAAoAAAACAAQAAABKAAsAAAACAAQAAABKAAwAAAACAAQAAABKAA0AAAACAAQAAABKAA4AAAACAAQAAABKAA8AAAACAAQAAABKABAAAAACAAQAAABKABsAAAACAAQAAABKABwAAAACAAQAAABKAB0AAAACAAQAAABKAB4AAAACAAQAAABKAB8AAAACAAQAAABKACAAAAACAAQAAABKACEAAAACAAQAAABKACIAAAACAAQAAABKACMAAAACAAQAAABKACQAAAACAAQAAABKACUAAAACAAQAAABKACYAAAACAAQAAABKACcAAAACAAQAAABKACgAAAACAAQAAABKACkAAAACAAQAAABKACoAAAACAAQAAAA/ACwAAAABAAUAAABAACwAAAABAAUAAABBACwAAAABAAUAAABCACwAAAABAAUAAABDACwAAAABAAUAAABEACwAAAABAAUAAABFACwAAAABAAUAAABGACwAAAABAAUAAABHACwAAAABAAUAAABIACwAAAABAAUAAABJACwAAAABAAUAAABKACwAAAACAAUAAABKACsAAAACAAQAAABHAAAAAAABAAMAAABIAAAAAAABAAMAAABJAAAAAAABAAMAAABKABEAAAACAAQAAAA=")
+tile_set = ExtResource("3_blt7d")
+
+[node name="Personaje" parent="." instance=ExtResource("4_kby3c")]
+visible = false
+position = Vector2(646, 369)
+scale = Vector2(5, 5)
+collision_layer = 2
+
+[connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
+
+[editable path="DoorU"]
+[editable path="DoorD"]
+[editable path="DoorR"]
+[editable path="DoorL"]
