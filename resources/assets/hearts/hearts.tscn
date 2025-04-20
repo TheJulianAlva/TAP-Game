@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://cstdxec2rs018"]
+
+[ext_resource type="Texture2D" uid="uid://cvd2sumjpco08" path="res://resources/Images/icon/Heart-2.png.png" id="1_eg8vg"]
+
+[node name="Hearts" type="Panel"]
+offset_right = 76.0
+offset_bottom = 29.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 49.0
+offset_bottom = 16.0
+scale = Vector2(1.51515, 1.64)
+texture = ExtResource("1_eg8vg")
+stretch_mode = 1

@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://kct58v5olu4f"]
+
+[ext_resource type="PackedScene" uid="uid://275ibvia1q42" path="res://source/screens/personaje/personaje.tscn" id="1_utw31"]
+[ext_resource type="Script" uid="uid://ddjn07dudbc5x" path="res://camera_2d2.gd" id="2_46uf0"]
+[ext_resource type="PackedScene" uid="uid://bo2ub8kol5ixc" path="res://source/screens/room/room.tscn" id="3_tqm3t"]
+
+[node name="Floor" type="Node2D"]
+
+[node name="Personaje" parent="." instance=ExtResource("1_utw31")]
+position = Vector2(-35, -83)
+scale = Vector2(5, 5)
+collision_layer = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(599, 369)
+script = ExtResource("2_46uf0")
+
+[node name="Room" parent="." instance=ExtResource("3_tqm3t")]
+light_mask = 2
+position = Vector2(-11, 60)
+scale = Vector2(1.00413, 1.0073)
+
+[node name="Room3" parent="." instance=ExtResource("3_tqm3t")]
+light_mask = 2
+position = Vector2(-7, 813)
+
+[node name="Room4" parent="." instance=ExtResource("3_tqm3t")]
+light_mask = 2
+position = Vector2(1226, 819)
+
+[node name="Room2" parent="." instance=ExtResource("3_tqm3t")]
+light_mask = 2
+position = Vector2(1224, 60)
