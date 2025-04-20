@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b068oj7fvlyap"]
+
+[ext_resource type="Script" uid="uid://br0sjxmbcyrky" path="res://hud_calabozo.gd" id="1_60o5b"]
+[ext_resource type="PackedScene" uid="uid://cstdxec2rs018" path="res://resources/assets/hearts/hearts.tscn" id="2_60o5b"]
+
+[node name="HUDCalabozo" type="CanvasLayer"]
+script = ExtResource("1_60o5b")
+
+[node name="Hearts" parent="." instance=ExtResource("2_60o5b")]
+scale = Vector2(2.17333, 1.82143)

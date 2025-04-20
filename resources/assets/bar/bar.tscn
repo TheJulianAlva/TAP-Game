@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bny124sd0j881"]
+
+[ext_resource type="Texture2D" uid="uid://b0ovwflg6qlxs" path="res://resources/Images/icon/New Piskel-1.png (1).png" id="1_gk1r6"]
+[ext_resource type="Texture2D" uid="uid://brgv4mfmmdp7f" path="res://resources/Images/icon/New Piskel-1.png.png" id="2_3blue"]
+
+[node name="Bar" type="Panel"]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(1.07034, 1.38871)
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 19.0
+scale = Vector2(2.81986, 2.27367)
+value = 30.0
+fill_mode = 3
+texture_under = ExtResource("1_gk1r6")
+texture_progress = ExtResource("2_3blue")
