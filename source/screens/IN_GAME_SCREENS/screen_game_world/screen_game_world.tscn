@@ -1,13 +1,13 @@
 [gd_scene load_steps=10 format=4 uid="uid://c35qe5u2y172e"]
 
-[ext_resource type="Script" uid="uid://bke6m8lbttiyp" path="res://source/screens/IN_GAME_SCREENS/screen_game_world/screen_game_world.gd" id="1_7ixir"]
+[ext_resource type="Script" uid="uid://bke6m8lbttiyp" path="res://source/SCREENS/IN_GAME_SCREENS/screen_game_world/screen_game_world.gd" id="1_7ixir"]
 [ext_resource type="TileSet" uid="uid://ckqpsaw1nd35i" path="res://resources/assets/TILEMAPS/World Tile Map/pant_game_world.tres" id="2_wbc5w"]
-[ext_resource type="PackedScene" uid="uid://275ibvia1q42" path="res://source/screens/principal_character/prin_character.tscn" id="3_fpf8y"]
-[ext_resource type="PackedScene" uid="uid://dm44vdfpa0tp8" path="res://source/screens/hud/hud.tscn" id="4_ihve8"]
-[ext_resource type="PackedScene" uid="uid://b4ygg3i7b6p2a" path="res://source/screens/luces/luces.tscn" id="5_4epuo"]
-[ext_resource type="PackedScene" uid="uid://gkt7ddh3p5gu" path="res://source/screens/dialog_window/dialog_window.tscn" id="6_8yl4s"]
+[ext_resource type="PackedScene" uid="uid://275ibvia1q42" path="res://source/SCREENS/principal_character/prin_character.tscn" id="3_fpf8y"]
+[ext_resource type="PackedScene" uid="uid://dm44vdfpa0tp8" path="res://source/SCREENS/hud/hud.tscn" id="4_ihve8"]
+[ext_resource type="PackedScene" uid="uid://b4ygg3i7b6p2a" path="res://source/SCREENS/luces/luces.tscn" id="5_4epuo"]
+[ext_resource type="PackedScene" uid="uid://gkt7ddh3p5gu" path="res://source/SCREENS/dialog_window/dialog_window.tscn" id="6_8yl4s"]
 [ext_resource type="Texture2D" uid="uid://ha2tqbv36eg8" path="res://resources/Images/mapa-ITTOL.jpg" id="7_lol6w"]
-[ext_resource type="PackedScene" uid="uid://dpdc4tj360n2" path="res://source/screens/enemy_basic/enemy_basic.tscn" id="8_itses"]
+[ext_resource type="PackedScene" uid="uid://dpdc4tj360n2" path="res://source/SCREENS/enemy_basic/enemy_basic.tscn" id="8_itses"]
 
 [sub_resource type="Curve2D" id="Curve2D_2fr7k"]
 _data = {
@@ -36,12 +36,12 @@ y_sort_enabled = true
 tile_map_data = PackedByteArray("AAACAPL/AAAPABAAAAACAPP/AAAPABEAAAADAPL/AAAQABAAAAADAPP/AAAQABEAAAACAPD/AAAVABAAAAADAPD/AAAWABAAAAACAOz/AAAPABAAAAACAO3/AAAPABEAAAADAOz/AAAQABAAAAADAO3/AAAQABEAAAABAPD/AAADAAYAAAABAPH/AAADAAcAAAABAO3/AAADAAYAAAABAO7/AAADAAcAAAABAOr/AAADAAYAAAABAOv/AAADAAcAAAABAOf/AAADAAYAAAABAOj/AAADAAcAAAABAOT/AAADAAYAAAABAOX/AAADAAcAAAABAPT/AAADAAcAAAABAPP/AAADAAYAAAA=")
 tile_set = ExtResource("2_wbc5w")
 
-[node name="Personaje" parent="." instance=ExtResource("3_fpf8y")]
+[node name="PrincipalCharacter" parent="." instance=ExtResource("3_fpf8y")]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(-224, -24)
 
-[node name="Cam" type="Camera2D" parent="Personaje"]
+[node name="Camera" type="Camera2D" parent="PrincipalCharacter"]
 zoom = Vector2(5, 5)
 limit_smoothed = true
 

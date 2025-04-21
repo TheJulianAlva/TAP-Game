@@ -1,6 +1,6 @@
 extends Node2D
-@onready var personaje: CharacterBody2D = $Personaje
-@onready var cam: Camera2D = $Personaje/Cam
+@onready var personaje: CharacterBody2D = $PrincipalCharacter
+@onready var cam: Camera2D = $PrincipalCharacter/Camera
 @onready var path_follow_2d: PathFollow2D = $Paths/Path_01/PathFollow2D
 @onready var enemy_base: EnemigoT = $Enemies/Enemy_Base
 

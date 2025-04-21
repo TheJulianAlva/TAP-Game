@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bxnl2fyf4m4gu"]
 
-[ext_resource type="Script" uid="uid://bhlj4gan4howh" path="res://source/Singleton/scn_transition/scn_transition.gd" id="1_jjdby"]
+[ext_resource type="Script" uid="uid://bhlj4gan4howh" path="res://source/SINGLETONS/scn_transition/scn_transition.gd" id="1_jjdby"]
 
 [sub_resource type="Animation" id="Animation_j1012"]
 length = 0.001

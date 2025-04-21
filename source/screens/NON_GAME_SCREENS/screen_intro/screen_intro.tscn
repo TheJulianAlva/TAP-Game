@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://brlisq6k4h1hf"]
 
 [ext_resource type="FontFile" uid="uid://dvcf3m6rj80gw" path="res://resources/lang/OCRAEXT.TTF" id="1_7e0ta"]
-[ext_resource type="Script" uid="uid://jtfcdnq1bcob" path="res://source/screens/NON_GAME_SCREENS/pantintro/pant_intro.gd" id="1_xtnmq"]
+[ext_resource type="Script" uid="uid://jtfcdnq1bcob" path="res://source/SCREENS/NON_GAME_SCREENS/screen_intro/screen_intro.gd" id="1_xtnmq"]
 [ext_resource type="PackedScene" uid="uid://cbmykjyl6dc26" path="res://components/btnAMenuPrin/btn_a_menu_prin.tscn" id="2_jl63i"]
 [ext_resource type="Texture2D" uid="uid://d2yy3m3ily82s" path="res://resources/Images/TecBg/image.png" id="2_jpcxj"]
 

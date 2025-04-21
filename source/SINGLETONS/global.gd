@@ -1,5 +1,14 @@
 extends Node
 
+#Declaraciones de rutas de pantallas no jugables
+var SCREEN_PRINCIPAL_PATH:String = "res://source/SCREENS/NON_GAME_SCREENS/screen_principal/screen_principal.tscn"
+var SCREEN_CONFIG_PATH:String = "res://source/SCREENS/NON_GAME_SCREENS/screen_config/screen_config.tscn"
+var SCREEN_INTRO_PATH:String = "res://source/SCREENS/NON_GAME_SCREENS/screen_intro/screen_intro.tscn"
+var SCREEN_CONTROLS_PATH:String = "res://source/SCREENS/NON_GAME_SCREENS/screen_controls/screen_controls.tscn"
+
+#Declaraciones de rutas de pantallas jugables
+var SCREEN_GAME_WORLD_PATH:String = "res://source/SCREENS/IN_GAME_SCREENS/screen_game_world/screen_game_world.tscn"
+
 var player_has_lamp:bool
 
 #Declaraciones de variables globales

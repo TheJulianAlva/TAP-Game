@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bqlyiqi4kpm5y"]
 
-[ext_resource type="Shader" uid="uid://dwo7u8qtf7oel" path="res://source/Singleton/scn_circle_transition/scn_circle_transition.gdshader" id="1_04pr0"]
-[ext_resource type="Script" uid="uid://b7i112s2fxnv5" path="res://source/Singleton/scn_circle_transition/scn_circle_transition.gd" id="1_hf644"]
+[ext_resource type="Shader" uid="uid://dwo7u8qtf7oel" path="res://source/SINGLETONS/scn_circle_transition/scn_circle_transition.gdshader" id="1_04pr0"]
+[ext_resource type="Script" uid="uid://b7i112s2fxnv5" path="res://source/SINGLETONS/scn_circle_transition/scn_circle_transition.gd" id="1_hf644"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7y4n2"]
 shader = ExtResource("1_04pr0")

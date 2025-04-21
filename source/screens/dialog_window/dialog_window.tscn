@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://gkt7ddh3p5gu"]
 
-[ext_resource type="Script" uid="uid://txo58xy67mom" path="res://source/screens/dialog_window/dialog_window.gd" id="1_awmlj"]
+[ext_resource type="Script" uid="uid://txo58xy67mom" path="res://source/SCREENS/dialog_window/dialog_window.gd" id="1_awmlj"]
 [ext_resource type="FontFile" uid="uid://dvcf3m6rj80gw" path="res://resources/lang/OCRAEXT.TTF" id="2_avnr8"]
 
 [node name="DialogWindow" type="CanvasLayer"]

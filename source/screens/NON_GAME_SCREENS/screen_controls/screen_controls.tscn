@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cnsm0pam3w5c7"]
 
-[ext_resource type="Script" uid="uid://cpa7xy0kghn5e" path="res://source/screens/NON_GAME_SCREENS/pantcontrol/pant_control.gd" id="1_rf4wj"]
+[ext_resource type="Script" uid="uid://cpa7xy0kghn5e" path="res://source/SCREENS/NON_GAME_SCREENS/screen_controls/screen_controls.gd" id="1_rf4wj"]
 [ext_resource type="FontFile" uid="uid://dvcf3m6rj80gw" path="res://resources/lang/OCRAEXT.TTF" id="2_5x0gq"]
 
 [node name="PantControl" type="Node2D"]

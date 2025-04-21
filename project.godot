@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="TNM Toluca"
-run/main_scene="res://source/screens/NON_GAME_SCREENS/pantintro/pant_intro.tscn"
+run/main_scene="res://source/SCREENS/NON_GAME_SCREENS/screen_intro/screen_intro.tscn"
 config/features=PackedStringArray("4.4", "Mobile")
 boot_splash/bg_color=Color(0.219008, 0.287766, 0.490227, 1)
 boot_splash/image="res://resources/Images/Escudo ITTOL.png"
@@ -20,11 +20,11 @@ boot_splash/minimum_display_time=2000
 
 [autoload]
 
-CONFIG_FILE="*res://source/Singleton/config.gd"
-GLOBAL="*res://source/Singleton/global.gd"
-SCN_TRANSITION="*res://source/Singleton/scn_transition/scn_transition.tscn"
-SCN_CIRCLE_TRANSITION="*res://source/Singleton/scn_circle_transition/scn_circle_transition.tscn"
-EVENTS="*res://source/Singleton/events_manager.tscn"
+CONFIG_FILE="*res://source/SINGLETONS/config.gd"
+GLOBAL="*res://source/SINGLETONS/global.gd"
+SCN_TRANSITION="*res://source/SINGLETONS/scn_transition/scn_transition.tscn"
+SCN_CIRCLE_TRANSITION="*res://source/SINGLETONS/scn_circle_transition/scn_circle_transition.tscn"
+EVENTS="*res://source/SINGLETONS/events_manager.tscn"
 
 [display]
 

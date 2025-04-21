@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dm44vdfpa0tp8"]
 
 [ext_resource type="PackedScene" uid="uid://cbmykjyl6dc26" path="res://components/btnAMenuPrin/btn_a_menu_prin.tscn" id="1_8l4ku"]
-[ext_resource type="Script" uid="uid://eo0oc1r4wfoj" path="res://source/screens/hud/hud.gd" id="1_qtr58"]
+[ext_resource type="Script" uid="uid://eo0oc1r4wfoj" path="res://source/SCREENS/hud/hud.gd" id="1_qtr58"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_qtr58")
