@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="TNM Toluca"
-run/main_scene="res://source/screens/pantintro/pant_intro.tscn"
+run/main_scene="res://source/screens/NON_GAME_SCREENS/pantintro/pant_intro.tscn"
 config/features=PackedStringArray("4.4", "Mobile")
 boot_splash/bg_color=Color(0.219008, 0.287766, 0.490227, 1)
 boot_splash/image="res://resources/Images/Escudo ITTOL.png"

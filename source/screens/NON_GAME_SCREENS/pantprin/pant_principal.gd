@@ -9,7 +9,7 @@ class_name PantPrincipal extends Node2D
 @onready var btn_iniciar: Button = $VBContainer/btnIniciar
 
 var pantConfigPath: String = "res://source/screens/pantconfig/pant_config.tscn"
-var pantGameWorldPath: String = "res://source/screens/pantgameworld/pant_game_world.tscn"
+var pantGameWorldPath: String = "res://source/screens/IN_GAME_SCREENS/pantgameworld/pant_game_world.tscn"
 var pantIntroPath: String = "res://source/screens/pantintro/pant_intro.tscn"
 
 # Called when the node enters the scene tree for the first time.

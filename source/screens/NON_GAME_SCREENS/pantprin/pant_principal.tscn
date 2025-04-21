@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://corp1vr051pep"]
 
-[ext_resource type="Script" uid="uid://bvdki7sxjwp8f" path="res://source/screens/pantprin/pant_principal.gd" id="1_apxvv"]
+[ext_resource type="Script" uid="uid://bvdki7sxjwp8f" path="res://source/screens/NON_GAME_SCREENS/pantprin/pant_principal.gd" id="1_apxvv"]
 [ext_resource type="FontFile" uid="uid://dvcf3m6rj80gw" path="res://resources/lang/OCRAEXT.TTF" id="2_00500"]
 [ext_resource type="Texture2D" uid="uid://cfgvvuqhm148a" path="res://resources/Images/parallax/4.png" id="2_vb4qs"]
 [ext_resource type="Texture2D" uid="uid://b2plmqcsx7btl" path="res://resources/Images/parallax/3.png" id="3_giitp"]

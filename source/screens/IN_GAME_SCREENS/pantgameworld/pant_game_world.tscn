@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=4 uid="uid://c35qe5u2y172e"]
 
 [ext_resource type="TileSet" uid="uid://ckqpsaw1nd35i" path="res://resources/assets/tile_map_outside/pant_game_world.tres" id="1_6mcfk"]
-[ext_resource type="Script" uid="uid://bke6m8lbttiyp" path="res://source/screens/pantgameworld/pant_game_world.gd" id="1_ko6gq"]
-[ext_resource type="PackedScene" uid="uid://275ibvia1q42" path="res://source/screens/personaje/personaje.tscn" id="2_aoxgk"]
+[ext_resource type="Script" uid="uid://bke6m8lbttiyp" path="res://source/screens/IN_GAME_SCREENS/pantgameworld/pant_game_world.gd" id="1_ko6gq"]
+[ext_resource type="PackedScene" uid="uid://275ibvia1q42" path="res://source/screens/principal_character/prin_character.tscn" id="2_aoxgk"]
 [ext_resource type="PackedScene" uid="uid://dm44vdfpa0tp8" path="res://source/screens/hud/hud.tscn" id="4_cvmvu"]
 [ext_resource type="PackedScene" uid="uid://b4ygg3i7b6p2a" path="res://source/screens/luces/luces.tscn" id="5_m1qy7"]
 [ext_resource type="PackedScene" uid="uid://gkt7ddh3p5gu" path="res://source/screens/dialog_window/dialog_window.tscn" id="6_hh6wr"]

@@ -1,21 +1,21 @@
 [gd_scene load_steps=4 format=3 uid="uid://275ibvia1q42"]
 
-[ext_resource type="Script" uid="uid://cnkygc5bj5ips" path="res://source/screens/personaje/personaje.gd" id="1_211qq"]
+[ext_resource type="Script" uid="uid://cnkygc5bj5ips" path="res://source/screens/principal_character/prin_character.gd" id="1_211qq"]
 [ext_resource type="SpriteFrames" uid="uid://2y6btlsb3qil" path="res://resources/assets/principalcharacter/principalcharacter_spriteframes.tres" id="2_pgort"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_27g3f"]
 size = Vector2(10, 6)
 
-[node name="Personaje" type="CharacterBody2D"]
+[node name="PrincipalCharacter" type="CharacterBody2D"]
 script = ExtResource("1_211qq")
 
-[node name="AnimPlayer" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = ExtResource("2_pgort")
-animation = &"idle_right"
+animation = &"idle_down"
 autoplay = "idle_down"
 offset = Vector2(0, -8)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
 position = Vector2(0, -3)
 shape = SubResource("RectangleShape2D_27g3f")

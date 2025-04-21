@@ -9,7 +9,7 @@
 class_name Personaje extends CharacterBody2D
 
 
-@onready var anim_player: AnimatedSprite2D = $AnimPlayer
+@onready var anim_player: AnimatedSprite2D = $AnimatedSprite
 #var speed: int = GLOBAL.pChar_speed #Comentado mientras se hacen modificaciones a pantallas específicas
 var speed=70
 
