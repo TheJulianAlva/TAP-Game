@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://gh2vjn6t4v8u"]
+
+[ext_resource type="Script" uid="uid://bovr2caf2nom" path="res://source/screens/door_room/door_room.gd" id="1_4ioby"]
+
+[node name="door_room" type="Area2D"]
+script = ExtResource("1_4ioby")
+
+[node name="SpawnLocation" type="Marker2D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
