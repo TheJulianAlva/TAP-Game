@@ -540,7 +540,7 @@ shape = SubResource("RectangleShape2D_7ioar")
 position = Vector2(182, 17)
 
 [node name="SpawnLocation" parent="DoorUp" index="0"]
-position = Vector2(0, -80)
+position = Vector2(0, -50)
 
 [node name="CollisionDoor" type="CollisionShape2D" parent="DoorUp"]
 shape = SubResource("RectangleShape2D_16k1f")

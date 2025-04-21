@@ -8,11 +8,9 @@
 
 class_name Personaje extends CharacterBody2D
 
-@export var has_lamp:bool
 
 @onready var anim_player: AnimatedSprite2D = $AnimPlayer
-@onready var lamp: PointLight2D = $Lamp
-#var speed: int = GLOBAL.pChar_speed
+#var speed: int = GLOBAL.pChar_speed #Comentado mientras se hacen modificaciones a pantallas específicas
 var speed=70
 
 var direction: String = "down"
@@ -64,7 +62,3 @@ func update_velocity(axis_hor:float, axis_ver:float) -> Vector2:
 		vec_velocity.x = speed * axis_hor
 		vec_velocity.y = speed * axis_ver
 	return vec_velocity
-
-func toogle_lamp() -> void:
-	if has_lamp:
-		lamp.visible = !lamp.visible
