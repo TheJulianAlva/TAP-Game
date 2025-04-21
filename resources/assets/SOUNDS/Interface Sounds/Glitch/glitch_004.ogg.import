@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bvbgmhsy8ukd8"
+path="res://.godot/imported/glitch_004.ogg-97db7fccc67e5cd01b5a1df418518473.oggvorbisstr"
+
+[deps]
+
+source_file="res://resources/assets/SOUNDS/Interface Sounds/Glitch/glitch_004.ogg"
+dest_files=["res://.godot/imported/glitch_004.ogg-97db7fccc67e5cd01b5a1df418518473.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

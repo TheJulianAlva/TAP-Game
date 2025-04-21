@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://camvjo5qsil3l"
+path="res://.godot/imported/error_005.ogg-156de017f588a359aff85af24f8c52ff.oggvorbisstr"
+
+[deps]
+
+source_file="res://resources/assets/SOUNDS/Interface Sounds/Error/error_005.ogg"
+dest_files=["res://.godot/imported/error_005.ogg-156de017f588a359aff85af24f8c52ff.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://do7tobw283qjs"
+path="res://.godot/imported/handleCoins_1.ogg-d8028be191ea876bf672c281cf0a2012.oggvorbisstr"
+
+[deps]
+
+source_file="res://resources/assets/SOUNDS/RPG audio/HandleCoins/handleCoins_1.ogg"
+dest_files=["res://.godot/imported/handleCoins_1.ogg-d8028be191ea876bf672c281cf0a2012.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

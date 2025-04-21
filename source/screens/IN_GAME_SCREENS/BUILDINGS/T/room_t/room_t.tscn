@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=4 uid="uid://b6hf47nfrsxpf"]
 
 [ext_resource type="Script" uid="uid://uk6vwwvpcuxt" path="res://source/screens/IN_GAME_SCREENS/BUILDINGS/T/room_t/room_t.gd" id="1_16k1f"]
-[ext_resource type="Texture2D" uid="uid://cjcabdtvnowhp" path="res://resources/assets/tile_map_outside/tilemap_packed.png" id="1_k82n3"]
+[ext_resource type="Texture2D" uid="uid://cjcabdtvnowhp" path="res://resources/assets/TILEMAPS/World Tile Map/tilemap_packed.png" id="1_k82n3"]
 [ext_resource type="PackedScene" uid="uid://gh2vjn6t4v8u" path="res://source/screens/IN_GAME_SCREENS/BUILDINGS/door_room/door_room.tscn" id="3_16k1f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7ioar"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bevfcsjbfsid7"
+path="res://.godot/imported/back_001.ogg-d2726cb4406d8b1b28acf38b660ec4af.oggvorbisstr"
+
+[deps]
+
+source_file="res://resources/assets/SOUNDS/Interface Sounds/Back/back_001.ogg"
+dest_files=["res://.godot/imported/back_001.ogg-d2726cb4406d8b1b28acf38b660ec4af.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
