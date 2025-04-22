@@ -12,8 +12,10 @@ class_name Player extends CharacterBody2D
 @onready var anim_player: AnimatedSprite2D = $AnimatedSprite
 #var speed: int = GLOBAL.pChar_speed #Comentado mientras se hacen modificaciones a pantallas específicas
 var speed = 70
-var maxHealth:int = 3
-@onready var currentHealth:int = 3
+@export var maxHealth:int = 5
+@onready var currentHealth:int = 5
+signal healthChanged
+
 var currentDirection: String = "down"
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -50,4 +52,4 @@ func _on_hit_box_area_entered(area: Area2D) -> void:
 		currentHealth -= 1
 		if currentHealth < 0: #Asignacion máxima temporal
 			currentHealth = maxHealth
-		print(currentHealth)
+		healthChanged.emit(currentHealth)

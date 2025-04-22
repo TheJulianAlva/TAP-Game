@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dm44vdfpa0tp8"]
+[gd_scene load_steps=4 format=3 uid="uid://dm44vdfpa0tp8"]
 
 [ext_resource type="PackedScene" uid="uid://cbmykjyl6dc26" path="res://components/btnAMenuPrin/btn_a_menu_prin.tscn" id="1_8l4ku"]
 [ext_resource type="Script" uid="uid://eo0oc1r4wfoj" path="res://source/SCREENS/hud/hud.gd" id="1_qtr58"]
+[ext_resource type="PackedScene" uid="uid://c0na2uqnijrp7" path="res://source/SCREENS/ITEMS/hearts_container/hearts_container.tscn" id="3_jvpyy"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_qtr58")
@@ -11,3 +12,9 @@ offset_left = 986.0
 offset_top = 641.0
 offset_right = -34.0
 offset_bottom = -39.0
+
+[node name="heartsContainer" parent="." instance=ExtResource("3_jvpyy")]
+anchors_preset = 0
+anchor_left = 0.0
+anchor_right = 0.0
+grow_horizontal = 1
