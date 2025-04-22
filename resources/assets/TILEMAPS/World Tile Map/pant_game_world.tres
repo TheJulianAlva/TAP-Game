@@ -1417,7 +1417,7 @@ texture = ExtResource("5_dmefx")
 6:0/0/y_sort_origin = 5
 6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4.84257, 7.10626, -5.87412, 4.98584, -5.87412, -2.92273, 6.10336, -2.98004, 6.10336, 4.92853, 4.67064, 7.10626)
 0:1/0 = 0
-0:1/0/y_sort_origin = 5
+0:1/0/y_sort_origin = 7
 0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.84837, -4.18352, 6.79106, -4.24083, 6.27528, 2.0058, 4.21218, 7.04895, -4.21218, 7.04895, -6.44721, 1.71926)
 1:1/0 = 0
 1:1/0/y_sort_origin = 5
@@ -1482,7 +1482,7 @@ texture = ExtResource("5_dmefx")
 
 [resource]
 physics_layer_0/collision_layer = 1
-physics_layer_0/collision_mask = 2
+physics_layer_0/collision_mask = 6
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Grass"
 terrain_set_0/terrain_0/color = Color(0.905268, 0.000263371, 0.807778, 1)

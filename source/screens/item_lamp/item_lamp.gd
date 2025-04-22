@@ -5,7 +5,7 @@ signal item_obtenido
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if body is Personaje:
+	if body is Player:
 		if !body.has_lamp:
 			var tween = create_tween()
 			tween.tween_property(self,"position",position + Vector2(0,-25),0.4)
