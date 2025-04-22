@@ -1,0 +1,15 @@
+Buenos días bienvenidos a este video yo soy Julián Alva Zepeda y yo Carolina Ledesma Gallegos y vamos a presentarles Jonh's adventure
+
+Este juego trata de la hazaña que tendrá que completar nuestro protagonista, el cual llega al Instituto Tecnológico de Toluca para conseguir informes acerca de la carrera de tics, pero debido a la baja demanda la coordinadora lo inscribe y no podrá salir del instituto hasta terminar la carrera. Para complicar aún más las cosas, los guardias de seguridad lo han confundido con un vendedor de gomitas y no dejan de perseguirlo, y además no tiene dinero suficiente para el transporte de regreso a su casa.
+Ahora su única alternativa es completar lo necesario para titularse y necesitará reunir el dinero suficiente para tomar su camión de regreso.
+
+Cómo podemos observar nuestro diseño es bastante retro y John es un diseño totalmente original.
+El mapa general contiene una estructura lo más semejante al croquis del Instituto Tecnológico de Toluca.
+
+A lo largo del juego el personaje se enfrentará a cuatro jefes principales que estarán ubicados en las carreras de ingeniería en gestión empresarial, ingeniería industrial, ingeniería en sistemas computacionales  e ingeniería mecatrónica. En ese orden irá subiendo la dificultad de cada calabozo.
+John, a lo largo de su aventura por el Instituto Tecnológico de Toluca, interactuará con diferentes personajes que le guiarán en el desarrollo del juego y  estará adquiriendo nuevas habilidades y herramientas.
+
+Aquí podemos observar cuáles son nuestras pantallas de inicio que se maneja de forma vertical, de configuración, cuáles son algunos ítems que incorporamos y algunos personajes auxiliares y enemigos.
+
+Nuestros edificios son los calabozos donde encontrará ciertos desafíos y enemigos a vencer, además deberá encontrar una llave para encontrarse con el jefe del calabozo.
+La particularidad de nuestros calabozos es que están divididos en cuartos, entonces el manejo de nuestra cámara es diferente, por lo que tenemos un evento que nos indica el cuarto en el que está el personaje, y los cambios se manejan en base a marcadores 
