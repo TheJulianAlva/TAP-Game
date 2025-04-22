@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c4bh83cy8f70t"
+path="res://.godot/imported/Game_Over_2.wav-a846a9fd5e2fd8fe1d982dcfb529d582.sample"
+
+[deps]
+
+source_file="res://resources/assets/SOUNDS/RPG audio/GameOver/Game_Over_2.wav"
+dest_files=["res://.godot/imported/Game_Over_2.wav-a846a9fd5e2fd8fe1d982dcfb529d582.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
