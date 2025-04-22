@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://by2b1crgphhw6"]
+
+[ext_resource type="Script" uid="uid://b03dpa736c43y" path="res://components/building_camera/building_camera.gd" id="1_iobcp"]
+
+[node name="CamaraCalabozo" type="Camera2D"]
+zoom = Vector2(3.3, 3.3)
+script = ExtResource("1_iobcp")
