@@ -1,15 +1,16 @@
 [gd_scene load_steps=2 format=3 uid="uid://cstdxec2rs018"]
 
-[ext_resource type="Texture2D" uid="uid://cvd2sumjpco08" path="res://resources/Images/icon/Heart-2.png.png" id="1_eg8vg"]
+[ext_resource type="Texture2D" uid="uid://cq8fh7tynxwdl" path="res://resources/Images/icon/Heart.png" id="1_k74ex"]
 
 [node name="Hearts" type="Panel"]
-offset_right = 76.0
-offset_bottom = 29.0
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(16, 13)
+offset_right = 16.0
+offset_bottom = 13.0
 
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 49.0
-offset_bottom = 16.0
-scale = Vector2(1.51515, 1.64)
-texture = ExtResource("1_eg8vg")
-stretch_mode = 1
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -2)
+texture = ExtResource("1_k74ex")
+centered = false
+hframes = 5
+frame = 4
