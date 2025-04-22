@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=4 uid="uid://bxclwjgjr20o6"]
 
-[ext_resource type="PackedScene" uid="uid://b6hf47nfrsxpf" path="res://source/SCREENS/IN_GAME_SCREENS/BUILDINGS/T/room_t/room_t.tscn" id="1_kejch"]
-[ext_resource type="PackedScene" uid="uid://275ibvia1q42" path="res://source/SCREENS/principal_character/prin_character.tscn" id="2_nufxb"]
-[ext_resource type="Script" uid="uid://x7se06i33rjy" path="res://source/SCREENS/IN_GAME_SCREENS/BUILDINGS/T/building_t/camera.gd" id="3_4lq2i"]
+[ext_resource type="PackedScene" uid="uid://b6hf47nfrsxpf" path="res://source/screens/IN_GAME_SCREENS/BUILDINGS/room_t/room_t.tscn" id="1_kejch"]
+[ext_resource type="PackedScene" uid="uid://275ibvia1q42" path="res://source/screens/principal_character/prin_character.tscn" id="2_nufxb"]
+[ext_resource type="Script" uid="uid://x7se06i33rjy" path="res://source/screens/IN_GAME_SCREENS/BUILDINGS/T/floor_t_1/camera.gd" id="3_4lq2i"]
 
 [node name="Building_T" type="Node2D"]
 
@@ -30,7 +30,7 @@ position = Vector2(351, 0)
 position = Vector2(351, 216)
 
 [node name="room_t4" parent="." instance=ExtResource("1_kejch")]
-position = Vector2(0, 216)
+position = Vector2(702, 216)
 
 [node name="Personaje" parent="." instance=ExtResource("2_nufxb")]
 position = Vector2(119, 83)
@@ -48,3 +48,8 @@ script = ExtResource("3_4lq2i")
 [editable path="room_t/DoorUp"]
 [editable path="room_t/DoorRight"]
 [editable path="room_t/DoorDown"]
+[editable path="room_t2"]
+[editable path="room_t2/DoorLeft"]
+[editable path="room_t2/DoorUp"]
+[editable path="room_t2/DoorRight"]
+[editable path="room_t2/DoorDown"]
