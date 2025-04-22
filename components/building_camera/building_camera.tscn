@@ -3,5 +3,6 @@
 [ext_resource type="Script" uid="uid://b03dpa736c43y" path="res://components/building_camera/building_camera.gd" id="1_iobcp"]
 
 [node name="CamaraCalabozo" type="Camera2D"]
+anchor_mode = 0
 zoom = Vector2(3.3, 3.3)
 script = ExtResource("1_iobcp")
