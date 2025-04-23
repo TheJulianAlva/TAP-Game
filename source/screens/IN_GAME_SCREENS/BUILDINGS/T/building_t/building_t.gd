@@ -3,6 +3,8 @@ extends Node2D
 @onready var path_follow_2d: PathFollow2D =$room_t/Path2D/PathFollow2D
 @onready var ghost: FollowEnemy = $room_t/Ghost
 
+func _ready() -> void:
+	$Player.hasLamp = GLOBAL.player_has_lamp
 
 func _process(delta: float) -> void:
 	ghost.update_animation(path_follow_2d,delta)
