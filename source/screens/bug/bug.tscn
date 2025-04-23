@@ -1,22 +1,24 @@
 [gd_scene load_steps=9 format=3 uid="uid://fcxuvgk66vcf"]
 
 [ext_resource type="Script" uid="uid://cypeb2hytajl5" path="res://source/screens/bug/bug.gd" id="1_uvam6"]
-[ext_resource type="Texture2D" uid="uid://b2qemupce1oai" path="res://source/screens/ITEMS/enemy/bug.png" id="2_kdo27"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_r3jlm"]
+load_path = "res://.godot/imported/bug.png-b9f581ebc46f5010e62794e6d4d3903f.ctex"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kvga7"]
-atlas = ExtResource("2_kdo27")
+atlas = SubResource("CompressedTexture2D_r3jlm")
 region = Rect2(16, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tnqs1"]
-atlas = ExtResource("2_kdo27")
+atlas = SubResource("CompressedTexture2D_r3jlm")
 region = Rect2(32, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ge04t"]
-atlas = ExtResource("2_kdo27")
+atlas = SubResource("CompressedTexture2D_r3jlm")
 region = Rect2(48, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_te3pg"]
-atlas = ExtResource("2_kdo27")
+atlas = SubResource("CompressedTexture2D_r3jlm")
 region = Rect2(0, 32, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_irfso"]

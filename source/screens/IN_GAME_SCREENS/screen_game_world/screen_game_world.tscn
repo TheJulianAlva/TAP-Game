@@ -1,13 +1,13 @@
 [gd_scene load_steps=12 format=4 uid="uid://c35qe5u2y172e"]
 
-[ext_resource type="Script" uid="uid://bke6m8lbttiyp" path="res://source/SCREENS/IN_GAME_SCREENS/screen_game_world/screen_game_world.gd" id="1_7ixir"]
+[ext_resource type="Script" uid="uid://bke6m8lbttiyp" path="res://source/screens/IN_GAME_SCREENS/screen_game_world/screen_game_world.gd" id="1_7ixir"]
 [ext_resource type="TileSet" uid="uid://ckqpsaw1nd35i" path="res://resources/assets/TILEMAPS/World Tile Map/pant_game_world.tres" id="2_wbc5w"]
 [ext_resource type="Texture2D" uid="uid://cnbuhxvqoq0s3" path="res://resources/assets/TILEMAPS/World Tile Map/CARS TILEMAP.png" id="3_ec45k"]
-[ext_resource type="PackedScene" uid="uid://275ibvia1q42" path="res://source/SCREENS/principal_character/prin_character.tscn" id="3_fpf8y"]
-[ext_resource type="PackedScene" uid="uid://dm44vdfpa0tp8" path="res://source/SCREENS/hud/hud.tscn" id="4_ihve8"]
-[ext_resource type="PackedScene" uid="uid://b4ygg3i7b6p2a" path="res://source/SCREENS/luces/luces.tscn" id="5_4epuo"]
+[ext_resource type="PackedScene" uid="uid://275ibvia1q42" path="res://source/screens/principal_character/prin_character.tscn" id="3_fpf8y"]
+[ext_resource type="PackedScene" uid="uid://dm44vdfpa0tp8" path="res://source/screens/hud/hud.tscn" id="4_ihve8"]
+[ext_resource type="PackedScene" uid="uid://b4ygg3i7b6p2a" path="res://source/screens/luces/luces.tscn" id="5_4epuo"]
 [ext_resource type="Texture2D" uid="uid://ha2tqbv36eg8" path="res://resources/Images/mapa-ITTOL.jpg" id="7_lol6w"]
-[ext_resource type="PackedScene" uid="uid://dpdc4tj360n2" path="res://source/SCREENS/enemy_basic/enemy_basic.tscn" id="8_itses"]
+[ext_resource type="PackedScene" uid="uid://dpdc4tj360n2" path="res://source/screens/enemy_basic/enemy_basic.tscn" id="8_itses"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rlg4x"]
 texture = ExtResource("3_ec45k")
