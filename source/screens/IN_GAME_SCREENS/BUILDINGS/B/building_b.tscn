@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://bmwi7g8hngx3d"]
+[gd_scene load_steps=33 format=4 uid="uid://bmwi7g8hngx3d"]
 
 [ext_resource type="Script" uid="uid://bf5d4i4dk8fb8" path="res://source/SCREENS/IN_GAME_SCREENS/BUILDINGS/B/building_b.gd" id="1_m3d4e"]
 [ext_resource type="PackedScene" uid="uid://b6hf47nfrsxpf" path="res://source/SCREENS/IN_GAME_SCREENS/BUILDINGS/room_t/room_t.tscn" id="1_ottig"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bug55khhfkt20" path="res://resources/assets/TILEMAPS/Interiors Tile Map/Interiors_Tile_Map.png" id="4_f6sld"]
 [ext_resource type="Texture2D" uid="uid://bxd0roikffstr" path="res://resources/assets/TILEMAPS/Ui Pixel Pack/Tilesheets/Small tiles/Thin outline/tilemap.png" id="5_ughfn"]
 [ext_resource type="PackedScene" uid="uid://sbtm2b37won7" path="res://components/accessDoor/access_door.tscn" id="6_2merq"]
+[ext_resource type="PackedScene" uid="uid://bg2yd3j1hrut5" path="res://source/SCREENS/ghost/ghost.tscn" id="8_kx7h8"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_m3d4e"]
 polygon = PackedVector2Array(0, 8, 0, -4, -1, -4, -1, 8)
@@ -1481,12 +1482,30 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_qh8uv")
 sources/1 = SubResource("TileSetAtlasSource_qfxc5")
 
+[sub_resource type="Curve2D" id="Curve2D_vo6aq"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 173, 67, 0, 0, 0, 0, 258, 78, 0, 0, 0, 0, 171, 109, 0, 0, 0, 0, 252, 148, 0, 0, 0, 0, 172, 110, 0, 0, 0, 0, 258, 78, 0, 0, 0, 0, 173, 67)
+}
+point_count = 7
+
+[sub_resource type="Curve2D" id="Curve2D_kx7h8"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 435, 42, 0, 0, 0, 0, 504, 43, 0, 0, 0, 0, 531, 85, 0, 0, 0, 0, 584, 84, 0, 0, 0, 0, 608, 74, 0, 0, 0, 0, 625, 76, 0, 0, 0, 0, 632, 86, 0, 0, 0, 0, 622, 110, 0, 0, 0, 0, 606, 122, 0, 0, 0, 0, 604, 160, 0, 0, 0, 0, 429, 158, 0, 0, 0, 0, 435, 42)
+}
+point_count = 12
+
+[sub_resource type="Curve2D" id="Curve2D_y5pti"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 107, 263, 0, 0, 0, 0, 149, 265, 0, 0, 0, 0, 167, 287, 0, 0, 0, 0, 162, 314, 0, 0, 0, 0, 114, 327, 0, 0, 0, 0, 118, 367, 0, 0, 0, 0, 166, 399, 0, 0, 0, 0, 232, 402, 0, 0, 0, 0, 249, 333, 0, 0, 0, 0, 243, 270, 0, 0, 0, 0, 171, 259, 0, 0, 0, 0, 107, 263)
+}
+point_count = 12
+
 [node name="BuildingB" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_m3d4e")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.41598, 0.41598, 0.41598, 1)
+color = Color(0.0214347, 0.0214346, 0.0214346, 1)
 
 [node name="room_t" parent="." instance=ExtResource("1_ottig")]
 
@@ -1533,6 +1552,7 @@ disabled = true
 z_index = 1
 y_sort_enabled = true
 position = Vector2(58, 118)
+lamp_energy = 0.8
 
 [node name="CamaraCalabozo" parent="." instance=ExtResource("3_f6sld")]
 position_smoothing_enabled = true
@@ -1551,6 +1571,56 @@ position = Vector2(18, 110)
 rotation = 1.5708
 scale = Vector2(2.6, 2.6)
 pathScene = "res://source/SCREENS/IN_GAME_SCREENS/screen_game_world/screen_game_world.tscn"
+
+[node name="Ghosts" type="Node" parent="."]
+
+[node name="Ghost1" parent="Ghosts" instance=ExtResource("8_kx7h8")]
+position = Vector2(173, 67)
+
+[node name="Ghost2" parent="Ghosts" instance=ExtResource("8_kx7h8")]
+z_index = 1
+position = Vector2(435, 42)
+
+[node name="Ghost3" parent="Ghosts" instance=ExtResource("8_kx7h8")]
+position = Vector2(107, 263)
+
+[node name="Paths" type="Node" parent="."]
+
+[node name="PathGhost1" type="Path2D" parent="Paths"]
+curve = SubResource("Curve2D_vo6aq")
+
+[node name="Follow" type="PathFollow2D" parent="Paths/PathGhost1"]
+position = Vector2(173, 67)
+rotation = 0.128697
+
+[node name="RemoteTransform" type="RemoteTransform2D" parent="Paths/PathGhost1/Follow"]
+remote_path = NodePath("../../../../Ghosts/Ghost1")
+update_rotation = false
+update_scale = false
+
+[node name="PathGhost2" type="Path2D" parent="Paths"]
+curve = SubResource("Curve2D_kx7h8")
+
+[node name="Follow" type="PathFollow2D" parent="Paths/PathGhost2"]
+position = Vector2(435, 42)
+rotation = 0.0144917
+
+[node name="RemoteTransform" type="RemoteTransform2D" parent="Paths/PathGhost2/Follow"]
+remote_path = NodePath("../../../../Ghosts/Ghost2")
+update_rotation = false
+update_scale = false
+
+[node name="PathGhost3" type="Path2D" parent="Paths"]
+curve = SubResource("Curve2D_y5pti")
+
+[node name="Follow" type="PathFollow2D" parent="Paths/PathGhost3"]
+position = Vector2(107, 263)
+rotation = 0.0475831
+
+[node name="RemoteTransform" type="RemoteTransform2D" parent="Paths/PathGhost3/Follow"]
+remote_path = NodePath("../../../../Ghosts/Ghost3")
+update_rotation = false
+update_scale = false
 
 [connection signal="scene_change" from="Access Doors/AccessDoor" to="." method="_on_access_door_scene_change"]
 

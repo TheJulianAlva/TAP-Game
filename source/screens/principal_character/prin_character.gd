@@ -13,7 +13,7 @@ class_name Player extends CharacterBody2D
 @onready var effects: AnimationPlayer = $Effects
 @onready var hurt_timer: Timer = $HurtTimer
 @onready var lamp: PointLight2D = $Lamp
-
+@export var lamp_energy: float
 
 #var speed: int = GLOBAL.pChar_speed #Comentado mientras se hacen modificaciones a pantallas específicas
 var speed = 70
@@ -33,6 +33,7 @@ var hasLamp:bool
 func _ready() -> void:
 	effects.play("RESET")
 	lamp.visible = hasLamp
+	lamp.energy = lamp_energy
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta: float) -> void:
@@ -44,7 +45,7 @@ func _physics_process(_delta: float) -> void:
 			hurt_by_enemy()
 	
 
-func _input(event: InputEvent) -> void:
+func _input(_event: InputEvent) -> void:
 	if Input.is_action_pressed("GAME_tooglelamp"):
 		toogle_lamp()
 
