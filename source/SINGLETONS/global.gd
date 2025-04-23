@@ -9,7 +9,7 @@ var SCREEN_CONTROLS_PATH:String = "res://source/SCREENS/NON_GAME_SCREENS/screen_
 #Declaraciones de rutas de pantallas jugables
 var SCREEN_GAME_WORLD_PATH:String = "res://source/SCREENS/IN_GAME_SCREENS/screen_game_world/screen_game_world.tscn"
 
-var player_has_lamp:bool
+var player_has_lamp:bool = true
 
 #Declaracion de marcadores para ubicacion de personaje
 enum Markers {mk_world, mk_building_t, mk_building_b}
