@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=4 uid="uid://bxclwjgjr20o6"]
+[gd_scene load_steps=42 format=4 uid="uid://bxclwjgjr20o6"]
 
 [ext_resource type="PackedScene" uid="uid://b6hf47nfrsxpf" path="res://source/SCREENS/IN_GAME_SCREENS/BUILDINGS/room_t/room_t.tscn" id="1_kejch"]
 [ext_resource type="Script" uid="uid://llu8jxmn3ldf" path="res://source/SCREENS/IN_GAME_SCREENS/BUILDINGS/T/building_t/building_t.gd" id="1_wkxav"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://by2b1crgphhw6" path="res://components/building_camera/building_camera.tscn" id="3_o28ta"]
 [ext_resource type="Texture2D" uid="uid://bug55khhfkt20" path="res://resources/assets/TILEMAPS/Interiors Tile Map/Interiors_Tile_Map.png" id="4_c77t3"]
 [ext_resource type="PackedScene" uid="uid://sbtm2b37won7" path="res://components/accessDoor/access_door.tscn" id="7_pnyb2"]
+[ext_resource type="PackedScene" uid="uid://dvj7vysylj34e" path="res://source/SCREENS/NON_GAME_SCREENS/pause_screen/pause_screen.tscn" id="8_rg1eq"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_pnyb2"]
 polygon = PackedVector2Array(5, 8, 5, -6, 3, -6, 3, 8)
@@ -1462,6 +1463,8 @@ rotates = false
 remote_path = NodePath("../../../../Ghosts/Ghost5")
 update_rotation = false
 update_scale = false
+
+[node name="PauseScreen" parent="." instance=ExtResource("8_rg1eq")]
 
 [connection signal="scene_change" from="Access Doors/AccessDoor" to="." method="_on_access_door_scene_change"]
 
