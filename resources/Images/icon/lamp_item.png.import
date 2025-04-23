@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddtwa6mteuay8"
-path="res://.godot/imported/ghost.png-49326a3f923d11b97b3a792ee378c1e7.ctex"
+uid="uid://ct6jvpfllxb2b"
+path="res://.godot/imported/lamp_item.png-36354bc1640edeed5702e1f4da8f5d49.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://source/SCREENS/ghost/ghost.png"
-dest_files=["res://.godot/imported/ghost.png-49326a3f923d11b97b3a792ee378c1e7.ctex"]
+source_file="res://resources/Images/icon/lamp_item.png"
+dest_files=["res://.godot/imported/lamp_item.png-36354bc1640edeed5702e1f4da8f5d49.ctex"]
 
 [params]
 

@@ -1,7 +1,16 @@
-extends CharacterBody2D
+class_name FollowEnemy extends CharacterBody2D
 
-var posicionAnt:Vector2=position
+var lastPosition:Vector2=position
 
-func act_animacion(ruta:PathFollow2D,delta:float):
+func update_animation(ruta:PathFollow2D,delta:float):
+	var direction:String
 	ruta.progress+=GLOBAL.enemy_speed*delta
-	posicionAnt=position
+	var difx=position.x-lastPosition.x
+	var dify=position.y-lastPosition.y
+	var difMayx=(abs(difx)-abs(dify))>0
+	if(difMayx):
+		direction="right" if difx>0 else "left"
+	else:
+		direction="down" if dify>0 else "up"
+	$AnimSprite.play("walking_" + direction)
+	lastPosition=position

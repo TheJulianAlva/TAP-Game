@@ -11,6 +11,11 @@ var SCREEN_GAME_WORLD_PATH:String = "res://source/SCREENS/IN_GAME_SCREENS/screen
 
 var player_has_lamp:bool
 
+#Declaracion de marcadores para ubicacion de personaje
+enum Markers {mk_world, mk_building_t, mk_building_b}
+var current_mark = Markers.mk_world
+
+
 #Declaraciones de variables globales
 var pChar_speed:int ##Velocidad del personaje.
 var pChar_max_health:int ##Salud máxima del personaje.

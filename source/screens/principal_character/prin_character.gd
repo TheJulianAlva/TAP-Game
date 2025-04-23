@@ -12,6 +12,7 @@ class_name Player extends CharacterBody2D
 @onready var anim_player: AnimatedSprite2D = $AnimatedSprite
 @onready var effects: AnimationPlayer = $Effects
 @onready var hurt_timer: Timer = $HurtTimer
+@onready var lamp: PointLight2D = $Lamp
 
 
 #var speed: int = GLOBAL.pChar_speed #Comentado mientras se hacen modificaciones a pantallas específicas
@@ -20,15 +21,18 @@ var speed = 70
 @onready var currentHealth:int = 5
 signal healthChanged
 
-var knockBackPower:float = 20.0
+#var knockBackPower:float = 20.0
 
 var currentDirection: String = "down"
 
 var isHurt:bool = false
 var enemyCollisions = []
 
+var hasLamp:bool
+
 func _ready() -> void:
 	effects.play("RESET")
+	lamp.visible = hasLamp
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta: float) -> void:
@@ -40,6 +44,9 @@ func _physics_process(_delta: float) -> void:
 			hurt_by_enemy()
 	
 
+func _input(event: InputEvent) -> void:
+	if Input.is_action_pressed("GAME_tooglelamp"):
+		toogle_lamp()
 
 func handle_animation() -> void:
 	if velocity.length() == 0:
@@ -70,7 +77,7 @@ func hurt_by_enemy() -> void:
 		currentHealth = maxHealth
 	healthChanged.emit(currentHealth)
 	isHurt = true
-	knock_back()
+	#knock_back()
 	effects.play("hurtAnimation")
 	hurt_timer.start()
 	await hurt_timer.timeout
@@ -82,10 +89,14 @@ func _on_hit_box_area_entered(area: Area2D) -> void:
 	if area.name == "HitBox":
 		enemyCollisions.append(area)
 		
-
+'''
 func knock_back():
 	velocity = -velocity * knockBackPower
 	move_and_slide()
-
+'''
 func _on_hit_box_area_exited(area: Area2D) -> void:
 	enemyCollisions.erase(area)
+
+func toogle_lamp() -> void:
+	if hasLamp:
+		lamp.visible = !lamp.visible
