@@ -1,5 +1,5 @@
 id,es,en
-lblTitulo,UniQuest,UniQuest
+lblTitulo,La Aventura de Juanito,John's Adventure
 btnIniciar,Iniciar Juego,Start Game
 btnConfig,Configuración,Settings
 btnSalir,Salir,Quit
@@ -9,5 +9,6 @@ btnControles,Controles,Controls
 btnGuardar,Guardar cambios,Save changes
 btnRegresar,Regresar,Back
 btnAMenuPrin,Regresar al Menu,Back to Menu
-
+lblPausa,Pausa,Pause
+btnContinuar,Continuar,Continue
 
