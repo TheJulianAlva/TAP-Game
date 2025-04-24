@@ -1,24 +1,90 @@
-[gd_scene load_steps=4 format=3 uid="uid://brlisq6k4h1hf"]
+[gd_scene load_steps=11 format=3 uid="uid://brlisq6k4h1hf"]
 
-[ext_resource type="FontFile" uid="uid://dvcf3m6rj80gw" path="res://resources/lang/OCRAEXT.TTF" id="1_7e0ta"]
-[ext_resource type="Script" uid="uid://jtfcdnq1bcob" path="res://source/screens/NON_GAME_SCREENS/screen_intro/screen_intro.gd" id="1_xtnmq"]
+[ext_resource type="Script" uid="uid://jtfcdnq1bcob" path="res://source/SCREENS/NON_GAME_SCREENS/screen_intro/screen_intro.gd" id="1_xtnmq"]
 [ext_resource type="PackedScene" uid="uid://cbmykjyl6dc26" path="res://components/btnAMenuPrin/btn_a_menu_prin.tscn" id="2_jl63i"]
+[ext_resource type="FontFile" uid="uid://cjtrvo0s4eib2" path="res://resources/lang/Minecraft.ttf" id="2_vmv0k"]
+[ext_resource type="Texture2D" uid="uid://b0bgxag1h6el3" path="res://resources/assets/principalcharacter/John_Dancing.png" id="4_uiehf"]
+[ext_resource type="AudioStream" uid="uid://bh3gifyvbhf0i" path="res://resources/assets/MUSIC/Track_#4.ogg" id="5_n85ag"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vmv0k"]
+atlas = ExtResource("4_uiehf")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n85ag"]
+atlas = ExtResource("4_uiehf")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_phhdg"]
+atlas = ExtResource("4_uiehf")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sckyh"]
+atlas = ExtResource("4_uiehf")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dibnt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vmv0k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n85ag")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_phhdg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sckyh")
+}],
+"loop": true,
+"name": &"John_Dancing",
+"speed": 5.0
+}]
 
 [node name="PantIntro" type="Node"]
 script = ExtResource("1_xtnmq")
 
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.19094, 0.479791, 0.510884, 1)
+
 [node name="lblTitulo" type="Label" parent="."]
-offset_left = 5.0
-offset_top = 252.0
-offset_right = 1197.0
-offset_bottom = 327.0
-theme_override_fonts/font = ExtResource("1_7e0ta")
-theme_override_font_sizes/font_size = 78
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -596.0
+offset_top = -200.0
+offset_right = 596.0
+offset_bottom = -119.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_vmv0k")
+theme_override_font_sizes/font_size = 90
 text = "lblTitulo"
 horizontal_alignment = 1
 
 [node name="BtnAMenuPrin" parent="." instance=ExtResource("2_jl63i")]
-offset_left = 980.0
+offset_left = 942.0
 offset_top = 644.0
 offset_right = -40.0
 offset_bottom = -36.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(600, 400)
+scale = Vector2(15, 15)
+sprite_frames = SubResource("SpriteFrames_dibnt")
+animation = &"John_Dancing"
+autoplay = "John_Dancing"
+frame = 1
+frame_progress = 0.274029
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_n85ag")
+autoplay = true
