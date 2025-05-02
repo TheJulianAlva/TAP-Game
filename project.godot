@@ -36,6 +36,10 @@ window/size/resizable=false
 
 project/assembly_name="TNM Toluca"
 
+[gui]
+
+theme/custom_font="uid://cjtrvo0s4eib2"
+
 [input]
 
 WASD_W={
