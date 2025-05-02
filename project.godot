@@ -39,6 +39,7 @@ project/assembly_name="TNM Toluca"
 [gui]
 
 theme/custom_font="uid://cjtrvo0s4eib2"
+theme/default_font_antialiasing=0
 
 [input]
 
