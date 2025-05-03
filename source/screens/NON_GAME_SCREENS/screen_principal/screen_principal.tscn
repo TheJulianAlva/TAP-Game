@@ -13,7 +13,7 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("VBoxContainer:theme_override_constants/separation")
+tracks/0/path = NodePath("MContainer/VContainer:theme_override_constants/separation")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -30,44 +30,41 @@ _data = {
 
 [node name="PantPrincipal" type="Control"]
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
 theme = ExtResource("1_ikh0f")
 script = ExtResource("1_apxvv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 self_modulate = Color(0.377918, 0.377919, 0.377919, 1)
-position = Vector2(0.749939, 32.5)
 scale = Vector2(0.790039, 0.790039)
 texture = ExtResource("2_gqheu")
+centered = false
+offset = Vector2(0, -80)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="MContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -259.0
-offset_top = -256.0
-offset_right = 259.0
-offset_bottom = 320.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_top = 100
+
+[node name="VContainer" type="VBoxContainer" parent="MContainer"]
+layout_mode = 2
 theme_override_constants/separation = 160
 
-[node name="lblTitulo" type="Label" parent="VBoxContainer"]
+[node name="lblTitulo" type="Label" parent="MContainer/VContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 92
 text = "lblTitulo"
 horizontal_alignment = 1
 
-[node name="Container" type="VBoxContainer" parent="VBoxContainer"]
+[node name="HContainer" type="VBoxContainer" parent="MContainer/VContainer"]
 custom_minimum_size = Vector2(260, 240)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -75,17 +72,17 @@ size_flags_vertical = 4
 theme_override_constants/separation = 32
 alignment = 1
 
-[node name="btnIniciar" type="Button" parent="VBoxContainer/Container"]
+[node name="btnIniciar" type="Button" parent="MContainer/VContainer/HContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 text = "btnIniciar"
 
-[node name="btnConfig" type="Button" parent="VBoxContainer/Container"]
+[node name="btnConfig" type="Button" parent="MContainer/VContainer/HContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 text = "btnConfig"
 
-[node name="btnSalir" type="Button" parent="VBoxContainer/Container"]
+[node name="btnSalir" type="Button" parent="MContainer/VContainer/HContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 text = "btnSalir"
@@ -100,13 +97,13 @@ autostart = true
 stream = ExtResource("4_ikh0f")
 autoplay = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="animButtons" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_yem06")
 }
 autoplay = "moving_menu_animation"
 
-[connection signal="pressed" from="VBoxContainer/Container/btnIniciar" to="." method="_on_btn_iniciar_pressed"]
-[connection signal="pressed" from="VBoxContainer/Container/btnConfig" to="." method="_on_btn_config_pressed"]
-[connection signal="pressed" from="VBoxContainer/Container/btnSalir" to="." method="_on_btn_salir_pressed"]
+[connection signal="pressed" from="MContainer/VContainer/HContainer/btnIniciar" to="." method="_on_btn_iniciar_pressed"]
+[connection signal="pressed" from="MContainer/VContainer/HContainer/btnConfig" to="." method="_on_btn_config_pressed"]
+[connection signal="pressed" from="MContainer/VContainer/HContainer/btnSalir" to="." method="_on_btn_salir_pressed"]
 [connection signal="timeout" from="TmrToIntro" to="." method="_on_tmr_to_intro_timeout"]

@@ -1,14 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://dvj7vysylj34e"]
 
 [ext_resource type="Script" uid="uid://ivxrdg40fgyb" path="res://source/SCREENS/NON_GAME_SCREENS/pause_screen/pause_screen.gd" id="1_gy1n2"]
-[ext_resource type="FontFile" uid="uid://cjtrvo0s4eib2" path="res://resources/lang/Minecraft.ttf" id="2_0kmqk"]
+[ext_resource type="Theme" uid="uid://8bamh3tcwyh0" path="res://resources/UI_Themes/UI_PRINCIPAL_THEME.tres" id="2_0kmqk"]
 [ext_resource type="PackedScene" uid="uid://cbmykjyl6dc26" path="res://components/btnAMenuPrin/btn_a_menu_prin.tscn" id="2_8na8e"]
 
 [node name="PauseScreen" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_gy1n2")
 
-[node name="Background1" type="ColorRect" parent="."]
+[node name="BgComplete" type="ColorRect" parent="."]
 visible = false
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,7 +17,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.431373)
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="bgPanel" type="ColorRect" parent="."]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
@@ -32,47 +32,44 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+theme = ExtResource("2_0kmqk")
 color = Color(0.241156, 0.241156, 0.241156, 0.933333)
 
-[node name="Label" type="Label" parent="Background"]
+[node name="MContainer" type="MarginContainer" parent="bgPanel"]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -98.0
-offset_top = 50.0
-offset_right = 98.0
-offset_bottom = 117.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("2_0kmqk")
+grow_vertical = 2
+theme_override_constants/margin_top = 50
+
+[node name="VContainer" type="VBoxContainer" parent="bgPanel/MContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/separation = 30
+
+[node name="lblPause" type="Label" parent="bgPanel/MContainer/VContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 56
 text = "lblPausa"
 horizontal_alignment = 1
 
-[node name="Container" type="VBoxContainer" parent="Background"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -90.0
-offset_right = 90.0
-offset_bottom = 150.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 50
-alignment = 1
-
-[node name="btnContinue" type="Button" parent="Background/Container"]
+[node name="btnContinue" type="Button" parent="bgPanel/MContainer/VContainer"]
+custom_minimum_size = Vector2(260, 60)
 layout_mode = 2
-size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("2_0kmqk")
-theme_override_font_sizes/font_size = 20
+size_flags_horizontal = 4
+size_flags_vertical = 4
 text = "btnContinuar"
 
-[node name="BtnAMenuPrin" parent="Background/Container" instance=ExtResource("2_8na8e")]
+[node name="BtnAMenuPrin" parent="bgPanel/MContainer/VContainer" instance=ExtResource("2_8na8e")]
+custom_minimum_size = Vector2(260, 60)
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
-[connection signal="pressed" from="Background/Container/btnContinue" to="." method="_on_btn_continue_pressed"]
+[connection signal="pressed" from="bgPanel/MContainer/VContainer/btnContinue" to="." method="_on_btn_continue_pressed"]
+[connection signal="pressed" from="bgPanel/MContainer/VContainer/BtnAMenuPrin" to="." method="_on_btn_a_menu_prin_pressed"]
