@@ -6,10 +6,10 @@
 	Descripción: Se implementa la pantalla de configuración inicial del juego.
 '''
 
-class_name PantConfig extends Node2D
+class_name PantConfig extends Control
 
 var _al:String = CONFIG_FILE.load_language_setting().actlan
-@onready var btn_idioma: Button = $Panel/btnIdioma
+@onready var btn_idioma: Button = $MContainer/VContainer/MContainer/VContainer/HContainer/btnIdioma
 
 
 func _ready() -> void:
