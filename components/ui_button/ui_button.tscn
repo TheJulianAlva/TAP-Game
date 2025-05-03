@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmosgc8mkrphs"]
+
+[ext_resource type="Texture2D" uid="uid://bonvl3ttvnb2h" path="res://resources/assets/TILEMAPS/PixelArt UI/buttons/silver_button_normal.png" id="1_t2ssj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k16w0"]
+texture = ExtResource("1_t2ssj")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 6.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+region_rect = Rect2(0, 0, 15, 17)
+
+[sub_resource type="Theme" id="Theme_t2ssj"]
+Button/styles/normal = SubResource("StyleBoxTexture_k16w0")
+
+[node name="UI Button" type="Button"]
+offset_left = 223.0
+offset_top = 151.0
+offset_right = 314.0
+offset_bottom = 190.0
+scale = Vector2(10, 10)
+theme = SubResource("Theme_t2ssj")
+text = "Hola jeje"

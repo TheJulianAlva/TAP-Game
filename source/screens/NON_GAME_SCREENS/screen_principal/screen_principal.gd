@@ -5,12 +5,11 @@
 	Fecha de última modificación 14 de marzo de 2025
 	Descripción: Se implementa la pantalla principal del juego.
 '''
-class_name PantPrincipal extends Node2D
-@onready var btn_iniciar: Button = $VBContainer/btnIniciar
+class_name PantPrincipal extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	btn_iniciar.grab_focus()
+	$VBoxContainer/Container/btnIniciar.grab_focus()
 
 func _on_btn_salir_pressed() -> void:
 	get_tree().quit()
