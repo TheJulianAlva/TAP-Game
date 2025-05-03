@@ -1,10 +1,27 @@
-[gd_scene load_steps=11 format=3 uid="uid://brlisq6k4h1hf"]
+[gd_scene load_steps=16 format=3 uid="uid://brlisq6k4h1hf"]
 
 [ext_resource type="Script" uid="uid://jtfcdnq1bcob" path="res://source/SCREENS/NON_GAME_SCREENS/screen_intro/screen_intro.gd" id="1_xtnmq"]
-[ext_resource type="PackedScene" uid="uid://cbmykjyl6dc26" path="res://components/btnAMenuPrin/btn_a_menu_prin.tscn" id="2_jl63i"]
-[ext_resource type="FontFile" uid="uid://cjtrvo0s4eib2" path="res://resources/lang/Minecraft.ttf" id="2_vmv0k"]
 [ext_resource type="Texture2D" uid="uid://b0bgxag1h6el3" path="res://resources/assets/principalcharacter/John_Dancing.png" id="4_uiehf"]
 [ext_resource type="AudioStream" uid="uid://bh3gifyvbhf0i" path="res://resources/assets/MUSIC/Track_#4.ogg" id="5_n85ag"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vmv0k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h7sr4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uiehf"]
+content_margin_left = 1.0
+content_margin_top = 1.0
+content_margin_right = 1.0
+content_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n85ag"]
+
+[sub_resource type="Theme" id="Theme_uiehf"]
+Button/font_sizes/font_size = 32
+Button/styles/focus = SubResource("StyleBoxEmpty_vmv0k")
+Button/styles/hover = SubResource("StyleBoxEmpty_h7sr4")
+Button/styles/normal = SubResource("StyleBoxEmpty_uiehf")
+Button/styles/pressed = SubResource("StyleBoxEmpty_n85ag")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vmv0k"]
 atlas = ExtResource("4_uiehf")
@@ -42,10 +59,43 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="PantIntro" type="Node"]
+[sub_resource type="Animation" id="Animation_h7sr4"]
+resource_name = "flash_button"
+length = 2.0
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("btnSkip:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uiehf"]
+_data = {
+&"flash_button": SubResource("Animation_h7sr4")
+}
+
+[node name="PantIntro" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_uiehf")
 script = ExtResource("1_xtnmq")
 
 [node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -54,6 +104,7 @@ grow_vertical = 2
 color = Color(0.19094, 0.479791, 0.510884, 1)
 
 [node name="lblTitulo" type="Label" parent="."]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -65,16 +116,9 @@ offset_right = 596.0
 offset_bottom = -119.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_vmv0k")
-theme_override_font_sizes/font_size = 90
+theme_override_font_sizes/font_size = 100
 text = "lblTitulo"
 horizontal_alignment = 1
-
-[node name="BtnAMenuPrin" parent="." instance=ExtResource("2_jl63i")]
-offset_left = 942.0
-offset_top = 644.0
-offset_right = -40.0
-offset_bottom = -36.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(600, 400)
@@ -88,3 +132,33 @@ frame_progress = 0.274029
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_n85ag")
 autoplay = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 10
+
+[node name="btnSkip" type="Button" parent="MarginContainer"]
+self_modulate = Color(1, 1, 1, 0.945279)
+custom_minimum_size = Vector2(260, 60)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "btnSaltar"
+flat = true
+alignment = 2
+
+[node name="animButton" type="AnimationPlayer" parent="MarginContainer"]
+libraries = {
+&"": SubResource("AnimationLibrary_uiehf")
+}
+autoplay = "flash_button"
+
+[connection signal="pressed" from="MarginContainer/btnSkip" to="." method="_on_btn_skip_pressed"]

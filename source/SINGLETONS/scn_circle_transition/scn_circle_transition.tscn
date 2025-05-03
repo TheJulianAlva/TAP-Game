@@ -45,6 +45,7 @@ _data = {
 }
 
 [node name="scn_circle_transition" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_hf644")
 
 [node name="CircleRect" type="ColorRect" parent="."]

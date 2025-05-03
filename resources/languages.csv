@@ -3,11 +3,12 @@ lblTitulo,La Aventura de Juanito,John's Adventure
 btnIniciar,Iniciar Juego,Start Game
 btnConfig,Configuración,Settings
 btnSalir,Salir,Quit
-btnIdioma,Español,English
 lblIdioma,Idioma,Language
+btnIdioma,Español,English
 btnControles,Controles,Controls
 btnGuardar,Guardar cambios,Save changes
 btnRegresar,Regresar,Back
+btnSaltar,Presiona para saltar,Press to skip
 btnAMenuPrin,Regresar al Menu,Back to Menu
 lblPausa,Pausa,Pause
 btnContinuar,Continuar,Continue

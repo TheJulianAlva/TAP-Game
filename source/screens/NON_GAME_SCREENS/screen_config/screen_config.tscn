@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://djhkhajlgtwlw"]
+[gd_scene load_steps=5 format=3 uid="uid://djhkhajlgtwlw"]
 
 [ext_resource type="Script" uid="uid://diyvocvu85iks" path="res://source/SCREENS/NON_GAME_SCREENS/screen_config/screen_config.gd" id="1_576yn"]
 [ext_resource type="Theme" uid="uid://8bamh3tcwyh0" path="res://resources/UI_Themes/UI_PRINCIPAL_THEME.tres" id="1_n4l4m"]
 [ext_resource type="Texture2D" uid="uid://cn77snl28cmgi" path="res://resources/Images/TecBg/Background Tec.png" id="3_x1v23"]
+[ext_resource type="AudioStream" uid="uid://8iww154goyw6" path="res://resources/assets/MUSIC/Golden Gleam.ogg" id="4_5alu7"]
 
 [node name="PantConfig" type="Control"]
 layout_mode = 3
@@ -71,13 +72,13 @@ horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="btnIdioma" type="Button" parent="MContainer/VContainer/MContainer/VContainer/HContainer"]
-custom_minimum_size = Vector2(260, 0)
+custom_minimum_size = Vector2(260, 55)
 layout_mode = 2
 focus_neighbor_bottom = NodePath("../../btnControles")
 text = "btnIdioma"
 
 [node name="btnControles" type="Button" parent="MContainer/VContainer/MContainer/VContainer"]
-custom_minimum_size = Vector2(260, 50)
+custom_minimum_size = Vector2(260, 55)
 layout_mode = 2
 size_flags_horizontal = 8
 focus_neighbor_top = NodePath("../HContainer/btnIdioma")
@@ -85,7 +86,7 @@ focus_neighbor_bottom = NodePath("../../../btnGuardar")
 text = "btnControles"
 
 [node name="btnGuardar" type="Button" parent="MContainer/VContainer"]
-custom_minimum_size = Vector2(260, 50)
+custom_minimum_size = Vector2(260, 55)
 layout_mode = 2
 size_flags_horizontal = 4
 focus_neighbor_top = NodePath("../MContainer/VContainer/btnControles")
@@ -93,11 +94,15 @@ focus_neighbor_bottom = NodePath("../btnRegresar")
 text = "btnGuardar"
 
 [node name="btnRegresar" type="Button" parent="MContainer/VContainer"]
-custom_minimum_size = Vector2(260, 50)
+custom_minimum_size = Vector2(260, 55)
 layout_mode = 2
 size_flags_horizontal = 4
 focus_neighbor_top = NodePath("../btnGuardar")
 text = "btnRegresar"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_5alu7")
+autoplay = true
 
 [connection signal="pressed" from="MContainer/VContainer/MContainer/VContainer/HContainer/btnIdioma" to="." method="_on_btn_idioma_pressed"]
 [connection signal="pressed" from="MContainer/VContainer/MContainer/VContainer/btnControles" to="." method="_on_btn_controles_pressed"]
