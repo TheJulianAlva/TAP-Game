@@ -9,7 +9,7 @@ class_name PantPrincipal extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$Menu/Container/btnIniciar.grab_focus()
+	$VBoxContainer/Container/btnIniciar.grab_focus()
 
 func _on_btn_salir_pressed() -> void:
 	get_tree().quit()

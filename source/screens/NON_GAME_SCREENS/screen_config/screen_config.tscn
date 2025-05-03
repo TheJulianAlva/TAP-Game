@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://djhkhajlgtwlw"]
+[gd_scene load_steps=2 format=3 uid="uid://djhkhajlgtwlw"]
 
 [ext_resource type="Script" uid="uid://diyvocvu85iks" path="res://source/SCREENS/NON_GAME_SCREENS/screen_config/screen_config.gd" id="1_576yn"]
-[ext_resource type="FontFile" uid="uid://dvcf3m6rj80gw" path="res://resources/lang/OCRAEXT.TTF" id="2_37670"]
 
-[node name="PantConfig" type="Node2D"]
+[node name="PantConfig" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_576yn")
 
 [node name="Panel" type="Panel" parent="."]
@@ -18,7 +19,6 @@ offset_right = 690.0
 offset_bottom = 603.0
 focus_neighbor_top = NodePath("../btnControles")
 focus_neighbor_bottom = NodePath("../btnRegresar")
-theme_override_fonts/font = ExtResource("2_37670")
 text = "btnGuardar"
 
 [node name="btnRegresar" type="Button" parent="Panel"]
@@ -28,7 +28,6 @@ offset_top = 617.0
 offset_right = 690.0
 offset_bottom = 657.0
 focus_neighbor_top = NodePath("../btnGuardar")
-theme_override_fonts/font = ExtResource("2_37670")
 text = "btnRegresar"
 
 [node name="btnIdioma" type="Button" parent="Panel"]
@@ -38,7 +37,6 @@ offset_top = 156.0
 offset_right = 690.0
 offset_bottom = 196.0
 focus_neighbor_bottom = NodePath("../btnControles")
-theme_override_fonts/font = ExtResource("2_37670")
 text = "btnIdioma"
 
 [node name="btnControles" type="Button" parent="Panel"]
@@ -49,7 +47,6 @@ offset_right = 690.0
 offset_bottom = 268.0
 focus_neighbor_top = NodePath("../btnIdioma")
 focus_neighbor_bottom = NodePath("../btnGuardar")
-theme_override_fonts/font = ExtResource("2_37670")
 text = "btnControles"
 
 [node name="lblIdioma" type="Label" parent="Panel"]
@@ -58,7 +55,6 @@ offset_left = 386.0
 offset_top = 166.0
 offset_right = 484.0
 offset_bottom = 189.0
-theme_override_fonts/font = ExtResource("2_37670")
 theme_override_font_sizes/font_size = 18
 text = "lblIdioma"
 horizontal_alignment = 2
