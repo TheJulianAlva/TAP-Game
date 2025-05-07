@@ -1,14 +1,15 @@
-[gd_scene load_steps=43 format=4 uid="uid://bxclwjgjr20o6"]
+[gd_scene load_steps=45 format=4 uid="uid://bxclwjgjr20o6"]
 
-[ext_resource type="PackedScene" uid="uid://b6hf47nfrsxpf" path="res://source/SCREENS/IN_GAME_SCREENS/BUILDINGS/room_t/room_t.tscn" id="1_kejch"]
-[ext_resource type="Script" uid="uid://llu8jxmn3ldf" path="res://source/SCREENS/IN_GAME_SCREENS/BUILDINGS/T/building_t/building_t.gd" id="1_wkxav"]
-[ext_resource type="PackedScene" uid="uid://275ibvia1q42" path="res://source/SCREENS/principal_character/prin_character.tscn" id="2_nufxb"]
-[ext_resource type="PackedScene" uid="uid://bg2yd3j1hrut5" path="res://source/SCREENS/ghost/ghost.tscn" id="3_5auq8"]
+[ext_resource type="PackedScene" uid="uid://b6hf47nfrsxpf" path="res://source/screens/IN_GAME_SCREENS/BUILDINGS/room_t/room_t.tscn" id="1_kejch"]
+[ext_resource type="Script" uid="uid://llu8jxmn3ldf" path="res://source/screens/IN_GAME_SCREENS/BUILDINGS/T/building_t/building_t.gd" id="1_wkxav"]
+[ext_resource type="PackedScene" uid="uid://275ibvia1q42" path="res://source/screens/principal_character/prin_character.tscn" id="2_nufxb"]
+[ext_resource type="PackedScene" uid="uid://bg2yd3j1hrut5" path="res://source/screens/ghost/ghost.tscn" id="3_5auq8"]
 [ext_resource type="PackedScene" uid="uid://by2b1crgphhw6" path="res://components/building_camera/building_camera.tscn" id="3_o28ta"]
 [ext_resource type="Texture2D" uid="uid://bug55khhfkt20" path="res://resources/assets/TILEMAPS/Interiors Tile Map/Interiors_Tile_Map.png" id="4_c77t3"]
 [ext_resource type="PackedScene" uid="uid://sbtm2b37won7" path="res://components/accessDoor/access_door.tscn" id="7_pnyb2"]
-[ext_resource type="PackedScene" uid="uid://dvj7vysylj34e" path="res://source/SCREENS/NON_GAME_SCREENS/pause_screen/pause_screen.tscn" id="8_rg1eq"]
+[ext_resource type="PackedScene" uid="uid://dvj7vysylj34e" path="res://source/screens/NON_GAME_SCREENS/pause_screen/pause_screen.tscn" id="8_rg1eq"]
 [ext_resource type="AudioStream" uid="uid://ctwsuigmg26qo" path="res://resources/assets/MUSIC/Track_#5.ogg" id="9_k4rmb"]
+[ext_resource type="PackedScene" uid="uid://ban4g8judb6wb" path="res://source/screens/IN_GAME_SCREENS/BUILDINGS/stair/stair.tscn" id="10_6hh50"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_pnyb2"]
 polygon = PackedVector2Array(5, 8, 5, -6, 3, -6, 3, 8)
@@ -1303,6 +1304,8 @@ _data = {
 }
 point_count = 18
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6hh50"]
+
 [node name="Building_T" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_wkxav")
@@ -1359,6 +1362,9 @@ disabled = true
 
 [node name="CollisionDoor" parent="room_t4/DoorDown" index="1"]
 disabled = true
+
+[node name="room_t5" parent="." instance=ExtResource("1_kejch")]
+position = Vector2(-12, 455)
 
 [node name="Props" type="TileMapLayer" parent="."]
 y_sort_enabled = true
@@ -1472,6 +1478,16 @@ stream = ExtResource("9_k4rmb")
 volume_db = 10.0
 autoplay = true
 
+[node name="Stair" parent="." instance=ExtResource("10_6hh50")]
+position = Vector2(658, 54)
+
+[node name="SpawnLocationStair" parent="Stair" index="0"]
+position = Vector2(-485, 513)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stair"]
+position = Vector2(-8, -5)
+shape = SubResource("RectangleShape2D_6hh50")
+
 [connection signal="scene_change" from="Access Doors/AccessDoor" to="." method="_on_access_door_scene_change"]
 
 [editable path="room_t"]
@@ -1494,3 +1510,4 @@ autoplay = true
 [editable path="room_t4/DoorUp"]
 [editable path="room_t4/DoorRight"]
 [editable path="room_t4/DoorDown"]
+[editable path="Stair"]
