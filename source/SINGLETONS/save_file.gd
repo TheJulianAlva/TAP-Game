@@ -4,7 +4,8 @@ func save_game():
 		var datos = {
 			"pChar_max_health": GLOBAL.pChar_max_health,
 			"pChar_current_health": GLOBAL.pChar_current_health,
-			"pChar_base_damage": GLOBAL.pChar_base_damage
+			"pChar_base_damage": GLOBAL.pChar_base_damage,
+			"pChar_high_heal": GLOBAL.pChar_high_heal
 		}
 		var jsonString = JSON.stringify(datos)
 		var jsonFile = FileAccess.open("res://gamesaved.json", FileAccess.WRITE)
@@ -25,5 +26,6 @@ func load_game():
 	GLOBAL.pChar_max_health = datos.pChar_max_health
 	GLOBAL.pChar_current_health = datos.pChar_current_health
 	GLOBAL.pChar_base_damage = datos.pChar_base_damage
+	GLOBAL.pChar_high_heal = datos.pChar_high_heal
 	print("DATA FILE LOADED...")
 	
