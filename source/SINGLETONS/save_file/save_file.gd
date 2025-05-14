@@ -26,6 +26,6 @@ func load_game():
 	GLOBAL.pChar_max_health = datos.pChar_max_health
 	GLOBAL.pChar_current_health = datos.pChar_current_health
 	GLOBAL.pChar_base_damage = datos.pChar_base_damage
-	GLOBAL.pChar_high_heal = datos.pChar_high_heal
+	GLOBAL.player_has_lamp = datos.player_has_lamp
 	print("DATA FILE LOADED...")
 	
