@@ -19,6 +19,7 @@ var current_mark = Markers.mk_world
 #Declaraciones de variables globales
 var pChar_speed:int ##Velocidad del personaje.
 var pChar_max_health:int ##Salud máxima del personaje.
+var pChar_current_health:int ##Salud actual del personaje.
 var pChar_base_damage:int ##Daño base del personaje.
 var pChar_low_heal:int ##Recuperación base de salud del personaje.
 var pChar_high_heal:int ##Recuperación máxima de salud del personaje.
