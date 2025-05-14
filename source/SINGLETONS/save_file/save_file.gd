@@ -12,7 +12,7 @@ func save_file():
 	jsonFile.store_line(jsonString)
 	jsonFile.close()
 	print("Saved")
-	
+	print("chk")	
 func load():
 	var jsonFile = FileAccess.open("res://gamesaved.json",FileAccess.READ)
 	var jsonString = jsonFile.get_as_text()
