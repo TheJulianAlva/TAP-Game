@@ -10,7 +10,8 @@ class_name PantPrincipal extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$MContainer/VContainer/HContainer/btnIniciar.grab_focus()
-
+	THR_LOADER.load_scene(GLOBAL.SCREEN_INTRO_PATH)
+	
 func _on_btn_salir_pressed() -> void:
 	get_tree().quit()
 

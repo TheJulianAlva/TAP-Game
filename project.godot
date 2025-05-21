@@ -26,6 +26,7 @@ GLOBAL="*res://source/SINGLETONS/global.gd"
 SCN_TRANSITION="*res://source/SINGLETONS/scn_transition/scn_transition.tscn"
 SCN_CIRCLE_TRANSITION="*res://source/SINGLETONS/scn_circle_transition/scn_circle_transition.tscn"
 EVENTS="*res://source/SINGLETONS/events_manager.tscn"
+THR_LOADER="*res://source/SINGLETONS/thread_loader/thread_loader.tscn"
 
 [display]
 
@@ -90,6 +91,10 @@ GAME_pause={
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":80,"key_label":0,"unicode":112,"location":0,"echo":false,"script":null)
 ]
 }
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
 
 [internationalization]
 
