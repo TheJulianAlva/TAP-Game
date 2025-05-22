@@ -12,7 +12,7 @@ size = Vector2(19, 17)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vokbg"]
 size = Vector2(19, 16)
 
-[node name="Building_B2" type="Node2D"]
+[node name="BuildingB2" type="Node2D"]
 metadata/_edit_vertical_guides_ = [357.0]
 
 [node name="room_t" parent="." instance=ExtResource("1_6q5l5")]
@@ -154,6 +154,8 @@ position = Vector2(318, -250)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stair2"]
 position = Vector2(-5.5, -5)
 shape = SubResource("RectangleShape2D_vokbg")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
 
 [editable path="room_t"]
 [editable path="room_t/DoorLeft"]
