@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=4 uid="uid://dn7l4jplyxai5"]
 
-[ext_resource type="PackedScene" uid="uid://b6hf47nfrsxpf" path="res://source/SCREENS/IN_GAME_SCREENS/BUILDINGS/room_t/room_t.tscn" id="1_20pi7"]
+[ext_resource type="PackedScene" uid="uid://b6hf47nfrsxpf" path="res://source/screens/IN_GAME_SCREENS/BUILDINGS/room_t/room_t.tscn" id="1_20pi7"]
 [ext_resource type="Texture2D" uid="uid://bug55khhfkt20" path="res://resources/assets/TILEMAPS/Interiors Tile Map/Interiors_Tile_Map.png" id="2_5e4pw"]
 [ext_resource type="TileSet" uid="uid://jhgtkav2md3m" path="res://resources/assets/TILEMAPS/Interiors Tile Map/interior_set.tres" id="2_qiopx"]
 [ext_resource type="Texture2D" uid="uid://buk1swolglo7d" path="res://resources/assets/TILEMAPS/Interiors Tile Map/Room_Tile_Map.png" id="3_pmd6i"]
