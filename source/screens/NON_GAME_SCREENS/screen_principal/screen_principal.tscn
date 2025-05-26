@@ -93,7 +93,7 @@ wait_time = 60.0
 one_shot = true
 autostart = true
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="BgMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_ikh0f")
 autoplay = true
 
@@ -103,7 +103,10 @@ libraries = {
 }
 autoplay = "moving_menu_animation"
 
+[connection signal="focus_exited" from="MContainer/VContainer/HContainer/btnIniciar" to="." method="_btns_focus_exited"]
 [connection signal="pressed" from="MContainer/VContainer/HContainer/btnIniciar" to="." method="_on_btn_iniciar_pressed"]
+[connection signal="focus_exited" from="MContainer/VContainer/HContainer/btnConfig" to="." method="_btns_focus_exited"]
 [connection signal="pressed" from="MContainer/VContainer/HContainer/btnConfig" to="." method="_on_btn_config_pressed"]
+[connection signal="focus_exited" from="MContainer/VContainer/HContainer/btnSalir" to="." method="_btns_focus_exited"]
 [connection signal="pressed" from="MContainer/VContainer/HContainer/btnSalir" to="." method="_on_btn_salir_pressed"]
 [connection signal="timeout" from="TmrToIntro" to="." method="_on_tmr_to_intro_timeout"]
