@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmfh1jv1pdt17"]
+
+[ext_resource type="PackedScene" uid="uid://2eru8vuj8tpk" path="res://source/screens/IN_GAME_SCREENS/BUILDINGS/closed_room/closed_room.tscn" id="1_vkbcu"]
+[ext_resource type="PackedScene" uid="uid://by2b1crgphhw6" path="res://components/building_camera/building_camera.tscn" id="2_pqskw"]
+[ext_resource type="PackedScene" uid="uid://dvj7vysylj34e" path="res://source/screens/NON_GAME_SCREENS/pause_screen/pause_screen.tscn" id="3_g0au0"]
+[ext_resource type="PackedScene" uid="uid://275ibvia1q42" path="res://source/screens/principal_character/prin_character.tscn" id="4_c6hpw"]
+
+[node name="Building6" type="Node2D"]
+
+[node name="ClosedRoom" parent="." instance=ExtResource("1_vkbcu")]
+
+[node name="CamaraCalabozo" parent="." instance=ExtResource("2_pqskw")]
+
+[node name="PauseScreen" parent="." instance=ExtResource("3_g0au0")]
+
+[node name="Player" parent="." instance=ExtResource("4_c6hpw")]
+position = Vector2(180, 194)
