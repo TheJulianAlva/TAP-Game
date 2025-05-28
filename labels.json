@@ -1,0 +1,26 @@
+[
+  { "name": "🎨 assets", "color": "c5def5", "description": "Diseño o incorporación de gráficos, música, efectos, etc." },
+  { "name": "🔧 components", "color": "bfdadc", "description": "Componentes reutilizables como UI, ítems o enemigos." },
+  { "name": "🎮 in-game-screens", "color": "84b6eb", "description": "Pantallas o escenas dentro del gameplay." },
+  { "name": "🧾 non-game-screens", "color": "0366d6", "description": "Pantallas fuera del gameplay (menús, créditos, etc)." },
+  { "name": "🖱️ ui-ux", "color": "f9d0c4", "description": "Interfaz de usuario y experiencia del juego." },
+  { "name": "📜 scripting", "color": "d4c5f9", "description": "Lógica del juego en GDScript u otros lenguajes." },
+  { "name": "🎞️ animation", "color": "5319e7", "description": "Animaciones o estados animados." },
+  { "name": "🗺️ map-design", "color": "0e8a16", "description": "Diseño de niveles o escenarios." },
+  { "name": "💬 dialogue", "color": "f7c6c7", "description": "Diálogos y narrativa del juego." },
+  { "name": "🔊 audio", "color": "fbca04", "description": "Implementación de sonidos y música." },
+
+  { "name": "🐞 error", "color": "d73a4a", "description": "Algo no funciona como se esperaba." },
+  { "name": "✨ nueva funcionalidad", "color": "0e8a16", "description": "Agregar una nueva característica al juego." },
+  { "name": "🛠️ mejora", "color": "a2eeef", "description": "Mejora de una funcionalidad existente." },
+  { "name": "🔄 refactorización", "color": "cfd3d7", "description": "Reorganización del código sin cambiar comportamiento." },
+  { "name": "⚙️ optimización", "color": "fef2c0", "description": "Mejorar rendimiento o uso de recursos." },
+  { "name": "📝 documentación", "color": "0075ca", "description": "Redacción o actualización de documentación." },
+  { "name": "🧪 pruebas", "color": "fef2c0", "description": "Tareas relacionadas con testing o QA." },
+  { "name": "🎯 balanceo", "color": "bfe5bf", "description": "Ajuste de dificultad o mecánicas de juego." },
+  { "name": "🧼 pulido", "color": "eeeeee", "description": "Detalles visuales o estéticos del juego." },
+
+  { "name": "🔴 prioridad-alta", "color": "b60205", "description": "Requiere atención inmediata." },
+  { "name": "🟠 prioridad-media", "color": "f9d0c4", "description": "Importante, pero no urgente." },
+  { "name": "🟢 prioridad-baja", "color": "c5def5", "description": "Puede esperar o es menor." }
+]

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cg12qfnfmyrw"]
+
+[ext_resource type="Script" uid="uid://c8lkfoxu52l7v" path="res://source/SINGLETONS/save_file.gd" id="1_38652"]
+
+[node name="SaveFile" type="Node"]
+script = ExtResource("1_38652")
