@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://cfm7wdqr1o825"]
+[gd_scene load_steps=6 format=4 uid="uid://cfm7wdqr1o825"]
 
 [ext_resource type="PackedScene" uid="uid://b6hf47nfrsxpf" path="res://source/screens/IN_GAME_SCREENS/BUILDINGS/room_t/room_t.tscn" id="1_ewpxv"]
 [ext_resource type="PackedScene" uid="uid://by2b1crgphhw6" path="res://components/building_camera/building_camera.tscn" id="2_5qilr"]
+[ext_resource type="TileSet" uid="uid://jhgtkav2md3m" path="res://resources/assets/TILEMAPS/Interiors Tile Map/interior_set.tres" id="2_ho24s"]
 [ext_resource type="PackedScene" uid="uid://275ibvia1q42" path="res://source/screens/principal_character/prin_character.tscn" id="3_ho24s"]
 [ext_resource type="PackedScene" uid="uid://dvj7vysylj34e" path="res://source/screens/NON_GAME_SCREENS/pause_screen/pause_screen.tscn" id="4_5qilr"]
 
@@ -20,6 +21,11 @@ disabled = true
 
 [node name="CollisionDoor" parent="room_t/DoorDown" index="1"]
 disabled = true
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(0, 4)
+tile_map_data = PackedByteArray("AAAQAAIAAgAKACgAAAAQAAMAAgAKACkAAAARAAIAAgALACgAAAARAAMAAgALACkAAAADAAEAAgANADAAAAADAAIAAgANADEAAAADAAMAAgANADIAAAAEAAEAAgAOADAAAAAEAAIAAgAOADEAAAAEAAMAAgAOADIAAAASAAcAAgAFACgAABARAAcAAgAGACgAABASAAgAAgAFACkAABARAAgAAgAGACkAABASAAkAAgAFACgAABARAAkAAgAGACgAABASAAoAAgAFACkAABARAAoAAgAGACkAABASAAUAAgAFACgAABARAAUAAgAGACgAABASAAYAAgAFACkAABARAAYAAgAGACkAABADAAgAAgAMAC0AAAADAAkAAgAMAC4AAAAFAAoAAgAGAEoAAAAGAAoAAgAGAEoAAAAHAAoAAgAGAEoAAAAHAAAAAgABAEYAAAAHAAEAAgABAEcAAAACAAYAAgAAADsAAAACAAcAAgAAADwAAAAGAAYAAgAHAA8AAAAGAAcAAgAHABAAAAAGAAgAAgAHABEAAAAHAAYAAgAIAA8AAAAHAAcAAgAIABAAAAAHAAgAAgAIABEAAAAIAAYAAgAJAA8AAAAIAAcAAgAJABAAAAAIAAgAAgAJABEAAAAJAAYAAgAKAA8AAAAJAAcAAgAKABAAAAAJAAgAAgAKABEAAAA=")
+tile_set = ExtResource("2_ho24s")
 
 [node name="CamaraCalabozo" parent="." instance=ExtResource("2_5qilr")]
 

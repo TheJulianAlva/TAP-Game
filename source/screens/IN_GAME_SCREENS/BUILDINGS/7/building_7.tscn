@@ -1,13 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://0ggxaq41tt7f"]
+[gd_scene load_steps=6 format=4 uid="uid://0ggxaq41tt7f"]
 
 [ext_resource type="PackedScene" uid="uid://2eru8vuj8tpk" path="res://source/screens/IN_GAME_SCREENS/BUILDINGS/closed_room/closed_room.tscn" id="1_kuq12"]
 [ext_resource type="PackedScene" uid="uid://275ibvia1q42" path="res://source/screens/principal_character/prin_character.tscn" id="2_44ebc"]
+[ext_resource type="TileSet" uid="uid://jhgtkav2md3m" path="res://resources/assets/TILEMAPS/Interiors Tile Map/interior_set.tres" id="2_iwcbg"]
 [ext_resource type="PackedScene" uid="uid://dvj7vysylj34e" path="res://source/screens/NON_GAME_SCREENS/pause_screen/pause_screen.tscn" id="3_iwcbg"]
 [ext_resource type="PackedScene" uid="uid://by2b1crgphhw6" path="res://components/building_camera/building_camera.tscn" id="4_28dvb"]
 
 [node name="Building7" type="Node2D"]
 
 [node name="ClosedRoom" parent="." instance=ExtResource("1_kuq12")]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAFAAEAAgANACYAAAAFAAIAAgANACcAAAAGAAEAAgAOACYAAAAGAAIAAgAOACcAAAASAAIAAgAMACgAAAASAAMAAgAMACkAAAARAAIAAgAMACgAAAARAAMAAgAMACkAAAAQAAIAAgAMACgAAAAQAAMAAgAMACkAAAAEAAkAAgAFADsAAAAEAAoAAgAFADwAAAAFAAkAAgAGADsAAAAFAAoAAgAGADwAAAARAAkAAgAFADsAAAARAAoAAgAFADwAAAASAAkAAgAGADsAAAASAAoAAgAGADwAAAADAAMAAgANADUAAAADAAQAAgANADYAAAADAAUAAgANADcAAAAJAAIAAgAEAEgAAAAJAAMAAgAEAEkAAAAKAAIAAgAFAEgAAAAKAAMAAgAFAEkAAAALAAIAAgAGAEgAAAALAAMAAgAGAEkAAAAJAAkAAgANABAAAGAJAAgAAgAOABAAAGAJAAcAAgAPABAAAGAKAAkAAgANABEAAGAKAAgAAgAOABEAAGAKAAcAAgAPABEAAGALAAkAAgANABIAAGALAAgAAgAOABIAAGALAAcAAgAPABIAAGAMAAkAAgANABMAAGAMAAgAAgAOABMAAGAMAAcAAgAPABMAAGA=")
+tile_set = ExtResource("2_iwcbg")
 
 [node name="Player" parent="." instance=ExtResource("2_44ebc")]
 position = Vector2(181, 175)
