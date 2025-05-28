@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=4 uid="uid://2faulylremck"]
+
+[ext_resource type="PackedScene" uid="uid://2eru8vuj8tpk" path="res://source/screens/IN_GAME_SCREENS/BUILDINGS/closed_room/closed_room.tscn" id="1_712ok"]
+[ext_resource type="TileSet" uid="uid://jhgtkav2md3m" path="res://resources/assets/TILEMAPS/Interiors Tile Map/interior_set.tres" id="2_qg2dy"]
+[ext_resource type="PackedScene" uid="uid://275ibvia1q42" path="res://source/screens/principal_character/prin_character.tscn" id="2_ts3jb"]
+[ext_resource type="PackedScene" uid="uid://dvj7vysylj34e" path="res://source/screens/NON_GAME_SCREENS/pause_screen/pause_screen.tscn" id="3_qg2dy"]
+[ext_resource type="PackedScene" uid="uid://by2b1crgphhw6" path="res://components/building_camera/building_camera.tscn" id="4_ti7eg"]
+
+[node name="Building5" type="Node2D"]
+
+[node name="ClosedRoom" parent="." instance=ExtResource("1_712ok")]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAEAAEAAgAIABYAAAAEAAIAAgAIABcAAAAFAAEAAgAJABYAAAAFAAIAAgAJABcAAAAKAAEAAgAHABgAAAAKAAIAAgAHABkAAAALAAEAAgAIABgAAAALAAIAAgAIABkAAAAPAAEAAgACABgAAAAPAAIAAgACABkAAAAQAAEAAgADABgAAAAQAAIAAgADABkAAAAUAAIAAgAMACgAAAAUAAMAAgAMACkAAAACAAgAAgAFAEwAAAACAAkAAgAFAE0AAAACAAoAAgAFAE4AAAADAAgAAgAGAEwAAAADAAkAAgAGAE0AAAADAAoAAgAGAE4AAAACAAQAAgAFAEwAAAACAAUAAgAFAE0AAAACAAYAAgAFAE4AAAADAAQAAgAGAEwAAAADAAUAAgAGAE0AAAADAAYAAgAGAE4AAAAHAAMAAgAEAEgAAAAHAAQAAgAEAEkAAAAIAAMAAgAFAEgAAAAIAAQAAgAFAEkAAAAJAAMAAgAGAEgAAAAJAAQAAgAGAEkAAAAOAAMAAgAEAEgAAAAOAAQAAgAEAEkAAAAPAAMAAgAFAEgAAAAPAAQAAgAFAEkAAAAQAAMAAgAGAEgAAAAQAAQAAgAGAEkAAAATAAkAAgANADUAAAATAAoAAgANADYAAAATAAsAAgANADcAAAANAAcAAgANAAsAAFANAAgAAgAOAAsAAFANAAkAAgAPAAsAAFAMAAcAAgANAAwAAFAMAAgAAgAOAAwAAFAMAAkAAgAPAAwAAFALAAcAAgANAA0AAFALAAgAAgAOAA0AAFALAAkAAgAPAA0AAFAKAAcAAgANAA4AAFAKAAgAAgAOAA4AAFAKAAkAAgAPAA4AAFA=")
+tile_set = ExtResource("2_qg2dy")
+
+[node name="Player" parent="." instance=ExtResource("2_ts3jb")]
+position = Vector2(182, 202)
+
+[node name="PauseScreen" parent="." instance=ExtResource("3_qg2dy")]
+
+[node name="CamaraCalabozo" parent="." instance=ExtResource("4_ti7eg")]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://brlisq6k4h1hf"]
 
-[ext_resource type="Script" uid="uid://jtfcdnq1bcob" path="res://source/SCREENS/NON_GAME_SCREENS/screen_intro/screen_intro.gd" id="1_xtnmq"]
+[ext_resource type="Script" uid="uid://jtfcdnq1bcob" path="res://source/screens/NON_GAME_SCREENS/screen_intro/screen_intro.gd" id="1_xtnmq"]
 [ext_resource type="Texture2D" uid="uid://b0bgxag1h6el3" path="res://resources/assets/principalcharacter/John_Dancing.png" id="4_uiehf"]
 [ext_resource type="AudioStream" uid="uid://bh3gifyvbhf0i" path="res://resources/assets/MUSIC/Track_#4.ogg" id="5_n85ag"]
 
