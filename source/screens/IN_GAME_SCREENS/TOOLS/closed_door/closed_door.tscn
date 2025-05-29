@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://cowooi0xq1ot5"]
+
+[ext_resource type="Script" uid="uid://dehocexbyy1t3" path="res://closed_door.gd" id="1_u0pab"]
+[ext_resource type="Texture2D" uid="uid://cc2hgruabev88" path="res://resources/assets/TILEMAPS/My Drawings/New Piskel-2.png.png" id="2_4nrji"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4nrji"]
+size = Vector2(20, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_up77g"]
+size = Vector2(14, 16)
+
+[node name="ClosedDoor" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_u0pab")
+
+[node name="Area2DDoor" type="Area2D" parent="."]
+light_mask = 7
+visibility_layer = 7
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DDoor"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_4nrji")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_4nrji")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_up77g")
