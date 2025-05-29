@@ -1507,7 +1507,6 @@ y_sort_enabled = true
 script = ExtResource("1_m3d4e")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0.0214347, 0.0214346, 0.0214346, 1)
 
 [node name="room_t" parent="." instance=ExtResource("1_ottig")]
