@@ -1,0 +1,88 @@
+[gd_scene load_steps=13 format=3 uid="uid://b8m32cqsjlykd"]
+
+[ext_resource type="Script" uid="uid://fbymmr1c1s0w" path="res://source/screens/enemy_basic/policeman.gd" id="1_4ka3w"]
+[ext_resource type="Texture2D" uid="uid://dv5c0f1rcek62" path="res://resources/assets/extras/policia.png" id="1_r50p3"]
+[ext_resource type="FontFile" uid="uid://cjtrvo0s4eib2" path="res://resources/lang/Minecraft.ttf" id="2_tsct8"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o06hi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uugll"]
+radius = 25.0799
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tsct8"]
+atlas = ExtResource("1_r50p3")
+region = Rect2(288, 33, 16, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ka3w"]
+atlas = ExtResource("1_r50p3")
+region = Rect2(304, 33, 16, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g8lk3"]
+atlas = ExtResource("1_r50p3")
+region = Rect2(320, 33, 16, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xh622"]
+atlas = ExtResource("1_r50p3")
+region = Rect2(336, 33, 16, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gbfk8"]
+atlas = ExtResource("1_r50p3")
+region = Rect2(352, 33, 16, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t7kiy"]
+atlas = ExtResource("1_r50p3")
+region = Rect2(368, 33, 16, 33)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fy1ip"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tsct8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ka3w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g8lk3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xh622")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gbfk8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t7kiy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Policeman" type="CharacterBody2D"]
+collision_layer = 7
+collision_mask = 7
+script = ExtResource("1_4ka3w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_o06hi")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_uugll")
+
+[node name="LabelTalk" type="Label" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 18.0
+theme_override_fonts/font = ExtResource("2_tsct8")
+text = "lblTalk"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_fy1ip")
+frame = 5
+frame_progress = 0.383663
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

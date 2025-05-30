@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgdlnbwwfxisl"]
+
+[ext_resource type="Texture2D" uid="uid://ckc6lubrmtyrl" path="res://resources/assets/TILEMAPS/My Drawings/New Piskel-1.png.png" id="1_c4c5r"]
+[ext_resource type="FontFile" uid="uid://cjtrvo0s4eib2" path="res://resources/lang/Minecraft.ttf" id="2_oi25d"]
+
+[node name="DialogWindow" type="Node2D"]
+
+[node name="NewPiskel-1_png" type="Sprite2D" parent="."]
+position = Vector2(522, 264)
+texture = ExtResource("1_c4c5r")
+
+[node name="LabelDialogo" type="Label" parent="."]
+offset_left = 84.0
+offset_top = 73.0
+offset_right = 439.0
+offset_bottom = 224.0
+scale = Vector2(2.5, 2.5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_oi25d")
+text = "lblDialogo
+"
