@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://cxb0qurbit5cs"]
+
+[ext_resource type="Texture2D" uid="uid://bnx1q6yvla5w6" path="res://resources/assets/touch_screen/touch_cross/sprite_2.png" id="1_sn6ho"]
+[ext_resource type="Texture2D" uid="uid://ckme2sd5vs7p1" path="res://resources/assets/touch_screen/touch_cross/sprite_3.png" id="2_crx41"]
+[ext_resource type="Texture2D" uid="uid://cd3cjo4tg0vfb" path="res://resources/assets/touch_screen/touch_cross/sprite_0.png" id="3_3g1ub"]
+[ext_resource type="Texture2D" uid="uid://cj8rps8yglsrc" path="res://resources/assets/touch_screen/touch_cross/sprite_1.png" id="4_jo86e"]
+[ext_resource type="Texture2D" uid="uid://bjpphcivnvg4q" path="res://resources/assets/touch_screen/tilemap_packed-1.png (1).png" id="5_02url"]
+[ext_resource type="Texture2D" uid="uid://cd450l2hfkmaq" path="res://resources/assets/touch_screen/tilemap_packed-1.png (2).png" id="6_hor7x"]
+
+[node name="TouchScreen" type="CanvasLayer"]
+
+[node name="TouchScreenButtonLeft" type="TouchScreenButton" parent="."]
+position = Vector2(70, 477)
+scale = Vector2(7, 7)
+texture_normal = ExtResource("1_sn6ho")
+action = "WASD_A"
+
+[node name="TouchScreenButtonRight" type="TouchScreenButton" parent="."]
+position = Vector2(182, 477)
+scale = Vector2(7, 7)
+texture_normal = ExtResource("2_crx41")
+action = "WASD_D"
+
+[node name="TouchScreenButtonUp" type="TouchScreenButton" parent="."]
+position = Vector2(126, 407)
+scale = Vector2(7, 7)
+texture_normal = ExtResource("3_3g1ub")
+action = "WASD_W"
+
+[node name="TouchScreenButtonDown" type="TouchScreenButton" parent="."]
+position = Vector2(126, 547)
+scale = Vector2(7, 7)
+texture_normal = ExtResource("4_jo86e")
+action = "WASD_S"
+
+[node name="TouchScreenButtonA" type="TouchScreenButton" parent="."]
+position = Vector2(831, 475)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("5_02url")
+
+[node name="TouchScreenButtonB" type="TouchScreenButton" parent="."]
+position = Vector2(990, 367)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("6_hor7x")
+action = "GAME_tooglelamp"

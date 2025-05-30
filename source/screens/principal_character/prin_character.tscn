@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://275ibvia1q42"]
 
-[ext_resource type="Script" uid="uid://cnkygc5bj5ips" path="res://source/SCREENS/principal_character/prin_character.gd" id="1_211qq"]
+[ext_resource type="Script" uid="uid://cnkygc5bj5ips" path="res://source/screens/principal_character/prin_character.gd" id="1_211qq"]
 [ext_resource type="SpriteFrames" uid="uid://2y6btlsb3qil" path="res://resources/assets/principalcharacter/principalcharacter_spriteframes.tres" id="2_pgort"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_27g3f"]

@@ -2,10 +2,11 @@ extends Node
 
 func save_game():
 		var datos = {
-			"pChar_max_healt": GLOBAL.pChar_max_health,
-		  "pChar_current_healt": GLOBAL.pChar_current_health,
-		  "pChar_base_damage": GLOBAL.pChar_base_damage,
-		  "player_has_lamp": GLOBAL.player_has_lamp
+			"player_max_healt": GLOBAL.pChar_max_health,
+			"player_current_healt": GLOBAL.pChar_current_health,
+			"player_base_damage": GLOBAL.pChar_base_damage,
+			"player_has_lamp": GLOBAL.player_has_lamp,
+			"player_current_mark": GLOBAL.current_mark
 		}
 		var jsonString = JSON.stringify(datos)
 		var jsonFile = FileAccess.open("res://gamesaved.json", FileAccess.WRITE)
@@ -23,9 +24,9 @@ func load_game():
 	jsonFile.close()
 	
 	var datos = JSON.parse_string(jsonString)
-	GLOBAL.pChar_max_health = datos.pChar_max_health
-	GLOBAL.pChar_current_health = datos.pChar_current_health
-	GLOBAL.pChar_base_damage = datos.pChar_base_damage
+	GLOBAL.pChar_max_health = datos.player_max_healt
+	GLOBAL.pChar_current_health = datos.player_current_healt
+	GLOBAL.pChar_base_damage = datos.player_base_damage
 	GLOBAL.player_has_lamp = datos.player_has_lamp
 	print("DATA FILE LOADED...")
 	
