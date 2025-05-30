@@ -2,6 +2,10 @@ id,es,en
 lblTitulo,La Aventura de Juanito,John's Adventure
 btnIniciar,Iniciar Juego,Start Game
 btnConfig,Configuración,Settings
+lblMaster,General,General
+lblSFX,Efectos,Effects
+lblMusic,Música,Music
+lblVoice,Voces,Voice
 btnSalir,Salir,Quit
 lblIdioma,Idioma,Language
 btnIdioma,Español,English

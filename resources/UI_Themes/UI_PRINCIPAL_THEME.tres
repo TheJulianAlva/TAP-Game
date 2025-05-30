@@ -1,13 +1,59 @@
-[gd_resource type="Theme" load_steps=5 format=3 uid="uid://8bamh3tcwyh0"]
+[gd_resource type="Theme" load_steps=13 format=3 uid="uid://8bamh3tcwyh0"]
 
 [ext_resource type="StyleBox" uid="uid://bxxlu777bgrh3" path="res://resources/UI_Themes/focus_button.tres" id="1_1xlby"]
 [ext_resource type="StyleBox" uid="uid://cfdp5ba0hxllh" path="res://resources/UI_Themes/normal_button.tres" id="2_bnsa4"]
 [ext_resource type="StyleBox" uid="uid://bvbhhojk64r7e" path="res://resources/UI_Themes/pressed_button.tres" id="3_1ctiw"]
+[ext_resource type="Texture2D" uid="uid://o0r2de6c83gg" path="res://resources/assets/TILEMAPS/PixelArt UI/sliders/High-RES/silver_grabber_normal.png" id="4_cof3o"]
+[ext_resource type="Texture2D" uid="uid://ct8lu7xmbdrs4" path="res://resources/assets/TILEMAPS/PixelArt UI/sliders/High-RES/silver_grabber_pressed.png" id="5_6wi6g"]
+[ext_resource type="Texture2D" uid="uid://brcwpp1j6r13q" path="res://resources/assets/TILEMAPS/PixelArt UI/sliders/silver_slider_filled.png" id="6_wrsqr"]
+[ext_resource type="Texture2D" uid="uid://lg57372sx34d" path="res://resources/assets/TILEMAPS/PixelArt UI/sliders/High-RES/silver_slider_empty.png" id="7_wrsqr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1xlby"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 draw_center = false
 corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ke163"]
+bg_color = Color(0.850199, 0.495053, 0.309213, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g6v7m"]
+texture = ExtResource("6_wrsqr")
+texture_margin_left = 4.0
+texture_margin_top = 2.0
+texture_margin_right = 4.0
+texture_margin_bottom = 2.0
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_je3f5"]
+texture = ExtResource("6_wrsqr")
+texture_margin_left = 4.0
+texture_margin_top = 2.0
+texture_margin_right = 4.0
+texture_margin_bottom = 2.0
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_splqj"]
+texture = ExtResource("7_wrsqr")
+texture_margin_left = 12.0
+texture_margin_top = 4.0
+texture_margin_right = 12.0
+texture_margin_bottom = 4.0
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
 
 [resource]
 Button/colors/font_color = Color(0.380392, 0.494118, 0.52549, 1)
@@ -21,3 +67,9 @@ Button/styles/normal = ExtResource("2_bnsa4")
 Button/styles/pressed = ExtResource("3_1ctiw")
 FlatButton/colors/font_color = Color(1, 1, 1, 1)
 FlatButton/styles/normal = SubResource("StyleBoxFlat_1xlby")
+HScrollBar/styles/grabber = SubResource("StyleBoxFlat_ke163")
+HSlider/icons/grabber = ExtResource("4_cof3o")
+HSlider/icons/grabber_highlight = ExtResource("5_6wi6g")
+HSlider/styles/grabber_area = SubResource("StyleBoxTexture_g6v7m")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxTexture_je3f5")
+HSlider/styles/slider = SubResource("StyleBoxTexture_splqj")

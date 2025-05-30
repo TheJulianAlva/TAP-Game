@@ -96,6 +96,7 @@ autostart = true
 [node name="BgMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_ikh0f")
 autoplay = true
+bus = &"Music"
 
 [node name="animButtons" type="AnimationPlayer" parent="."]
 libraries = {
