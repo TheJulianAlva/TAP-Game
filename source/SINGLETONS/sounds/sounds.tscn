@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://ckrm21rwpi4v4"]
+
+[ext_resource type="Script" uid="uid://dbtfwt8rgm51w" path="res://source/SINGLETONS/sounds/sounds.gd" id="1_kiycl"]
+[ext_resource type="AudioStream" uid="uid://dcq6d1uam3o5j" path="res://resources/assets/SOUNDS/Interface Sounds/Select/select_006.wav" id="2_qiph3"]
+[ext_resource type="AudioStream" uid="uid://b8gsdg2opl54" path="res://resources/assets/SOUNDS/Interface Sounds/Select/select_004.ogg" id="3_qiph3"]
+[ext_resource type="AudioStream" uid="uid://djuj32wo65jkp" path="res://resources/assets/SOUNDS/Interface Sounds/Select/select_002.ogg" id="4_1ng8s"]
+
+[node name="Sounds" type="Node"]
+script = ExtResource("1_kiycl")
+
+[node name="btnSelected" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_qiph3")
+volume_db = -15.0
+
+[node name="btnFocus" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_qiph3")
+volume_db = -20.0
+
+[node name="sliderChanged" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_1ng8s")
+volume_db = -25.0
