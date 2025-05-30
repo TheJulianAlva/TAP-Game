@@ -277,8 +277,63 @@ position = Vector2(-312, -851)
 [node name="World_Marker" type="Marker2D" parent="Markers"]
 position = Vector2(-167, -39)
 
-[node name="B_Marker" type="Marker2D" parent="Markers"]
-position = Vector2(-316, -471)
+[node name="Marker_B" type="Marker2D" parent="Markers"]
+position = Vector2(-315, -470)
+
+[node name="Marker_C1" type="Marker2D" parent="Markers"]
+position = Vector2(-254, -656)
+
+[node name="Marker_2" type="Marker2D" parent="Markers"]
+position = Vector2(-1497, -207)
+
+[node name="Marker_1" type="Marker2D" parent="Markers"]
+position = Vector2(-665, -414)
+
+[node name="Marker_CC" type="Marker2D" parent="Markers"]
+position = Vector2(22, -1268)
+
+[node name="Marker_B2" type="Marker2D" parent="Markers"]
+position = Vector2(-439, -1133)
+
+[node name="Marker_3" type="Marker2D" parent="Markers"]
+position = Vector2(-1318, -201)
+
+[node name="Marker_4" type="Marker2D" parent="Markers"]
+position = Vector2(-273, -1189)
+
+[node name="Marker_5" type="Marker2D" parent="Markers"]
+position = Vector2(-273, -110)
+
+[node name="Marker_6" type="Marker2D" parent="Markers"]
+position = Vector2(-69, -148)
+
+[node name="Marker_7" type="Marker2D" parent="Markers"]
+position = Vector2(-464, -662)
+
+[node name="Marker_8" type="Marker2D" parent="Markers"]
+position = Vector2(-534, -552)
+
+[node name="Marker_9" type="Marker2D" parent="Markers"]
+position = Vector2(-1055, -436)
+
+[node name="Marker_Cafe" type="Marker2D" parent="Markers"]
+position = Vector2(-845, -423)
+
+[node name="Marker_U" type="Marker2D" parent="Markers"]
+position = Vector2(-436, -405)
+
+
+[node name="Marker_M" type="Marker2D" parent="Markers"]
+position = Vector2(-709, -198)
+
+[node name="Marker_K" type="Marker2D" parent="Markers"]
+position = Vector2(-942, -242)
+
+[node name="Marker_D2" type="Marker2D" parent="Markers"]
+position = Vector2(-1425, -408)
+
+[node name="Marker_10" type="Marker2D" parent="Markers"]
+position = Vector2(-1218, -342)
 
 [node name="Marker_C1" type="Marker2D" parent="Markers"]
 position = Vector2(-254, -656)

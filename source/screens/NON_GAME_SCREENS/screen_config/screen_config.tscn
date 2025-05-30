@@ -1,9 +1,48 @@
-[gd_scene load_steps=5 format=3 uid="uid://djhkhajlgtwlw"]
+[gd_scene load_steps=8 format=3 uid="uid://djhkhajlgtwlw"]
 
 [ext_resource type="Script" uid="uid://diyvocvu85iks" path="res://source/SCREENS/NON_GAME_SCREENS/screen_config/screen_config.gd" id="1_576yn"]
 [ext_resource type="Theme" uid="uid://8bamh3tcwyh0" path="res://resources/UI_Themes/UI_PRINCIPAL_THEME.tres" id="1_n4l4m"]
 [ext_resource type="Texture2D" uid="uid://cn77snl28cmgi" path="res://resources/Images/TecBg/Background Tec.png" id="3_x1v23"]
 [ext_resource type="AudioStream" uid="uid://8iww154goyw6" path="res://resources/assets/MUSIC/Golden Gleam.ogg" id="4_5alu7"]
+
+[sub_resource type="Animation" id="Animation_ohbxp"]
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MContainer:size")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1211, 737), Vector2(1211, 720), Vector2(1211, 737)]
+}
+
+[sub_resource type="Animation" id="Animation_5alu7"]
+resource_name = "moving_menu_animation"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MContainer:size")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1.51572, 1, 1.6818),
+"update": 0,
+"values": [Vector2(1211, 737), Vector2(1211, 710), Vector2(1211, 737)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tf4ub"]
+_data = {
+&"RESET": SubResource("Animation_ohbxp"),
+&"moving_menu_animation": SubResource("Animation_5alu7")
+}
 
 [node name="PantConfig" type="Control"]
 layout_mode = 3
@@ -29,25 +68,130 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -605.5
-offset_top = -255.0
-offset_right = 605.5
-offset_bottom = 255.0
+offset_left = -605.0
+offset_top = -372.0
+offset_right = 606.0
+offset_bottom = 365.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_top = 100
+theme_override_constants/margin_top = 0
 
 [node name="VContainer" type="VBoxContainer" parent="MContainer"]
 layout_mode = 2
-theme_override_constants/separation = 20
+theme_override_constants/separation = 15
 alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="ContainerSliderMaster" type="MarginContainer" parent="MContainer/VContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 270
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 300
+theme_override_constants/margin_bottom = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MContainer/VContainer/ContainerSliderMaster"]
+layout_mode = 2
+
+[node name="lblMaster" type="Label" parent="MContainer/VContainer/ContainerSliderMaster/HBoxContainer"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "lblMaster"
+
+[node name="scrollMaster" type="HSlider" parent="MContainer/VContainer/ContainerSliderMaster/HBoxContainer"]
+custom_minimum_size = Vector2(350, 25)
+layout_mode = 2
+size_flags_vertical = 4
+focus_neighbor_bottom = NodePath("../../../ContainerSliderSFX2/HBoxContainer/scrollSFX")
+max_value = 1.0
+step = 0.1
+value = 1.0
+ticks_on_borders = true
+
+[node name="ContainerSliderSFX2" type="MarginContainer" parent="MContainer/VContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 270
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 300
+theme_override_constants/margin_bottom = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MContainer/VContainer/ContainerSliderSFX2"]
+layout_mode = 2
+
+[node name="lblSFX" type="Label" parent="MContainer/VContainer/ContainerSliderSFX2/HBoxContainer"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "lblSFX"
+
+[node name="scrollSFX" type="HSlider" parent="MContainer/VContainer/ContainerSliderSFX2/HBoxContainer"]
+custom_minimum_size = Vector2(350, 25)
+layout_mode = 2
+size_flags_vertical = 4
+focus_neighbor_top = NodePath("../../../ContainerSliderMaster/HBoxContainer/scrollMaster")
+focus_neighbor_bottom = NodePath("../../../ContainerSliderMusic/HBoxContainer/scrollMusic")
+max_value = 1.0
+step = 0.1
+value = 1.0
+
+[node name="ContainerSliderMusic" type="MarginContainer" parent="MContainer/VContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 270
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 300
+theme_override_constants/margin_bottom = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MContainer/VContainer/ContainerSliderMusic"]
+layout_mode = 2
+
+[node name="lblMusic" type="Label" parent="MContainer/VContainer/ContainerSliderMusic/HBoxContainer"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "lblMusic"
+
+[node name="scrollMusic" type="HSlider" parent="MContainer/VContainer/ContainerSliderMusic/HBoxContainer"]
+custom_minimum_size = Vector2(350, 25)
+layout_mode = 2
+size_flags_vertical = 4
+focus_neighbor_top = NodePath("../../../ContainerSliderSFX2/HBoxContainer/scrollSFX")
+focus_neighbor_bottom = NodePath("../../../ContainerSliderVoice/HBoxContainer/scrollVoice")
+max_value = 1.0
+step = 0.1
+value = 1.0
+
+[node name="ContainerSliderVoice" type="MarginContainer" parent="MContainer/VContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 270
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 300
+theme_override_constants/margin_bottom = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MContainer/VContainer/ContainerSliderVoice"]
+layout_mode = 2
+
+[node name="lblVoice" type="Label" parent="MContainer/VContainer/ContainerSliderVoice/HBoxContainer"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "lblVoice"
+
+[node name="scrollVoice" type="HSlider" parent="MContainer/VContainer/ContainerSliderVoice/HBoxContainer"]
+custom_minimum_size = Vector2(350, 25)
+layout_mode = 2
+size_flags_vertical = 4
+focus_neighbor_top = NodePath("../../../ContainerSliderMusic/HBoxContainer/scrollMusic")
+focus_neighbor_bottom = NodePath("../../../MContainer/VContainer/HContainer/btnIdioma")
+max_value = 1.0
+step = 0.1
+value = 1.0
 
 [node name="MContainer" type="MarginContainer" parent="MContainer/VContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_constants/margin_left = 265
-theme_override_constants/margin_bottom = 120
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_bottom = 80
 
 [node name="VContainer" type="VBoxContainer" parent="MContainer/VContainer/MContainer"]
 layout_mode = 2
@@ -74,22 +218,14 @@ vertical_alignment = 1
 [node name="btnIdioma" type="Button" parent="MContainer/VContainer/MContainer/VContainer/HContainer"]
 custom_minimum_size = Vector2(260, 55)
 layout_mode = 2
-focus_neighbor_bottom = NodePath("../../btnControles")
+focus_neighbor_bottom = NodePath("../../../../btnGuardar")
 text = "btnIdioma"
-
-[node name="btnControles" type="Button" parent="MContainer/VContainer/MContainer/VContainer"]
-custom_minimum_size = Vector2(260, 55)
-layout_mode = 2
-size_flags_horizontal = 8
-focus_neighbor_top = NodePath("../HContainer/btnIdioma")
-focus_neighbor_bottom = NodePath("../../../btnGuardar")
-text = "btnControles"
 
 [node name="btnGuardar" type="Button" parent="MContainer/VContainer"]
 custom_minimum_size = Vector2(260, 55)
 layout_mode = 2
 size_flags_horizontal = 4
-focus_neighbor_top = NodePath("../MContainer/VContainer/btnControles")
+focus_neighbor_top = NodePath("../MContainer/VContainer/HContainer/btnIdioma")
 focus_neighbor_bottom = NodePath("../btnRegresar")
 text = "btnGuardar"
 
@@ -103,8 +239,25 @@ text = "btnRegresar"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_5alu7")
 autoplay = true
+bus = &"Music"
 
+[node name="animButtons" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_tf4ub")
+}
+autoplay = "RESET"
+
+[connection signal="focus_exited" from="MContainer/VContainer/ContainerSliderMaster/HBoxContainer/scrollMaster" to="." method="_btns_focus_exited"]
+[connection signal="value_changed" from="MContainer/VContainer/ContainerSliderMaster/HBoxContainer/scrollMaster" to="." method="_on_scroll_master_value_changed"]
+[connection signal="focus_exited" from="MContainer/VContainer/ContainerSliderSFX2/HBoxContainer/scrollSFX" to="." method="_btns_focus_exited"]
+[connection signal="value_changed" from="MContainer/VContainer/ContainerSliderSFX2/HBoxContainer/scrollSFX" to="." method="_on_scroll_sfx_value_changed"]
+[connection signal="focus_exited" from="MContainer/VContainer/ContainerSliderMusic/HBoxContainer/scrollMusic" to="." method="_btns_focus_exited"]
+[connection signal="value_changed" from="MContainer/VContainer/ContainerSliderMusic/HBoxContainer/scrollMusic" to="." method="_on_scroll_music_value_changed"]
+[connection signal="focus_exited" from="MContainer/VContainer/ContainerSliderVoice/HBoxContainer/scrollVoice" to="." method="_btns_focus_exited"]
+[connection signal="value_changed" from="MContainer/VContainer/ContainerSliderVoice/HBoxContainer/scrollVoice" to="." method="_on_scroll_voice_value_changed"]
+[connection signal="focus_exited" from="MContainer/VContainer/MContainer/VContainer/HContainer/btnIdioma" to="." method="_btns_focus_exited"]
 [connection signal="pressed" from="MContainer/VContainer/MContainer/VContainer/HContainer/btnIdioma" to="." method="_on_btn_idioma_pressed"]
-[connection signal="pressed" from="MContainer/VContainer/MContainer/VContainer/btnControles" to="." method="_on_btn_controles_pressed"]
+[connection signal="focus_exited" from="MContainer/VContainer/btnGuardar" to="." method="_btns_focus_exited"]
 [connection signal="pressed" from="MContainer/VContainer/btnGuardar" to="." method="_on_btn_guardar_pressed"]
+[connection signal="focus_exited" from="MContainer/VContainer/btnRegresar" to="." method="_btns_focus_exited"]
 [connection signal="pressed" from="MContainer/VContainer/btnRegresar" to="." method="_on_btn_regresar_pressed"]

@@ -69,8 +69,9 @@ script = ExtResource("1_211qq")
 clip_children = 2
 texture_filter = 1
 sprite_frames = ExtResource("2_pgort")
-animation = &"idle_down"
+animation = &"dancing_down"
 autoplay = "idle_down"
+frame_progress = 0.477115
 offset = Vector2(0, -8)
 
 [node name="ColorRect" type="ColorRect" parent="AnimatedSprite"]

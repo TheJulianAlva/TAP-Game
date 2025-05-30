@@ -1,11 +1,13 @@
-[gd_scene load_steps=9 format=4 uid="uid://dbj72eiarij1k"]
+[gd_scene load_steps=12 format=4 uid="uid://dbj72eiarij1k"]
 
-[ext_resource type="PackedScene" uid="uid://b6hf47nfrsxpf" path="res://source/screens/IN_GAME_SCREENS/BUILDINGS/room_t/room_t.tscn" id="1_hsir3"]
-[ext_resource type="PackedScene" uid="uid://ban4g8judb6wb" path="res://source/screens/IN_GAME_SCREENS/BUILDINGS/stair/stair.tscn" id="2_icc03"]
+[ext_resource type="PackedScene" uid="uid://b6hf47nfrsxpf" path="res://source/SCREENS/IN_GAME_SCREENS/BUILDINGS/room_t/room_t.tscn" id="1_hsir3"]
+[ext_resource type="Script" uid="uid://brjeb6yvk4w4p" path="res://source/SCREENS/IN_GAME_SCREENS/BUILDINGS/CC/building_cc.gd" id="1_lo54m"]
+[ext_resource type="PackedScene" uid="uid://ban4g8judb6wb" path="res://source/SCREENS/IN_GAME_SCREENS/BUILDINGS/stair/stair.tscn" id="2_icc03"]
 [ext_resource type="PackedScene" uid="uid://by2b1crgphhw6" path="res://components/building_camera/building_camera.tscn" id="3_b1j2r"]
-[ext_resource type="PackedScene" uid="uid://275ibvia1q42" path="res://source/screens/principal_character/prin_character.tscn" id="4_qu03s"]
-[ext_resource type="PackedScene" uid="uid://dvj7vysylj34e" path="res://source/screens/NON_GAME_SCREENS/pause_screen/pause_screen.tscn" id="5_icc03"]
+[ext_resource type="PackedScene" uid="uid://275ibvia1q42" path="res://source/SCREENS/principal_character/prin_character.tscn" id="4_qu03s"]
+[ext_resource type="PackedScene" uid="uid://dvj7vysylj34e" path="res://source/SCREENS/NON_GAME_SCREENS/pause_screen/pause_screen.tscn" id="5_icc03"]
 [ext_resource type="TileSet" uid="uid://jhgtkav2md3m" path="res://resources/assets/TILEMAPS/Interiors Tile Map/interior_set.tres" id="6_b1j2r"]
+[ext_resource type="Script" uid="uid://rknateg4or68" path="res://components/accessDoor/access_door.gd" id="7_5jlnt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5s3cm"]
 size = Vector2(14, 12)
@@ -13,7 +15,11 @@ size = Vector2(14, 12)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3lmb8"]
 size = Vector2(15, 13)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lo54m"]
+size = Vector2(48, 10)
+
 [node name="BuildingCC" type="Node2D"]
+script = ExtResource("1_lo54m")
 
 [node name="room_t" parent="." instance=ExtResource("1_hsir3")]
 
@@ -24,6 +30,9 @@ tile_map_data = PackedByteArray("AAAJAAEAAwAIABIAAAAKAAEAAwAIABIAAAALAAEAAwAIABI
 disabled = true
 
 [node name="CollisionDoor" parent="room_t/DoorUp" index="1"]
+disabled = true
+
+[node name="CollisionDoor" parent="room_t/DoorDown" index="1"]
 disabled = true
 
 [node name="room_t2" parent="." instance=ExtResource("1_hsir3")]
@@ -89,6 +98,17 @@ shape = SubResource("RectangleShape2D_3lmb8")
 position = Vector2(181, 182)
 
 [node name="PauseScreen" parent="." instance=ExtResource("5_icc03")]
+
+[node name="AccessDoor" type="Area2D" parent="."]
+position = Vector2(182, 219)
+script = ExtResource("7_5jlnt")
+pathScene = "res://source/SCREENS/IN_GAME_SCREENS/screen_game_world/screen_game_world.tscn"
+metadata/_custom_type_script = "uid://rknateg4or68"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AccessDoor"]
+shape = SubResource("RectangleShape2D_lo54m")
+
+[connection signal="scene_change" from="AccessDoor" to="." method="_on_access_door_scene_change"]
 
 [editable path="room_t"]
 [editable path="room_t/DoorLeft"]

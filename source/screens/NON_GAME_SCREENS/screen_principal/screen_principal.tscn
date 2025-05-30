@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://corp1vr051pep"]
 
-[ext_resource type="Script" uid="uid://bvdki7sxjwp8f" path="res://source/screens/NON_GAME_SCREENS/screen_principal/screen_principal.gd" id="1_apxvv"]
+[ext_resource type="Script" uid="uid://bvdki7sxjwp8f" path="res://source/SCREENS/NON_GAME_SCREENS/screen_principal/screen_principal.gd" id="1_apxvv"]
 [ext_resource type="Theme" uid="uid://8bamh3tcwyh0" path="res://resources/UI_Themes/UI_PRINCIPAL_THEME.tres" id="1_ikh0f"]
 [ext_resource type="Texture2D" uid="uid://cn77snl28cmgi" path="res://resources/Images/TecBg/Background Tec.png" id="2_gqheu"]
 [ext_resource type="AudioStream" uid="uid://8iww154goyw6" path="res://resources/assets/MUSIC/Golden Gleam.ogg" id="4_ikh0f"]
@@ -93,9 +93,10 @@ wait_time = 60.0
 one_shot = true
 autostart = true
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="BgMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_ikh0f")
 autoplay = true
+bus = &"Music"
 
 [node name="animButtons" type="AnimationPlayer" parent="."]
 libraries = {
@@ -103,7 +104,10 @@ libraries = {
 }
 autoplay = "moving_menu_animation"
 
+[connection signal="focus_exited" from="MContainer/VContainer/HContainer/btnIniciar" to="." method="_btns_focus_exited"]
 [connection signal="pressed" from="MContainer/VContainer/HContainer/btnIniciar" to="." method="_on_btn_iniciar_pressed"]
+[connection signal="focus_exited" from="MContainer/VContainer/HContainer/btnConfig" to="." method="_btns_focus_exited"]
 [connection signal="pressed" from="MContainer/VContainer/HContainer/btnConfig" to="." method="_on_btn_config_pressed"]
+[connection signal="focus_exited" from="MContainer/VContainer/HContainer/btnSalir" to="." method="_btns_focus_exited"]
 [connection signal="pressed" from="MContainer/VContainer/HContainer/btnSalir" to="." method="_on_btn_salir_pressed"]
 [connection signal="timeout" from="TmrToIntro" to="." method="_on_tmr_to_intro_timeout"]

@@ -14,6 +14,11 @@ func _ready() -> void:
 		config.set_value("Character", "lowheal", 10)
 		config.set_value("Character", "highheal", 20)
 		config.set_value("Character", "name", "John Guavas")
+		#sección Audio
+		config.set_value("Audio","volume_master",1.0)
+		config.set_value("Audio","volume_sfx",1.0)
+		config.set_value("Audio","volume_music",1.0)
+		config.set_value("Audio","volume_voice",1.0)
 		
 		config.set_value("Enemy", "speed", 50)
 		config.save(file_path)
@@ -21,7 +26,6 @@ func _ready() -> void:
 	else:
 		config.load(file_path)
 		print("Archivo ", file_path, " cargado")
-	
 
 func save_full_config():
 	config.save(file_path)
@@ -68,3 +72,17 @@ func load_enemy_setting():
 	for key in config.get_section_keys("Enemy"):
 		enemy_settings[key]=config.get_value("Enemy",key)
 	return enemy_settings
+
+#SECCION Audio
+func save_audio_setting(key:String, value):
+	config.set_value("Audio",key,value)
+	config.save(file_path)
+
+func update_audio_setting(key:String, value):
+	config.set_value("Audio",key,value)
+
+func load_audio_setting():
+	var audio_settings= {}
+	for key in config.get_section_keys("Audio"):
+		audio_settings[key]=config.get_value("Audio",key)
+	return audio_settings
