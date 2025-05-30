@@ -9,21 +9,10 @@ func _on_key_door_opened() -> void:
 
 func _on_area_2d_door_body_entered(body: Node2D) -> void:	
 	if body is Player:
-		if body.hasK1:
+		if body.hasK:
 			if !door_opened:
 				$LabelConfirm.visible = true
-		if body.hasK2:
-			if !door_opened:
-				$LabelConfirm.visible = true
-		if body.hasK3:
-			if !door_opened:
-				$LabelConfirm.visible = true
-		if body.hasK4:
-			if !door_opened:
-				$LabelConfirm.visible = true
-		if body.hasK5:
-			if !door_opened:
-				$LabelConfirm.visible = true
+
 
 func _on_area_2d_door_body_exited(body: Node2D) -> void:
 	$LabelConfirm.visible = false

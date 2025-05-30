@@ -11,8 +11,8 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		if keytaken == false:
 			print("into")
 			keytaken = true
+			body.hasK = true
 			$Sprite2D.queue_free()
-			body.hasK1 = true
 
 func _process(delta: float) -> void:
 	if keytaken == true:

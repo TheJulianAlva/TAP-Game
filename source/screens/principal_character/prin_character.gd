@@ -29,11 +29,7 @@ var isHurt:bool = false
 var enemyCollisions = []
 
 var hasLamp:bool
-var hasK1:bool
-var hasK2:bool
-var hasK3:bool
-var hasK4:bool
-var hasK5:bool
+var hasK:bool
 
 func _ready() -> void:
 	effects.play("RESET")

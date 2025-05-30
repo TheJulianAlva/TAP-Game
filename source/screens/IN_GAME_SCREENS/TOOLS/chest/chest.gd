@@ -24,6 +24,7 @@ func _on_area_2d_chest_body_entered(body: Node2D) -> void:
 	
 func _on_area_2d_chest_body_exited(body: Node2D) -> void: 
 	if body is Player: 
+		in_chest_zone = false
 		$LabelConfirmC.visible = false
 
 
