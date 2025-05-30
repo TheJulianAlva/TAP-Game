@@ -1,17 +1,17 @@
 [gd_scene load_steps=18 format=4 uid="uid://c35qe5u2y172e"]
 
-[ext_resource type="Script" uid="uid://bke6m8lbttiyp" path="res://source/SCREENS/IN_GAME_SCREENS/screen_game_world/screen_game_world.gd" id="1_7ixir"]
+[ext_resource type="Script" uid="uid://bke6m8lbttiyp" path="res://source/screens/IN_GAME_SCREENS/screen_game_world/screen_game_world.gd" id="1_7ixir"]
 [ext_resource type="TileSet" uid="uid://ckqpsaw1nd35i" path="res://resources/assets/TILEMAPS/World Tile Map/pant_game_world.tres" id="2_wbc5w"]
 [ext_resource type="Texture2D" uid="uid://cnbuhxvqoq0s3" path="res://resources/assets/TILEMAPS/World Tile Map/CARS TILEMAP.png" id="3_ec45k"]
-[ext_resource type="PackedScene" uid="uid://275ibvia1q42" path="res://source/SCREENS/principal_character/prin_character.tscn" id="3_fpf8y"]
-[ext_resource type="PackedScene" uid="uid://dm44vdfpa0tp8" path="res://source/SCREENS/hud/hud.tscn" id="4_ihve8"]
-[ext_resource type="PackedScene" uid="uid://b4ygg3i7b6p2a" path="res://source/SCREENS/luces/luces.tscn" id="5_4epuo"]
+[ext_resource type="PackedScene" uid="uid://275ibvia1q42" path="res://source/screens/principal_character/prin_character.tscn" id="3_fpf8y"]
+[ext_resource type="PackedScene" uid="uid://dm44vdfpa0tp8" path="res://source/screens/hud/hud.tscn" id="4_ihve8"]
+[ext_resource type="PackedScene" uid="uid://b4ygg3i7b6p2a" path="res://source/screens/luces/luces.tscn" id="5_4epuo"]
 [ext_resource type="PackedScene" uid="uid://bf3ajiodaifpq" path="res://components/itemLamp/item_lamp.tscn" id="7_rlg4x"]
 [ext_resource type="PackedScene" uid="uid://sbtm2b37won7" path="res://components/accessDoor/access_door.tscn" id="9_hhjrm"]
-[ext_resource type="PackedScene" uid="uid://bg2yd3j1hrut5" path="res://source/SCREENS/ghost/ghost.tscn" id="9_rlg4x"]
-[ext_resource type="PackedScene" uid="uid://dvj7vysylj34e" path="res://source/SCREENS/NON_GAME_SCREENS/pause_screen/pause_screen.tscn" id="10_hhjrm"]
+[ext_resource type="PackedScene" uid="uid://bg2yd3j1hrut5" path="res://source/screens/ghost/ghost.tscn" id="9_rlg4x"]
+[ext_resource type="PackedScene" uid="uid://dvj7vysylj34e" path="res://source/screens/NON_GAME_SCREENS/pause_screen/pause_screen.tscn" id="10_hhjrm"]
 [ext_resource type="AudioStream" uid="uid://dsbt80f528nwr" path="res://resources/assets/MUSIC/Gentle Breeze.ogg" id="11_aeokw"]
-[ext_resource type="PackedScene" uid="uid://b8m32cqsjlykd" path="res://source/SCREENS/enemy_basic/policeman.tscn" id="12_4epuo"]
+[ext_resource type="PackedScene" uid="uid://b8m32cqsjlykd" path="res://source/screens/enemy_basic/policeman.tscn" id="12_4epuo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rlg4x"]
 texture = ExtResource("3_ec45k")
@@ -252,7 +252,7 @@ position = Vector2(-1055, -464)
 position = Vector2(-439, -1154)
 
 [node name="AccessDoorC1" parent="Access Doors" instance=ExtResource("9_hhjrm")]
-position = Vector2(-256, -667)
+position = Vector2(-254, -650)
 
 [node name="AccessDoorD2" parent="Access Doors" instance=ExtResource("9_hhjrm")]
 position = Vector2(-1419, -411)
@@ -264,7 +264,7 @@ position = Vector2(-973, -242)
 position = Vector2(-709, -182)
 
 [node name="AccessDoorU" parent="Access Doors" instance=ExtResource("9_hhjrm")]
-position = Vector2(-440, -411)
+position = Vector2(-443, -414)
 
 [node name="AccessDoorCafe" parent="Access Doors" instance=ExtResource("9_hhjrm")]
 position = Vector2(-844, -443)
@@ -281,7 +281,7 @@ position = Vector2(-167, -39)
 position = Vector2(-315, -470)
 
 [node name="Marker_C1" type="Marker2D" parent="Markers"]
-position = Vector2(-256, -635)
+position = Vector2(-254, -656)
 
 [node name="Marker_2" type="Marker2D" parent="Markers"]
 position = Vector2(-1497, -207)
@@ -320,7 +320,8 @@ position = Vector2(-1055, -436)
 position = Vector2(-845, -423)
 
 [node name="Marker_U" type="Marker2D" parent="Markers"]
-position = Vector2(-440, -391)
+position = Vector2(-436, -405)
+
 
 [node name="Marker_M" type="Marker2D" parent="Markers"]
 position = Vector2(-709, -198)
