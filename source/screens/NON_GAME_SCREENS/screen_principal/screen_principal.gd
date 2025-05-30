@@ -5,6 +5,7 @@
 	Fecha de última modificación 14 de marzo de 2025
 	Descripción: Se implementa la pantalla principal del juego.
 '''
+@icon("res://resources/Images/IconGodotNode/control/icon_scene.png")
 class_name PantPrincipal extends Control
 
 # Called when the node enters the scene tree for the first time.

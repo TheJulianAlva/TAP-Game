@@ -1,11 +1,11 @@
 '''
 	Módulo Player
-	Creado por José Julián Alva Zepeda
+	Creado por José Julián Alva Zepeda y Carolina Ledesma Gallegos
 	Fecha de creación 26 de febrero de 2025
 	Fecha de última modificación 26 de febrero de 2025
 	Descripción: Se implementa el personaje principal del juego.
 '''
-
+@icon("res://resources/Images/IconGodotNode/node_2D/icon_character.png")
 class_name Player extends CharacterBody2D
 
 
@@ -44,7 +44,7 @@ func _physics_process(_delta: float) -> void:
 	if !isHurt:
 		for enemyArea in enemyCollisions:
 			hurt_by_enemy()
-	
+
 
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_pressed("GAME_tooglelamp"):
@@ -52,7 +52,10 @@ func _input(_event: InputEvent) -> void:
 
 func handle_animation() -> void:
 	if velocity.length() == 0:
-		play_idle_animation()
+		if Input.is_action_pressed("GAME_dance"):
+			anim_player.play("dancing_down")
+		else:
+			play_idle_animation()
 	else:
 		play_walking_animation()
 
