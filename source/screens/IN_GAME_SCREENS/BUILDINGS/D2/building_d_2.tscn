@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://chqqlv0f7xr8w"]
+[gd_scene load_steps=11 format=4 uid="uid://chqqlv0f7xr8w"]
 
 [ext_resource type="PackedScene" uid="uid://b6hf47nfrsxpf" path="res://source/screens/IN_GAME_SCREENS/BUILDINGS/room_t/room_t.tscn" id="1_x8o0w"]
 [ext_resource type="PackedScene" uid="uid://ban4g8judb6wb" path="res://source/screens/IN_GAME_SCREENS/BUILDINGS/stair/stair.tscn" id="2_3pb8q"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://275ibvia1q42" path="res://source/screens/principal_character/prin_character.tscn" id="3_vghk3"]
 [ext_resource type="PackedScene" uid="uid://by2b1crgphhw6" path="res://components/building_camera/building_camera.tscn" id="4_ck5be"]
 [ext_resource type="PackedScene" uid="uid://dvj7vysylj34e" path="res://source/screens/NON_GAME_SCREENS/pause_screen/pause_screen.tscn" id="5_pdnb7"]
+[ext_resource type="PackedScene" uid="uid://cowooi0xq1ot5" path="res://source/screens/IN_GAME_SCREENS/TOOLS/closed_door/closed_door.tscn" id="7_ck5be"]
+[ext_resource type="PackedScene" uid="uid://b7w80d64ihd56" path="res://source/screens/IN_GAME_SCREENS/TOOLS/key/key.tscn" id="8_pdnb7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h4lwk"]
 size = Vector2(18, 20)
@@ -156,6 +158,18 @@ position = Vector2(176, 179)
 
 [node name="PauseScreen" parent="." instance=ExtResource("5_pdnb7")]
 
+[node name="ClosedDoor" parent="." instance=ExtResource("7_ck5be")]
+position = Vector2(184, 36)
+
+[node name="Key" parent="." instance=ExtResource("8_pdnb7")]
+position = Vector2(162, 119)
+
+[connection signal="body_entered" from="ClosedDoor/Area2DDoor" to="ClosedDoor" method="_on_area_2d_door_body_entered"]
+[connection signal="body_entered" from="ClosedDoor/Area2DDoor" to="Key" method="_on_area_2d_door_body_entered"]
+[connection signal="body_exited" from="ClosedDoor/Area2DDoor" to="ClosedDoor" method="_on_area_2d_door_body_exited"]
+[connection signal="body_exited" from="ClosedDoor/Area2DDoor" to="Key" method="_on_area_2d_door_body_exited"]
+[connection signal="door_opened" from="Key" to="room_t" method="_on_key_door_opened"]
+
 [editable path="room_t"]
 [editable path="room_t/DoorLeft"]
 [editable path="room_t/DoorUp"]
@@ -203,3 +217,5 @@ position = Vector2(176, 179)
 [editable path="room_t9/DoorDown"]
 [editable path="Stair"]
 [editable path="Stair2"]
+[editable path="ClosedDoor"]
+[editable path="Key"]

@@ -1,14 +1,48 @@
-[gd_scene load_steps=3 format=3 uid="uid://cafguk3e3n2kr"]
+[gd_scene load_steps=7 format=3 uid="uid://cafguk3e3n2kr"]
 
 [ext_resource type="Script" uid="uid://dvnl1kaf8bfin" path="res://source/screens/IN_GAME_SCREENS/TOOLS/chest/chest.gd" id="1_vl4l3"]
+[ext_resource type="Texture2D" uid="uid://c05wd8rt7wynv" path="res://resources/assets/TILEMAPS/My Drawings/Interiors_Tile_Map-1.png.png" id="2_b4q0l"]
+[ext_resource type="PackedScene" uid="uid://b7w80d64ihd56" path="res://source/screens/IN_GAME_SCREENS/TOOLS/key/key.tscn" id="3_tx8ip"]
+[ext_resource type="FontFile" uid="uid://cjtrvo0s4eib2" path="res://resources/lang/Minecraft.ttf" id="4_0u2jh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ed3uj"]
-radius = 83.0
+radius = 33.0151
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tx8ip"]
+size = Vector2(13, 31)
 
 [node name="Chest" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_vl4l3")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2DChest" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2DZ" type="CollisionShape2D" parent="Area2DChest"]
 shape = SubResource("CircleShape2D_ed3uj")
+
+[node name="Sprite2DC" type="Sprite2D" parent="."]
+texture = ExtResource("2_b4q0l")
+
+[node name="CollisionShape2DC" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_tx8ip")
+
+[node name="Key" parent="." instance=ExtResource("3_tx8ip")]
+collision_layer = 2
+collision_mask = 2
+
+[node name="LabelConfirmC" type="Label" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 18.0
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("4_0u2jh")
+text = "labelConfirmChest"
+
+[connection signal="body_entered" from="Area2DChest" to="." method="_on_area_2d_chest_body_entered"]
+[connection signal="body_exited" from="Area2DChest" to="." method="_on_area_2d_chest_body_exited"]
+
+[editable path="Key"]

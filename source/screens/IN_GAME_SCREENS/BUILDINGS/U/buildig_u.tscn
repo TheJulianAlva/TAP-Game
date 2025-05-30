@@ -4,9 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://275ibvia1q42" path="res://source/screens/principal_character/prin_character.tscn" id="2_4oy1p"]
 [ext_resource type="PackedScene" uid="uid://by2b1crgphhw6" path="res://components/building_camera/building_camera.tscn" id="3_7lpe0"]
 [ext_resource type="PackedScene" uid="uid://dvj7vysylj34e" path="res://source/screens/NON_GAME_SCREENS/pause_screen/pause_screen.tscn" id="4_7lpe0"]
+[ext_resource type="PackedScene" uid="uid://cafguk3e3n2kr" path="res://source/screens/IN_GAME_SCREENS/TOOLS/chest/chest.tscn" id="4_lpigo"]
 [ext_resource type="TileSet" uid="uid://jhgtkav2md3m" path="res://resources/assets/TILEMAPS/Interiors Tile Map/interior_set.tres" id="5_wa8hg"]
 [ext_resource type="PackedScene" uid="uid://cowooi0xq1ot5" path="res://source/screens/IN_GAME_SCREENS/TOOLS/closed_door/closed_door.tscn" id="6_lpigo"]
-[ext_resource type="PackedScene" uid="uid://b7w80d64ihd56" path="res://source/screens/IN_GAME_SCREENS/TOOLS/key/key.tscn" id="7_2aum4"]
 
 [node name="BuildigU" type="Node2D"]
 
@@ -48,6 +48,17 @@ disabled = true
 [node name="CollisionDoor" parent="room_t3/DoorDown" index="1"]
 disabled = true
 
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAGAAEAAgAEABgAAAAGAAIAAgAEABkAAAAHAAEAAgAFABgAAAAHAAIAAgAFABkAAAAIAAEAAgAGABgAAAAIAAIAAgAGABkAAAAOAAEAAgAEABgAAAAOAAIAAgAEABkAAAAPAAEAAgAFABgAAAAPAAIAAgAFABkAAAAQAAEAAgAGABgAAAAQAAIAAgAGABkAAAATAAIAAgAHADMAAAATAAMAAgAHADQAAAATAAQAAgAHADUAAAAUAAIAAgAIADMAAAAUAAMAAgAIADQAAAAUAAQAAgAIADUAAAAQAAUAAgAGAEgAAAAQAAYAAgAGAEkAAAAQAAgAAgADAE0AAAAQAAkAAgADAE4AAAARAAgAAgAEAE0AAAARAAkAAgAEAE4AAAAOAAUAAgAEAEgAAAAOAAYAAgAEAEkAAAAOAAgAAgAKABwAAAAOAAkAAgAKAB0AAAAPAAUAAgAFAEgAAAAPAAYAAgAFAEkAAAAPAAgAAgALABwAAAAPAAkAAgALAB0AAAAQAAcAAgADAEwAAAARAAcAAgAEAEwAAAAFAAgAAgACADMAAAAFAAkAAgACADQAAAAGAAgAAgADADMAAAAGAAkAAgADADQAAAA=")
+tile_set = ExtResource("5_wa8hg")
+
+[node name="ClosedDoor" parent="." instance=ExtResource("6_lpigo")]
+position = Vector2(184, 465)
+scale = Vector2(0.8, 0.8)
+
+[node name="Chest" parent="." instance=ExtResource("4_lpigo")]
+position = Vector2(244, 258)
+
 [node name="PrincipalCharacter" parent="." instance=ExtResource("2_4oy1p")]
 position = Vector2(70, 116)
 
@@ -57,22 +68,11 @@ position_smoothing_speed = 10.0
 
 [node name="PauseScreen" parent="." instance=ExtResource("4_7lpe0")]
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAGAAEAAgAEABgAAAAGAAIAAgAEABkAAAAHAAEAAgAFABgAAAAHAAIAAgAFABkAAAAIAAEAAgAGABgAAAAIAAIAAgAGABkAAAAOAAEAAgAEABgAAAAOAAIAAgAEABkAAAAPAAEAAgAFABgAAAAPAAIAAgAFABkAAAAQAAEAAgAGABgAAAAQAAIAAgAGABkAAAATAAIAAgAHADMAAAATAAMAAgAHADQAAAATAAQAAgAHADUAAAAUAAIAAgAIADMAAAAUAAMAAgAIADQAAAAUAAQAAgAIADUAAAAQAAUAAgAGAEgAAAAQAAYAAgAGAEkAAAAQAAgAAgADAE0AAAAQAAkAAgADAE4AAAARAAgAAgAEAE0AAAARAAkAAgAEAE4AAAAOAAUAAgAEAEgAAAAOAAYAAgAEAEkAAAAOAAgAAgAKABwAAAAOAAkAAgAKAB0AAAAPAAUAAgAFAEgAAAAPAAYAAgAFAEkAAAAPAAgAAgALABwAAAAPAAkAAgALAB0AAAAQAAcAAgADAEwAAAARAAcAAgAEAEwAAAAFAAgAAgACADMAAAAFAAkAAgACADQAAAAGAAgAAgADADMAAAAGAAkAAgADADQAAAA=")
-tile_set = ExtResource("5_wa8hg")
-
-[node name="ClosedDoor" parent="." instance=ExtResource("6_lpigo")]
-position = Vector2(184, 465)
-scale = Vector2(0.8, 0.8)
-
-[node name="Key" parent="." instance=ExtResource("7_2aum4")]
-position = Vector2(213, 376)
-
 [connection signal="body_entered" from="ClosedDoor/Area2DDoor" to="ClosedDoor" method="_on_area_2d_door_body_entered"]
-[connection signal="body_entered" from="ClosedDoor/Area2DDoor" to="Key" method="_on_area_2d_door_body_entered"]
+[connection signal="body_entered" from="ClosedDoor/Area2DDoor" to="Chest/Key" method="_on_area_2d_door_body_entered"]
 [connection signal="body_exited" from="ClosedDoor/Area2DDoor" to="ClosedDoor" method="_on_area_2d_door_body_exited"]
-[connection signal="body_exited" from="ClosedDoor/Area2DDoor" to="Key" method="_on_area_2d_door_body_exited"]
-[connection signal="door_opened" from="Key" to="ClosedDoor" method="_on_key_door_opened"]
+[connection signal="body_exited" from="ClosedDoor/Area2DDoor" to="Chest/Key" method="_on_area_2d_door_body_exited"]
+[connection signal="door_opened" from="Chest/Key" to="ClosedDoor" method="_on_key_door_opened"]
 
 [editable path="room_t"]
 [editable path="room_t/DoorLeft"]
@@ -90,4 +90,5 @@ position = Vector2(213, 376)
 [editable path="room_t3/DoorRight"]
 [editable path="room_t3/DoorDown"]
 [editable path="ClosedDoor"]
-[editable path="Key"]
+[editable path="Chest"]
+[editable path="Chest/Key"]
