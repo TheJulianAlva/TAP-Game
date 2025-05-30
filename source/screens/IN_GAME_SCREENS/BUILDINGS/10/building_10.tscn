@@ -1,13 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://bhic36fidtymb"]
+[gd_scene load_steps=7 format=3 uid="uid://bhic36fidtymb"]
 
-[ext_resource type="PackedScene" uid="uid://2eru8vuj8tpk" path="res://source/screens/IN_GAME_SCREENS/BUILDINGS/closed_room/closed_room.tscn" id="1_8dycj"]
-[ext_resource type="PackedScene" uid="uid://275ibvia1q42" path="res://source/screens/principal_character/prin_character.tscn" id="2_r0b16"]
+[ext_resource type="Script" uid="uid://6oyuswk10dx6" path="res://source/SCREENS/IN_GAME_SCREENS/BUILDINGS/10/building_10.gd" id="1_3h0mc"]
+[ext_resource type="PackedScene" uid="uid://2eru8vuj8tpk" path="res://source/SCREENS/IN_GAME_SCREENS/BUILDINGS/closed_room/closed_room.tscn" id="1_8dycj"]
+[ext_resource type="PackedScene" uid="uid://275ibvia1q42" path="res://source/SCREENS/principal_character/prin_character.tscn" id="2_r0b16"]
 [ext_resource type="PackedScene" uid="uid://by2b1crgphhw6" path="res://components/building_camera/building_camera.tscn" id="3_oejyh"]
-[ext_resource type="PackedScene" uid="uid://dvj7vysylj34e" path="res://source/screens/NON_GAME_SCREENS/pause_screen/pause_screen.tscn" id="4_88fn8"]
+[ext_resource type="PackedScene" uid="uid://dvj7vysylj34e" path="res://source/SCREENS/NON_GAME_SCREENS/pause_screen/pause_screen.tscn" id="4_88fn8"]
+[ext_resource type="PackedScene" uid="uid://sbtm2b37won7" path="res://components/accessDoor/access_door.tscn" id="5_ie0vx"]
 
 [node name="Building10" type="Node2D"]
+script = ExtResource("1_3h0mc")
 
 [node name="ClosedRoom" parent="." instance=ExtResource("1_8dycj")]
+
+[node name="CollisionDoor" parent="ClosedRoom/room_t/DoorDown" index="1"]
+disabled = true
 
 [node name="Player" parent="." instance=ExtResource("2_r0b16")]
 position = Vector2(178, 171)
@@ -15,3 +21,17 @@ position = Vector2(178, 171)
 [node name="CamaraCalabozo" parent="." instance=ExtResource("3_oejyh")]
 
 [node name="PauseScreen" parent="." instance=ExtResource("4_88fn8")]
+
+[node name="AccessDoor" parent="." instance=ExtResource("5_ie0vx")]
+position = Vector2(183, 219)
+scale = Vector2(2.08741, 1.19333)
+pathScene = "res://source/SCREENS/IN_GAME_SCREENS/screen_game_world/screen_game_world.tscn"
+
+[connection signal="scene_change" from="AccessDoor" to="." method="_on_access_door_scene_change"]
+
+[editable path="ClosedRoom"]
+[editable path="ClosedRoom/room_t"]
+[editable path="ClosedRoom/room_t/DoorLeft"]
+[editable path="ClosedRoom/room_t/DoorUp"]
+[editable path="ClosedRoom/room_t/DoorRight"]
+[editable path="ClosedRoom/room_t/DoorDown"]

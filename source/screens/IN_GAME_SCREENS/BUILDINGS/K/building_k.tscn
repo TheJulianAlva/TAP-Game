@@ -68,6 +68,7 @@ position = Vector2(181, 190)
 
 [node name="AccessDoor" type="Area2D" parent="."]
 position = Vector2(182, 225)
+collision_mask = 2
 script = ExtResource("7_bltam")
 pathScene = "res://source/SCREENS/IN_GAME_SCREENS/screen_game_world/screen_game_world.tscn"
 metadata/_custom_type_script = "uid://rknateg4or68"

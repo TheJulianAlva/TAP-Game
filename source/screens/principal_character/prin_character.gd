@@ -2,7 +2,7 @@
 	Módulo Player
 	Creado por José Julián Alva Zepeda y Carolina Ledesma Gallegos
 	Fecha de creación 26 de febrero de 2025
-	Fecha de última modificación 26 de febrero de 2025
+	Fecha de última modificación 29 de mayo de 2025
 	Descripción: Se implementa el personaje principal del juego.
 '''
 @icon("res://resources/Images/IconGodotNode/node_2D/icon_character.png")

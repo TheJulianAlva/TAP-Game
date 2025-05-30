@@ -1,14 +1,20 @@
-[gd_scene load_steps=6 format=4 uid="uid://cmfh1jv1pdt17"]
+[gd_scene load_steps=8 format=4 uid="uid://cmfh1jv1pdt17"]
 
-[ext_resource type="PackedScene" uid="uid://2eru8vuj8tpk" path="res://source/screens/IN_GAME_SCREENS/BUILDINGS/closed_room/closed_room.tscn" id="1_vkbcu"]
+[ext_resource type="Script" uid="uid://cpoad1dycph7y" path="res://source/SCREENS/IN_GAME_SCREENS/BUILDINGS/6/building_6.gd" id="1_lifgk"]
+[ext_resource type="PackedScene" uid="uid://2eru8vuj8tpk" path="res://source/SCREENS/IN_GAME_SCREENS/BUILDINGS/closed_room/closed_room.tscn" id="1_vkbcu"]
 [ext_resource type="TileSet" uid="uid://jhgtkav2md3m" path="res://resources/assets/TILEMAPS/Interiors Tile Map/interior_set.tres" id="2_g0au0"]
 [ext_resource type="PackedScene" uid="uid://by2b1crgphhw6" path="res://components/building_camera/building_camera.tscn" id="2_pqskw"]
-[ext_resource type="PackedScene" uid="uid://dvj7vysylj34e" path="res://source/screens/NON_GAME_SCREENS/pause_screen/pause_screen.tscn" id="3_g0au0"]
-[ext_resource type="PackedScene" uid="uid://275ibvia1q42" path="res://source/screens/principal_character/prin_character.tscn" id="4_c6hpw"]
+[ext_resource type="PackedScene" uid="uid://dvj7vysylj34e" path="res://source/SCREENS/NON_GAME_SCREENS/pause_screen/pause_screen.tscn" id="3_g0au0"]
+[ext_resource type="PackedScene" uid="uid://275ibvia1q42" path="res://source/SCREENS/principal_character/prin_character.tscn" id="4_c6hpw"]
+[ext_resource type="PackedScene" uid="uid://sbtm2b37won7" path="res://components/accessDoor/access_door.tscn" id="6_eexld"]
 
 [node name="Building6" type="Node2D"]
+script = ExtResource("1_lifgk")
 
 [node name="ClosedRoom" parent="." instance=ExtResource("1_vkbcu")]
+
+[node name="CollisionDoor" parent="ClosedRoom/room_t/DoorDown" index="1"]
+disabled = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAADAAEAAgAHADMAAAADAAIAAgAHADQAAAADAAMAAgAHADUAAAAEAAEAAgAJADMAAAAEAAIAAgAJADQAAAAEAAMAAgAJADUAAAAFAAEAAgAKADMAAAAFAAIAAgAKADQAAAAFAAMAAgAKADUAAAAGAAEAAgAJADMAAAAGAAIAAgAJADQAAAAGAAMAAgAJADUAAAAHAAEAAgAKADMAAAAHAAIAAgAKADQAAAAHAAMAAgAKADUAAAAIAAEAAgAJADMAAAAIAAIAAgAJADQAAAAIAAMAAgAJADUAAAAJAAEAAgAIADMAAAAJAAIAAgAIADQAAAAJAAMAAgAIADUAAAANAAEAAgAIABYAAAANAAIAAgAIABcAAAAOAAEAAgAJABYAAAAOAAIAAgAJABcAAAADAAoAAgAAADEAAAADAAsAAgAAADIAAAARAAEAAgAAAEgAAAARAAIAAgAAAEkAAAAPAAkAAgABACYAAAAPAAoAAgABACcAAAARAAkAAgABACYAAAARAAoAAgABACcAAAATAAkAAgABACYAAAATAAoAAgABACcAAAASAAcAAgABACYAAAASAAgAAgABACcAAAAQAAcAAgABACYAAAAQAAgAAgABACcAAAAPAAUAAgABACYAAAAPAAYAAgABACcAAAARAAUAAgABACYAAAARAAYAAgABACcAAAATAAUAAgABACYAAAATAAYAAgABACcAAAADAAUAAgAAACMAAAADAAYAAgAAACQAAAADAAcAAgAAACUAAAAEAAUAAgAAACMAAAAEAAYAAgAAACQAAAAEAAcAAgAAACUAAAAFAAUAAgAAACMAAAAFAAYAAgAAACQAAAAFAAcAAgAAACUAAAAEAAgAAgANABYAAAAEAAkAAgANABcAAAAFAAgAAgAOABYAAAAFAAkAAgAOABcAAAAGAAUAAgAAACMAAAAGAAYAAgAAACQAAAAGAAcAAgAAACUAAAA=")
@@ -20,3 +26,16 @@ tile_set = ExtResource("2_g0au0")
 
 [node name="Player" parent="." instance=ExtResource("4_c6hpw")]
 position = Vector2(180, 194)
+
+[node name="AccessDoor" parent="." instance=ExtResource("6_eexld")]
+position = Vector2(181, 214)
+pathScene = "res://source/SCREENS/IN_GAME_SCREENS/screen_game_world/screen_game_world.tscn"
+
+[connection signal="scene_change" from="AccessDoor" to="." method="_on_access_door_scene_change"]
+
+[editable path="ClosedRoom"]
+[editable path="ClosedRoom/room_t"]
+[editable path="ClosedRoom/room_t/DoorLeft"]
+[editable path="ClosedRoom/room_t/DoorUp"]
+[editable path="ClosedRoom/room_t/DoorRight"]
+[editable path="ClosedRoom/room_t/DoorDown"]

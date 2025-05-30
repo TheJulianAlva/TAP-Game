@@ -1,3 +1,8 @@
+'''
+	GLOBAL
+	Creado por José Julián Alva Zepeda y Carolina Ledesma Gallegos
+	Fecha de última modificación 30 de mayo de 2025
+'''
 extends Node
 
 #Declaraciones de rutas de pantallas no jugables
@@ -26,7 +31,9 @@ var player_has_lamp:bool = true
 enum Markers {
 	mk_world, mk_building_t, mk_building_b, mk_building_b2,
 	mk_building_c1, mk_building_cc, mk_building_cafe, mk_building_d2,
-	mk_building_m, mk_building_u, mk_building_k}
+	mk_building_m, mk_building_u, mk_building_k, mk_building1, mk_building2,
+	mk_building3, mk_building4, mk_building6, mk_building7, mk_building8,
+	mk_building9, mk_building10, mk_building5}
 
 var current_mark = Markers.mk_world
 

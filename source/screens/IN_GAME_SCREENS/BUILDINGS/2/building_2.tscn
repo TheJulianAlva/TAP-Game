@@ -1,17 +1,23 @@
-[gd_scene load_steps=6 format=4 uid="uid://b3arijyghgt7o"]
+[gd_scene load_steps=8 format=4 uid="uid://b3arijyghgt7o"]
 
-[ext_resource type="PackedScene" uid="uid://b6hf47nfrsxpf" path="res://source/screens/IN_GAME_SCREENS/BUILDINGS/room_t/room_t.tscn" id="1_cx5lk"]
+[ext_resource type="PackedScene" uid="uid://b6hf47nfrsxpf" path="res://source/SCREENS/IN_GAME_SCREENS/BUILDINGS/room_t/room_t.tscn" id="1_cx5lk"]
+[ext_resource type="Script" uid="uid://0jksphjo1y2p" path="res://source/SCREENS/IN_GAME_SCREENS/BUILDINGS/2/building_2.gd" id="1_nuuup"]
 [ext_resource type="PackedScene" uid="uid://by2b1crgphhw6" path="res://components/building_camera/building_camera.tscn" id="2_d0kwt"]
 [ext_resource type="TileSet" uid="uid://jhgtkav2md3m" path="res://resources/assets/TILEMAPS/Interiors Tile Map/interior_set.tres" id="2_v2xkg"]
-[ext_resource type="PackedScene" uid="uid://275ibvia1q42" path="res://source/screens/principal_character/prin_character.tscn" id="3_v2xkg"]
-[ext_resource type="PackedScene" uid="uid://dvj7vysylj34e" path="res://source/screens/NON_GAME_SCREENS/pause_screen/pause_screen.tscn" id="4_d0kwt"]
+[ext_resource type="PackedScene" uid="uid://275ibvia1q42" path="res://source/SCREENS/principal_character/prin_character.tscn" id="3_v2xkg"]
+[ext_resource type="PackedScene" uid="uid://dvj7vysylj34e" path="res://source/SCREENS/NON_GAME_SCREENS/pause_screen/pause_screen.tscn" id="4_d0kwt"]
+[ext_resource type="PackedScene" uid="uid://sbtm2b37won7" path="res://components/accessDoor/access_door.tscn" id="6_u7a7b"]
 
 [node name="Building2" type="Node2D"]
+script = ExtResource("1_nuuup")
 
 [node name="room_t" parent="." instance=ExtResource("1_cx5lk")]
 
 [node name="TileMapBuilding" parent="room_t" index="0"]
 tile_map_data = PackedByteArray("AAAJAAEAAwAIABEAAAAKAAEAAwANAAEAAAAJAAMAAwAIABIAAAAJAAQAAgAAAAAAAAAJAAUAAgAAAAAAAAAJAAYAAgAAAAAAAAAJAAcAAgAAAAAAAAAJAAgAAgAAAAAAAAAKAAMAAwALAAIAADAKAAQAAwALAAIAADAKAAUAAwALAAIAADAKAAYAAwALAAIAADAKAAcAAwALAAIAADAKAAgAAwALAAIAADAJAAIAAwAFABEAAAAKAAIAAwALAAIAADAAAAEAAwAIABEAAAAAAAIAAwAFABEAAAAAAAMAAwAIABIAAAAAAAQAAgAAAAAAAAAAAAUAAgAAAAAAAAAAAAYAAgAAAAAAAAAAAAcAAgAAAAAAAAAAAAgAAgAAAAAAAAABAAEAAwAIABEAAAABAAIAAwAFABEAAAABAAMAAwAIABIAAAABAAQAAgAAAAAAAAABAAUAAgAAAAAAAAABAAYAAgAAAAAAAAABAAcAAgAAAAAAAAABAAgAAgAAAAAAAAACAAEAAwAIABEAAAACAAIAAwAFABEAAAACAAMAAwAIABIAAAACAAQAAgAAAAAAAAACAAUAAgAAAAAAAAACAAYAAgAAAAAAAAACAAcAAgAAAAAAAAACAAgAAgAAAAAAAAADAAEAAwAIABEAAAADAAIAAwAFABEAAAADAAMAAwAIABIAAAADAAUAAgAAAAAAAAADAAYAAgAAAAAAAAADAAcAAgAAAAAAAAADAAgAAgAAAAAAAAAEAAEAAwAIABEAAAAEAAIAAwAFABEAAAAEAAMAAwAIABIAAAAEAAQAAgAAAAAAAAAEAAUAAgAAAAAAAAAEAAYAAgAAAAAAAAAEAAcAAgAAAAAAAAAEAAgAAgAAAAAAAAAFAAEAAwAIABEAAAAFAAIAAwAFABEAAAAFAAMAAwAIABIAAAAFAAQAAgAAAAAAAAAFAAUAAgAAAAAAAAAFAAYAAgAAAAAAAAAFAAcAAgAAAAAAAAAFAAgAAgAAAAAAAAAGAAEAAwAIABEAAAAGAAIAAwAFABEAAAAGAAMAAwAIABIAAAAGAAQAAgAAAAAAAAAGAAUAAgAAAAAAAAAGAAYAAgAAAAAAAAAGAAcAAgAAAAAAAAAGAAgAAgAAAAAAAAAHAAEAAwAIABEAAAAHAAIAAwAFABEAAAAHAAMAAwAIABIAAAAHAAQAAgAAAAAAAAAHAAUAAgAAAAAAAAAHAAYAAgAAAAAAAAAHAAcAAgAAAAAAAAAHAAgAAgAAAAAAAAAIAAEAAwAIABEAAAAIAAIAAwAFABEAAAAIAAMAAwAIABIAAAAIAAQAAgAAAAAAAAAIAAUAAgAAAAAAAAAIAAYAAgAAAAAAAAAIAAcAAgAAAAAAAAAIAAgAAgAAAAAAAAD//wEAAwAIABEAAAD//wIAAwAFABEAAAD//wMAAwAIABIAAAD//wQAAgAAAAAAAAD//wUAAgAAAAAAAAD//wYAAgAAAAAAAAD//wcAAgAAAAAAAAD//wgAAgAAAAAAAAD+/wUAAgAAAAAAAAD+/wYAAgAAAAAAAAD9/wUAAgAAAAAAAAD9/wYAAgAAAAAAAAD9/wEAAwAIABEAAAD9/wIAAwAFABEAAAD9/wMAAwAIABIAAAD9/wQAAgAAAAAAAAD+/wEAAwAIABEAAAD+/wIAAwAFABEAAAD+/wMAAwAIABIAAAD+/wQAAgAAAAAAAAD+/wcAAgAAAAAAAAD+/wgAAgAAAAAAAAD9/wcAAgAAAAAAAAD9/wgAAgAAAAAAAAD9/wkAAgAAAAAAAAD9/woAAwALAAIAAGD+/wkAAgAAAAAAAAD+/woAAwALAAIAAGD//wkAAgAAAAAAAAD//woAAwALAAIAAGAAAAkAAgAAAAAAAAAAAAoAAwALAAIAAGABAAkAAgAAAAAAAAABAAoAAwALAAIAAGACAAkAAgAAAAAAAAACAAoAAwALAAIAAGADAAkAAgAAAAAAAAADAAoAAwALAAIAAGAEAAkAAgAAAAAAAAAEAAoAAwALAAIAAGAFAAkAAgAAAAAAAAAFAAoAAwALAAIAAGAGAAkAAgAAAAAAAAAGAAoAAwALAAIAAGAHAAkAAgAAAAAAAAAHAAoAAwALAAIAAGAIAAkAAgAAAAAAAAAIAAoAAwALAAIAAGAJAAkAAgAAAAAAAAAJAAoAAwALAAIAAGAKAAkAAwALAAIAADAKAAoAAwANAAMAAAD8/wEAAwALAAEAAAD8/wIAAwALAAIAAAD8/wMAAwALAAIAAAD8/wQAAwALAAIAAAD8/wUAAgAAAAAAAAD8/wYAAgAAAAAAAAD8/wcAAwALAAIAAAD8/wgAAwALAAIAAAD8/wkAAwALAAIAAAD8/woAAwANAAMAAFADAAQAAgAAAAAAAAA=")
+
+[node name="CollisionDoor" parent="room_t/DoorLeft" index="1"]
+disabled = true
 
 [node name="CollisionDoor" parent="room_t/DoorUp" index="1"]
 disabled = true
@@ -32,6 +38,12 @@ tile_set = ExtResource("2_v2xkg")
 position = Vector2(38, 120)
 
 [node name="PauseScreen" parent="." instance=ExtResource("4_d0kwt")]
+
+[node name="AccessDoor" parent="." instance=ExtResource("6_u7a7b")]
+position = Vector2(7, 114)
+pathScene = "res://source/SCREENS/IN_GAME_SCREENS/screen_game_world/screen_game_world.tscn"
+
+[connection signal="scene_change" from="AccessDoor" to="." method="_on_access_door_scene_change"]
 
 [editable path="room_t"]
 [editable path="room_t/DoorLeft"]
