@@ -1,0 +1,73 @@
+[gd_scene load_steps=11 format=3 uid="uid://chwh77elbagcr"]
+
+[ext_resource type="Texture2D" uid="uid://dv5c0f1rcek62" path="res://resources/assets/extras/policia.png" id="1_r50p3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tsct8"]
+atlas = ExtResource("1_r50p3")
+region = Rect2(288, 33, 16, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ka3w"]
+atlas = ExtResource("1_r50p3")
+region = Rect2(304, 33, 16, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g8lk3"]
+atlas = ExtResource("1_r50p3")
+region = Rect2(320, 33, 16, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xh622"]
+atlas = ExtResource("1_r50p3")
+region = Rect2(336, 33, 16, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gbfk8"]
+atlas = ExtResource("1_r50p3")
+region = Rect2(352, 33, 16, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t7kiy"]
+atlas = ExtResource("1_r50p3")
+region = Rect2(368, 33, 16, 33)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fy1ip"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tsct8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ka3w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g8lk3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xh622")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gbfk8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t7kiy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o06hi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uugll"]
+radius = 25.0799
+
+[node name="Policeman" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_fy1ip")
+frame = 1
+frame_progress = 0.792856
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_o06hi")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_uugll")
