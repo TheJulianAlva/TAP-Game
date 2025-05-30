@@ -1,3 +1,4 @@
+@icon("res://resources/Images/IconGodotNode/node/icon_scene.png")
 class_name ScreenPause extends CanvasLayer
 
 var on_pause:bool

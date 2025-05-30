@@ -1,3 +1,4 @@
+@icon("res://resources/Images/IconGodotNode/node_2D/icon_scene.png")
 extends Node2D
 @onready var player: Player = $Player
 @onready var cam: Camera2D = $Player/Camera

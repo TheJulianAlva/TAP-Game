@@ -1,3 +1,4 @@
+@icon("res://resources/Images/IconGodotNode/node/icon_sound.png")
 extends Node
 
 func play_btn_selected() -> void:

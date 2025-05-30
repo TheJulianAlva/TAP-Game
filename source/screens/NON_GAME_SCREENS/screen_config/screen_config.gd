@@ -5,7 +5,7 @@
 	Fecha de última modificación 14 de marzo de 2025
 	Descripción: Se implementa la pantalla de configuración inicial del juego.
 '''
-
+@icon("res://resources/Images/IconGodotNode/control/icon_scene.png")
 class_name PantConfig extends Control
 
 var _al:String = CONFIG_FILE.load_language_setting().actlan
