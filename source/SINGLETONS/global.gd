@@ -23,7 +23,11 @@ var volume_voice:float		##volumen de las voces
 var player_has_lamp:bool = true
 
 #Declaracion de marcadores para ubicacion de personaje
-enum Markers {mk_world, mk_building_t, mk_building_b}
+enum Markers {
+	mk_world, mk_building_t, mk_building_b, mk_building_b2,
+	mk_building_c1, mk_building_cc, mk_building_cafe, mk_building_d2,
+	mk_building_m, mk_building_u, mk_building_k}
+
 var current_mark = Markers.mk_world
 
 
