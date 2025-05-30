@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://ban4g8judb6wb"]
+
+[ext_resource type="Script" uid="uid://bsjs6bopssoo4" path="res://source/screens/IN_GAME_SCREENS/BUILDINGS/stair/stair.gd" id="1_f6xvf"]
+[ext_resource type="TileSet" uid="uid://ckqpsaw1nd35i" path="res://resources/assets/TILEMAPS/World Tile Map/pant_game_world.tres" id="1_ilw8f"]
+
+[node name="Stair" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_f6xvf")
+
+[node name="SpawnLocationStair" type="Marker2D" parent="."]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray(0, 0, 255, 255, 255, 255, 0, 0, 2, 0, 12, 0, 0, 0)
+tile_set = ExtResource("1_ilw8f")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

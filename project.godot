@@ -26,6 +26,7 @@ GLOBAL="*res://source/SINGLETONS/global.gd"
 SCN_TRANSITION="*res://source/SINGLETONS/scn_transition/scn_transition.tscn"
 SCN_CIRCLE_TRANSITION="*res://source/SINGLETONS/scn_circle_transition/scn_circle_transition.tscn"
 EVENTS="*res://source/SINGLETONS/events_manager.tscn"
+THR_LOADER="*res://source/SINGLETONS/thread_loader/thread_loader.tscn"
 SOUNDS="*res://source/SINGLETONS/sounds/sounds.tscn"
 
 [display]
