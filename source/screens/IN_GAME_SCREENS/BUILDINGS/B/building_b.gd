@@ -1,3 +1,9 @@
+'''
+	Building B
+	Creado por José Julián Alva Zepeda y Carolina Ledesma Gallegos
+	Fecha de última modificación 15 de mayo de 2025
+	Descripción: Se implementan funciones para el edificio B
+'''
 extends Node2D
 @onready var ghost_1: FollowEnemy = $Ghosts/Ghost1
 @onready var ghost_2: FollowEnemy = $Ghosts/Ghost2

@@ -237,10 +237,12 @@ pathScene = "res://source/SCREENS/IN_GAME_SCREENS/BUILDINGS/4/building_4.tscn"
 
 [node name="5_Door" parent="Access Doors" instance=ExtResource("9_hhjrm")]
 position = Vector2(-242, -198)
+scale = Vector2(0.982276, 1.00128)
+pathScene = "res://source/SCREENS/IN_GAME_SCREENS/BUILDINGS/5/building_5.tscn"
 
 [node name="6_Door" parent="Access Doors" instance=ExtResource("9_hhjrm")]
 position = Vector2(-88, -252)
-pathScene = "res://source/SCREENS/IN_GAME_SCREENS/BUILDINGS/6/building_6.tscn "
+pathScene = "res://source/SCREENS/IN_GAME_SCREENS/BUILDINGS/6/building_6.tscn"
 
 [node name="7_Door" parent="Access Doors" instance=ExtResource("9_hhjrm")]
 position = Vector2(-456, -672)
