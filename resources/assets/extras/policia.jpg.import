@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckc6lubrmtyrl"
-path="res://.godot/imported/New Piskel-1.png.png-2c4e7e5de23e67ab842d6486454e7fad.ctex"
+uid="uid://pa6jjdkdydc4"
+path="res://.godot/imported/policia.jpg-ae726d6856048fc988ca8d8277fd07b1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/assets/TILEMAPS/My Drawings/New Piskel-1.png.png"
-dest_files=["res://.godot/imported/New Piskel-1.png.png-2c4e7e5de23e67ab842d6486454e7fad.ctex"]
+source_file="res://resources/assets/extras/policia.jpg"
+dest_files=["res://.godot/imported/policia.jpg-ae726d6856048fc988ca8d8277fd07b1.ctex"]
 
 [params]
 
