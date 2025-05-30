@@ -20,3 +20,20 @@ texture = ExtResource("2_0cuhd")
 position = Vector2(250, 416.5)
 scale = Vector2(7.96, 7.96)
 texture = ExtResource("3_71r3o")
+
+[node name="TouchScreenButtonLeft" type="TouchScreenButton" parent="."]
+position = Vector2(177, 420)
+
+[node name="TouchScreenButtonRight" type="TouchScreenButton" parent="."]
+position = Vector2(319, 416)
+
+[node name="TouchScreenButtonUp" type="TouchScreenButton" parent="."]
+position = Vector2(250, 354)
+
+[node name="TouchScreenButtonDown" type="TouchScreenButton" parent="."]
+position = Vector2(252, 487)
+
+[node name="TouchScreenButtonA" type="TouchScreenButton" parent="."]
+position = Vector2(916, 535)
+
+[node name="TouchScreenButtonB" type="TouchScreenButton" parent="."]
