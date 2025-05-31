@@ -99,3 +99,4 @@ func set_player_position() -> void:
 		GLOBAL.Markers.mk_building10:
 			player.position = marker_10.position
 			
+	GLOBAL.current_mark = GLOBAL.Markers.mk_world

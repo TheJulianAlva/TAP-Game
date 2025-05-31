@@ -58,6 +58,8 @@ func _ready() -> void:
 	var character_settings = CONFIG_FILE.load_character_setting()
 	pChar_speed = character_settings.speed
 	pChar_max_health = character_settings.maxhealth
+	print(pChar_max_health)
+	pChar_current_health = 1
 	pChar_base_damage = character_settings.basedamage
 	pChar_low_heal = character_settings.lowheal
 	pChar_high_heal = character_settings.highheal

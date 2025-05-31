@@ -17,8 +17,8 @@ class_name Player extends CharacterBody2D
 
 #var speed: int = GLOBAL.pChar_speed #Comentado mientras se hacen modificaciones a pantallas específicas
 var speed = 70
-@export var maxHealth:int = 5
-@onready var currentHealth:int = 5
+@onready var maxHealth:int = GLOBAL.pChar_max_health
+@onready var currentHealth:int = GLOBAL.pChar_current_health
 signal healthChanged
 
 #var knockBackPower:float = 20.0
@@ -78,8 +78,9 @@ func update_velocity() -> void:
 
 func hurt_by_enemy() -> void:
 	currentHealth -= 1
-	if currentHealth < 0: #Asignacion máxima temporal
+	if currentHealth < 1: #Asignacion máxima temporal
 		currentHealth = maxHealth
+	GLOBAL.pChar_current_health = currentHealth
 	healthChanged.emit(currentHealth)
 	isHurt = true
 	#knock_back()

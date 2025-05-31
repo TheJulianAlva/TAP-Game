@@ -24,7 +24,7 @@ func _on_btn_config_pressed() -> void:
 
 func _on_btn_iniciar_pressed() -> void:
 	await SOUNDS.play_btn_selected()
-	SCN_TRANSITION.change_scene(GLOBAL.SCREEN_GAME_WORLD_PATH)
+	manage_actual_screen()
 
 func _on_tmr_to_intro_timeout() -> void:
 	SCN_CIRCLE_TRANSITION.change_scene(GLOBAL.SCREEN_INTRO_PATH)
@@ -61,3 +61,5 @@ func manage_actual_screen() -> void:
 			path = "res://source/screens/IN_GAME_SCREENS/BUILDINGS/9/building_9.tscn"
 		GLOBAL.Markers.mk_building10:
 			path = "res://source/screens/IN_GAME_SCREENS/BUILDINGS/10/building_10.tscn"
+	print(path)
+	SCN_TRANSITION.change_scene(path)

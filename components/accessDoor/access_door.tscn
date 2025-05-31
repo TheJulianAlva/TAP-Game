@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://rknateg4or68" path="res://components/accessDoor/access_door.gd" id="1_c4pgw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0l6oq"]
-size = Vector2(18, 12)
+size = Vector2(18, 6)
 
 [node name="AccessDoor" type="Area2D"]
 collision_mask = 2

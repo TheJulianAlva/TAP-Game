@@ -9,7 +9,7 @@ func _ready() -> void:
 		config.set_value("Language", "actlan", "en")
 		#sección Character
 		config.set_value("Character", "speed", 80)
-		config.set_value("Character", "maxhealth", 30)
+		config.set_value("Character", "maxhealth", 5)
 		config.set_value("Character", "basedamage", 10)
 		config.set_value("Character", "lowheal", 10)
 		config.set_value("Character", "highheal", 20)

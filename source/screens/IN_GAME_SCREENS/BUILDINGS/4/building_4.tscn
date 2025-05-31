@@ -41,8 +41,8 @@ position = Vector2(184, 80)
 [node name="PauseScreen" parent="." instance=ExtResource("4_5qilr")]
 
 [node name="AccessDoor" parent="." instance=ExtResource("6_i6npo")]
-position = Vector2(185, 37)
-scale = Vector2(1.95455, -1.75)
+position = Vector2(182, 12)
+scale = Vector2(2.8, 2.8)
 pathScene = "res://source/SCREENS/IN_GAME_SCREENS/screen_game_world/screen_game_world.tscn"
 
 [connection signal="scene_change" from="AccessDoor" to="." method="_on_access_door_scene_change"]

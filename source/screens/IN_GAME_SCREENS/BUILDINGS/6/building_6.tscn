@@ -28,7 +28,8 @@ tile_set = ExtResource("2_g0au0")
 position = Vector2(180, 194)
 
 [node name="AccessDoor" parent="." instance=ExtResource("6_eexld")]
-position = Vector2(181, 214)
+position = Vector2(182, 225)
+scale = Vector2(2.7, 2.7)
 pathScene = "res://source/SCREENS/IN_GAME_SCREENS/screen_game_world/screen_game_world.tscn"
 
 [connection signal="scene_change" from="AccessDoor" to="." method="_on_access_door_scene_change"]

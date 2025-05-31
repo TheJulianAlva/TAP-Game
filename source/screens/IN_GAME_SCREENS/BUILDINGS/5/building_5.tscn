@@ -28,8 +28,8 @@ position = Vector2(182, 202)
 [node name="CamaraCalabozo" parent="." instance=ExtResource("4_ti7eg")]
 
 [node name="AccessDoor" parent="." instance=ExtResource("6_5f2dj")]
-position = Vector2(183, 217)
-scale = Vector2(1.88826, 1.29886)
+position = Vector2(182, 225)
+scale = Vector2(2.7, 2.7)
 pathScene = "res://source/SCREENS/IN_GAME_SCREENS/screen_game_world/screen_game_world.tscn"
 
 [connection signal="scene_change" from="AccessDoor" to="." method="_on_access_door_scene_change"]
@@ -40,4 +40,3 @@ pathScene = "res://source/SCREENS/IN_GAME_SCREENS/screen_game_world/screen_game_
 [editable path="ClosedRoom/room_t/DoorUp"]
 [editable path="ClosedRoom/room_t/DoorRight"]
 [editable path="ClosedRoom/room_t/DoorDown"]
-[editable path="AccessDoor"]

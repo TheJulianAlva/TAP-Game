@@ -1507,7 +1507,7 @@ y_sort_enabled = true
 script = ExtResource("1_m3d4e")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.0214347, 0.0214346, 0.0214346, 1)
+color = Color(0.111197, 0.111197, 0.111197, 1)
 
 [node name="room_t" parent="." instance=ExtResource("1_ottig")]
 
@@ -1569,7 +1569,7 @@ tile_set = SubResource("TileSet_ottig")
 [node name="Access Doors" type="Node" parent="."]
 
 [node name="AccessDoor" parent="Access Doors" instance=ExtResource("6_2merq")]
-position = Vector2(18, 110)
+position = Vector2(10, 106)
 rotation = 1.5708
 scale = Vector2(2.6, 2.6)
 pathScene = "res://source/SCREENS/IN_GAME_SCREENS/screen_game_world/screen_game_world.tscn"

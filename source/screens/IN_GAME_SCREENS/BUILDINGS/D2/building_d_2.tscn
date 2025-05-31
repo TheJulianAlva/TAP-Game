@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://chqqlv0f7xr8w"]
+[gd_scene load_steps=13 format=4 uid="uid://chqqlv0f7xr8w"]
 
 [ext_resource type="Script" uid="uid://dsgom8s2c22oh" path="res://source/SCREENS/IN_GAME_SCREENS/BUILDINGS/D2/building_d_2.gd" id="1_iv807"]
 [ext_resource type="PackedScene" uid="uid://b6hf47nfrsxpf" path="res://source/SCREENS/IN_GAME_SCREENS/BUILDINGS/room_t/room_t.tscn" id="1_x8o0w"]
@@ -9,16 +9,13 @@
 [ext_resource type="PackedScene" uid="uid://cafguk3e3n2kr" path="res://source/SCREENS/IN_GAME_SCREENS/TOOLS/chest/chest.tscn" id="4_pdnb7"]
 [ext_resource type="PackedScene" uid="uid://dvj7vysylj34e" path="res://source/SCREENS/NON_GAME_SCREENS/pause_screen/pause_screen.tscn" id="5_pdnb7"]
 [ext_resource type="PackedScene" uid="uid://cowooi0xq1ot5" path="res://source/SCREENS/IN_GAME_SCREENS/TOOLS/closed_door/closed_door.tscn" id="7_ck5be"]
-[ext_resource type="Script" uid="uid://rknateg4or68" path="res://components/accessDoor/access_door.gd" id="9_3qsfs"]
+[ext_resource type="PackedScene" uid="uid://sbtm2b37won7" path="res://components/accessDoor/access_door.tscn" id="10_iv807"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h4lwk"]
 size = Vector2(18, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_niuf4"]
 size = Vector2(16, 11)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_iv807"]
-size = Vector2(48, 20)
 
 [node name="BuildingD2" type="Node2D"]
 script = ExtResource("1_iv807")
@@ -173,22 +170,16 @@ position = Vector2(176, 179)
 
 [node name="PauseScreen" parent="." instance=ExtResource("5_pdnb7")]
 
-[node name="AccessDoor" type="Area2D" parent="."]
-position = Vector2(182, 225)
-collision_mask = 2
-script = ExtResource("9_3qsfs")
+[node name="AccessDoor" parent="." instance=ExtResource("10_iv807")]
+position = Vector2(182, 226)
+scale = Vector2(2.6, 2.6)
 pathScene = "res://source/SCREENS/IN_GAME_SCREENS/screen_game_world/screen_game_world.tscn"
-metadata/_custom_type_script = "uid://rknateg4or68"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AccessDoor"]
-shape = SubResource("RectangleShape2D_iv807")
 
 [connection signal="body_entered" from="ClosedDoor/Area2DDoor" to="ClosedDoor" method="_on_area_2d_door_body_entered"]
 [connection signal="body_entered" from="ClosedDoor/Area2DDoor" to="Chest/Key" method="_on_area_2d_door_body_entered"]
 [connection signal="body_exited" from="ClosedDoor/Area2DDoor" to="ClosedDoor" method="_on_area_2d_door_body_exited"]
 [connection signal="body_exited" from="ClosedDoor/Area2DDoor" to="Chest/Key" method="_on_area_2d_door_body_exited"]
 [connection signal="door_opened" from="Chest/Key" to="ClosedDoor" method="_on_key_door_opened"]
-[connection signal="scene_change" from="AccessDoor" to="." method="_on_access_door_scene_change"]
 
 [editable path="room_t"]
 [editable path="room_t/DoorLeft"]

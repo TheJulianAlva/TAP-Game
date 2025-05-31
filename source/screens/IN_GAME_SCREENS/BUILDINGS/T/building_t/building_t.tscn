@@ -221,7 +221,7 @@ position_smoothing_speed = 10.0
 [node name="Access Doors" type="Node" parent="."]
 
 [node name="AccessDoor" parent="Access Doors" instance=ExtResource("7_pnyb2")]
-position = Vector2(19, 110)
+position = Vector2(-3, 113)
 rotation = 1.5708
 scale = Vector2(2.6, 2.6)
 pathScene = "res://source/SCREENS/IN_GAME_SCREENS/screen_game_world/screen_game_world.tscn"

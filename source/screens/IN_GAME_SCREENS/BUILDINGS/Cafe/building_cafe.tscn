@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://dn7l4jplyxai5"]
+[gd_scene load_steps=13 format=4 uid="uid://dn7l4jplyxai5"]
 
 [ext_resource type="PackedScene" uid="uid://b6hf47nfrsxpf" path="res://source/SCREENS/IN_GAME_SCREENS/BUILDINGS/room_t/room_t.tscn" id="1_20pi7"]
 [ext_resource type="Script" uid="uid://bm0kkpywb10ru" path="res://source/SCREENS/IN_GAME_SCREENS/BUILDINGS/Cafe/building_cafe.gd" id="1_kmpwc"]
@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://275ibvia1q42" path="res://source/SCREENS/principal_character/prin_character.tscn" id="4_5e4pw"]
 [ext_resource type="PackedScene" uid="uid://dvj7vysylj34e" path="res://source/SCREENS/NON_GAME_SCREENS/pause_screen/pause_screen.tscn" id="5_r10lq"]
 [ext_resource type="PackedScene" uid="uid://by2b1crgphhw6" path="res://components/building_camera/building_camera.tscn" id="6_qiopx"]
-[ext_resource type="Script" uid="uid://rknateg4or68" path="res://components/accessDoor/access_door.gd" id="8_05cf6"]
+[ext_resource type="PackedScene" uid="uid://sbtm2b37won7" path="res://components/accessDoor/access_door.tscn" id="9_kmpwc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v3eqc"]
 texture = ExtResource("2_5e4pw")
@@ -1390,9 +1390,6 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_v3eqc")
 sources/1 = SubResource("TileSetAtlasSource_51il2")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kmpwc"]
-size = Vector2(10, 32)
-
 [node name="BuildingCafe" type="Node2D"]
 script = ExtResource("1_kmpwc")
 
@@ -1431,17 +1428,11 @@ position = Vector2(34, 124)
 
 [node name="CamaraCalabozo" parent="." instance=ExtResource("6_qiopx")]
 
-[node name="AccessDoor" type="Area2D" parent="."]
-position = Vector2(0, 114)
-collision_mask = 2
-script = ExtResource("8_05cf6")
+[node name="AccessDoor" parent="." instance=ExtResource("9_kmpwc")]
+position = Vector2(-4, 114)
+rotation = 1.5708
+scale = Vector2(1.8, 1.8)
 pathScene = "res://source/SCREENS/IN_GAME_SCREENS/screen_game_world/screen_game_world.tscn"
-metadata/_custom_type_script = "uid://rknateg4or68"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AccessDoor"]
-shape = SubResource("RectangleShape2D_kmpwc")
-
-[connection signal="scene_change" from="AccessDoor" to="." method="_on_access_door_scene_change"]
 
 [editable path="room_t"]
 [editable path="room_t/DoorLeft"]

@@ -33,4 +33,5 @@ func _on_btn_continue_pressed() -> void:
 
 func _on_btn_a_menu_prin_pressed() -> void:
 	SAVE_FILE.save_game()
+	print("File Saved from Pause Screen")
 	handle_pause()

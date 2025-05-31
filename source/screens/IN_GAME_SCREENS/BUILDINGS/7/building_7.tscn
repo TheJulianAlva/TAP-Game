@@ -28,8 +28,8 @@ position = Vector2(181, 175)
 [node name="CamaraCalabozo" parent="." instance=ExtResource("4_28dvb")]
 
 [node name="AccessDoor" parent="." instance=ExtResource("6_j0o67")]
-position = Vector2(181, 223)
-scale = Vector2(2.15152, 2)
+position = Vector2(182, 225)
+scale = Vector2(2.7, 2.7)
 pathScene = "res://source/SCREENS/IN_GAME_SCREENS/screen_game_world/screen_game_world.tscn"
 
 [connection signal="scene_change" from="AccessDoor" to="." method="_on_access_door_scene_change"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://cd31s3dojft5w"]
+[gd_scene load_steps=10 format=4 uid="uid://cd31s3dojft5w"]
 
 [ext_resource type="Script" uid="uid://o1hlip33jl4v" path="res://source/SCREENS/IN_GAME_SCREENS/BUILDINGS/U/buildig_u.gd" id="1_6nxc7"]
 [ext_resource type="PackedScene" uid="uid://b6hf47nfrsxpf" path="res://source/SCREENS/IN_GAME_SCREENS/BUILDINGS/room_t/room_t.tscn" id="1_dx1xg"]
@@ -8,10 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cafguk3e3n2kr" path="res://source/SCREENS/IN_GAME_SCREENS/TOOLS/chest/chest.tscn" id="4_lpigo"]
 [ext_resource type="TileSet" uid="uid://jhgtkav2md3m" path="res://resources/assets/TILEMAPS/Interiors Tile Map/interior_set.tres" id="5_wa8hg"]
 [ext_resource type="PackedScene" uid="uid://cowooi0xq1ot5" path="res://source/SCREENS/IN_GAME_SCREENS/TOOLS/closed_door/closed_door.tscn" id="6_lpigo"]
-[ext_resource type="Script" uid="uid://rknateg4or68" path="res://components/accessDoor/access_door.gd" id="9_qfdp0"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_e0nui"]
-size = Vector2(17, 31)
+[ext_resource type="PackedScene" uid="uid://sbtm2b37won7" path="res://components/accessDoor/access_door.tscn" id="9_qfdp0"]
 
 [node name="BuildigU" type="Node2D"]
 script = ExtResource("1_6nxc7")
@@ -69,7 +66,7 @@ scale = Vector2(0.8, 0.8)
 position = Vector2(244, 258)
 
 [node name="PrincipalCharacter" parent="." instance=ExtResource("2_4oy1p")]
-position = Vector2(70, 116)
+position = Vector2(43, 120)
 
 [node name="CamaraCalabozo" parent="." instance=ExtResource("3_7lpe0")]
 position_smoothing_enabled = true
@@ -77,23 +74,17 @@ position_smoothing_speed = 10.0
 
 [node name="PauseScreen" parent="." instance=ExtResource("4_7lpe0")]
 
-[node name="AccessDoor" type="Area2D" parent="."]
-position = Vector2(4, 116)
-collision_mask = 2
-script = ExtResource("9_qfdp0")
+[node name="AccessDoor" parent="." instance=ExtResource("9_qfdp0")]
+position = Vector2(0, 114)
+rotation = 1.5708
+scale = Vector2(1.9, 1.9)
 pathScene = "res://source/SCREENS/IN_GAME_SCREENS/screen_game_world/screen_game_world.tscn"
-metadata/_custom_type_script = "uid://rknateg4or68"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AccessDoor"]
-position = Vector2(-1.5, -2.5)
-shape = SubResource("RectangleShape2D_e0nui")
 
 [connection signal="body_entered" from="ClosedDoor/Area2DDoor" to="ClosedDoor" method="_on_area_2d_door_body_entered"]
 [connection signal="body_entered" from="ClosedDoor/Area2DDoor" to="Chest/Key" method="_on_area_2d_door_body_entered"]
 [connection signal="body_exited" from="ClosedDoor/Area2DDoor" to="ClosedDoor" method="_on_area_2d_door_body_exited"]
 [connection signal="body_exited" from="ClosedDoor/Area2DDoor" to="Chest/Key" method="_on_area_2d_door_body_exited"]
 [connection signal="door_opened" from="Chest/Key" to="ClosedDoor" method="_on_key_door_opened"]
-[connection signal="scene_change" from="AccessDoor" to="." method="_on_access_door_scene_change"]
 
 [editable path="room_t"]
 [editable path="room_t/DoorLeft"]
